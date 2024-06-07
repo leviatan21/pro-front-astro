@@ -8,10 +8,10 @@ import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 //import node from '@astrojs/node'
-import vercel from "@astrojs/vercel/serverless";
+// import vercel from "@astrojs/vercel/serverless";
+
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 const baseUrl = env?.PUBLIC_BASE_URL || '';
-
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,13 +20,13 @@ export default defineConfig({
   },
   'site': baseUrl,
   'trailingSlash': 'always',
-  'output': 'server',
-  //'output': 'static',
+  'output': 'static',
+  //'output': 'server',
   //'output': 'hybrid',
   //'adapter': node({
   //  'mode': 'standalone'
   //}),
-  'adapter': vercel(),
+  //'adapter': vercel(),
   'integrations': [
   // https://docs.astro.build/en/guides/styling/#sass-and-scss
   tailwind(), react(), sitemap(),
