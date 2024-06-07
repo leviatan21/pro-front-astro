@@ -20,7 +20,8 @@ export default defineConfig({
   },
   'site': baseUrl,
   'trailingSlash': 'always',
-  'output': 'static',
+  'output': 'server',
+  //'output': 'static',
   //'output': 'hybrid',
   //'adapter': node({
   //  'mode': 'standalone'
