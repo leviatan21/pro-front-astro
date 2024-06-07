@@ -1,0 +1,37 @@
+
+.dropdown-toggle {
+  width: 4.6rem;
+  min-width: auto;
+  &:after {
+    margin-left: 0.6em;
+  }
+}
+
+.dropdown-item {
+  padding: 6px 0px!important;
+  font-size: 15px!important;
+  cursor: pointer!important;
+}
+
+.dropdown-menu {
+  &.show {
+    padding: 0px 20px 0px 20px!important;
+    border-radius: 50px;
+    display: block;
+    top: 40px;
+    left: auto;
+    right: 0px;
+    width: 4.6rem;
+    min-width: auto;
+
+    @include media-max-992px {
+      display: block;
+      top: 38px;
+      left: 0px;
+      right: 0px;
+      max-width: 80px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}

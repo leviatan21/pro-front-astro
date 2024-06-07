@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import HeroSection from './sections/Hero.astro'
+import PortfoliosSection from './sections/Portfolios.astro'
+import BottonComponent from '../../components/Botton.astro'
+
+import PortfoliosContent from './content/portfolios.json'
+
+const lang = Astro.currentLocale
+---
+
+<Layout page="Projects">
+  <HeroSection />
+  <PortfoliosSection lang={lang} portfolios={PortfoliosContent} />
+  <BottonComponent lang={lang} />
+</Layout>

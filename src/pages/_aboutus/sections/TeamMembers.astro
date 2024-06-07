@@ -1,0 +1,58 @@
+---
+/* eslint-disable */
+import SectionComponent from '../../../components/Section.astro'
+import ImageAssetsComponent from '../../../components/ImageAssets.astro'
+import HeadingComponent from '../../../components/Heading.astro'
+import LinkedInIcon from '../../../components/icons/LinkedIn.astro'
+import ModalTeamSection from './ModalTeam.astro'
+
+const {
+  lang,
+  teams
+} = Astro.props
+---
+
+<SectionComponent className="teamMembers">
+  <div class="container">
+    <div class="row">
+      {teams.map((team,index) => (
+        <>
+          <div 
+            class="col-12 col-sm-6 col-md-4 col-lg-3 text-center my-5" 
+            data-aos="zoom-in" 
+            data-aos-delay={100 + (index*10)}
+            data-aos-once="true"
+          >
+            <div 
+              class="teamMember" 
+              data-bs-toggle="modal" 
+              data-bs-target={`#modal-team-${index}`}
+              data-target="#team-member-modal"
+              aria-label={team.name}
+            >
+              <ImageAssetsComponent className="w-75 has-modal" src={team.image} alt={team.name} width="200" height="200" />
+              <HeadingComponent level={3} className="teamMember">
+                {team.name}
+              </HeadingComponent>
+            </div>
+            <span>{team.title?.[lang]}</span>
+            {team.linkedin && (
+              <div class="socialIconGroup">
+                <a 
+                  class="social" 
+                  href={team.linkedin} 
+                  target="_blank" rel="opener noreferrer"
+                  aria-label="linkedin"
+                  title="opens in a new window"
+                >
+                  <LinkedInIcon className="size-8 d-inline-block" />
+                </a>
+              </div>
+            )}
+          </div>
+          <ModalTeamSection lang={lang} team={team} id={`modal-team-${index}`} />
+        </>
+      ))}
+    </div>
+  </div>
+</SectionComponent>

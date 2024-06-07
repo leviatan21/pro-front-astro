@@ -1,0 +1,30 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import Trans, { t } from '../../../i18n/utils.astro'
+import SectionComponent from '../../../components/Section.astro'
+import HeadingComponent from '../../../components/Heading.astro'
+import PortfolioCard from '../../../components/PortfolioCard.astro'
+
+const {
+  lang,
+  cards
+} = Astro.props
+---
+
+<SectionComponent className="portfolios-home p-5 my-5">
+  <div class="container">
+    <HeadingComponent level={2} className="w-100 d-flex justify-content-center underlinefh p-5 rayita_azul titulo_proyectos">
+      <Trans i18nKey='pagesHome:portfolio-heading' />
+    </HeadingComponent>
+    <div class="row my-4">
+      {cards.map((item,index)=> (
+        <PortfolioCard lang={lang} card={item} index={index} />
+      ))}
+    </div>
+    <div class="col-12 w-100 d-flex justify-content-center">
+      <a href={getAbsoluteLocaleUrl(lang,'projects')} class="btn btn-warning" aria-label={t(lang,'pagesHome:portfolio-btn-more')}>
+        <Trans i18nKey='pagesHome:portfolio-btn-more' />
+      </a>
+    </div>
+  </div>
+</SectionComponent>

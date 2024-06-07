@@ -1,0 +1,12 @@
+---
+const {
+  level
+} = Astro.props
+
+let list = []
+for (let i = 1; i <= 10; i++) {
+  list.push(i<=level ? 'active': '')
+}
+---
+
+{list.map((active) => <li class={active}></li>)}

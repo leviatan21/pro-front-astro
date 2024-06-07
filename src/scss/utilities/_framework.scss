@@ -1,0 +1,22 @@
+/* https://fontawesome.com/search */
+
+/* bootstrap */
+$btn-font-family: inherit;
+
+:root {
+  --bs-dropdown-link-hover-color: #fff;
+  --bs-heading-color: inherit;
+  --bs-link-color-rgb: 13, 110, 253;
+  --bs-btn-font-family: inherit;
+}
+
+.card {
+  .card-body {
+    color: $color-blue;
+    .card-title {
+      font-weight: 700;
+    }
+  }
+}
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'aos/dist/aos.css';

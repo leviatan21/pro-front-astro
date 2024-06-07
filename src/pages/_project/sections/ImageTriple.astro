@@ -1,0 +1,44 @@
+---
+import SectionComponent from '../../../components/Section.astro'
+import ImageTitleComponent from './ImageTitle.astro'
+import ImageAssetsComponent, { ImageBackground } from '../../../components/ImageAssets.astro'
+
+const {
+  image={}
+} = Astro.props
+
+const imageClassName          = (!image?.className ) ? 'w-75 h-auto p-2': image.className
+const sectionClassName        = (!image?.background) ? 'smoothProjects' : 'backgroundProjects'
+const sectionBackgroundImage  = (!image?.background) ? {}               : {'backgroundImage': ImageBackground(image?.background)}
+---
+
+<SectionComponent 
+  className={`portfolios my-5 ${sectionClassName}`}
+  style={sectionBackgroundImage}
+  data-section="triple"
+  data-aos="fade-zoom-in"
+  data-aos-easing="ease-in-back"
+  data-aos-delay="100"
+  data-aos-offset="10"
+  data-aos-once="true"
+>
+  <div class="container">
+    {image?.title && (
+      <div class="row">
+        <div class="col text-center">
+          <ImageTitleComponent title={image.title} />
+        </div>
+      </div>
+    )}
+    <div class="row">
+      <div class="col-12 col-md-4 text-center">
+        {image?.src?.left && <ImageAssetsComponent src={image.src.left} alt={image.alt} className={imageClassName} width="660" height="472" />}
+      </div>
+      <div class="col-12 col-md-4 text-center">
+        {image?.src?.center && <ImageAssetsComponent src={image.src.center} alt={image.alt} className={imageClassName} width="660" height="472" />}
+      </div>
+      <div class="col-12 col-md-4 text-center">
+        {image?.src?.right && <ImageAssetsComponent src={image.src.right} alt={image.alt} className={imageClassName} width="660" height="472" />}
+    </div>
+  </div>
+</SectionComponent>

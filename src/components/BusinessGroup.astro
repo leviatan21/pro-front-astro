@@ -1,0 +1,49 @@
+---
+import ImageAssetsComponent from './ImageAssets.astro'
+const {
+  group=[],
+  index=1
+} = Astro.props
+---
+
+<div class="footer-block-group">
+  <div class="container">
+    <span class="domus-group">
+      <a 
+        class="d-flex"
+        href="https://domus.global" 
+        target="_blank" 
+        rel="opener noreferrer follow" 
+        aria-label="WE ARE DOMUS DOMUS"
+        title="WE ARE DOMUS DOMUS"
+      >
+      {index===2 ? (
+        <>
+          WE ARE <ImageAssetsComponent src="domus-group/logo-domus-color.webp" alt="DOMUS" className="domus-global" width={85} height={67} /> DOMUS
+        </>
+        ) : ( 
+        <>
+          <ImageAssetsComponent src="logo-domus-footer.webp" alt="DOMUS" className="domus-global" width={100} height={18} />
+        </>
+      )}
+      </a>
+    </span>
+    <ul class="row">
+      {group.map((item) => (
+        <li class="col">
+          <a 
+            href={item.link} 
+            target="_blank" 
+            rel="opener noreferrer follow" 
+            class={`group-image ${item.heading}`} 
+            aria-label={item.heading}
+            title={item.heading}
+          >
+            <ImageAssetsComponent src={item.image} alt={item.heading} width={80} height={14} />
+            <span>{item.heading}</span>
+          </a>
+        </li>
+      ))} 
+    </ul>
+  </div>
+</div>

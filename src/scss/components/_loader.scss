@@ -1,0 +1,52 @@
+#loader {
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+  @include background-assets('iso-loader.svg', 'no-repeat');
+  &.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*
+.loader {
+  border: 16px solid $color-white-border;
+  border-top: 16px solid $color-green-border;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spinloader 2s linear infinite;
+
+  img {
+   height: 120px;
+   width: 120px;
+   animation: spinlogo 2s linear infinite;
+  }
+}
+
+@keyframes spinloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinlogo {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+*/

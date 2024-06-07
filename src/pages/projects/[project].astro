@@ -1,0 +1,18 @@
+---
+// @ts-nocheck
+import Page from '../_project/index.astro'
+
+import PortfoliosContent from '../_projects/content/portfolios.json'
+
+export function getStaticPaths() {
+  return PortfoliosContent.map(project => {
+    const path = project.path.replace('/projects/', '')
+    return ({'params':{'project':path}})
+  })
+}
+
+const {
+  project=""
+} = Astro.params
+---
+<Page project={project} />

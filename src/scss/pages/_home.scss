@@ -1,0 +1,108 @@
+
+.queusamos {
+  &:after{
+    width: 80%;
+    bottom:-11px
+  }
+}
+
+.testimonials-home {
+  .carousel {
+    overflow: hidden;
+  }
+
+  .testimonials {
+    
+    .col1, .col2 {
+      min-height: 420px;
+    }
+    .col2 {
+      position: relative;
+      align-self: flex-start;
+      align-items: flex-start;
+
+      img.carousel-testimonials {
+        min-height: 420px;
+        max-height: 420px;
+        height: 420px;
+        width: auto;
+        aspect-ratio: auto;
+        border-radius: .375rem;
+        @include media-max-992px {
+          object-fit: contain;
+          object-fit: scale-down;
+        }
+      }  
+    }
+    h3 {
+      font-family: $font-family-urbanist;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 48px;
+      line-height: 58px;
+      text-transform: uppercase;
+    }
+    span {
+      display: block;
+      font-weight: 400;
+      font-size: 20px;
+    }
+    a {
+      &.btn-more {
+        position: absolute;
+        bottom: 24px;
+        margin: 0 auto;
+        display: block;
+        z-index: 1;
+        border: 1px solid $color-white;
+        border-radius: 59px;
+        padding: 12px 24px;
+        color: $color-white;
+        @include media-max-992px {
+          bottom: 78px;
+        }
+      }
+    }
+    .autor {
+      .quote {
+        display: block;
+        font-style: italic;
+        margin-bottom: 1rem;
+        margin-top: 0;
+      }
+      .name {
+        display: block;
+        font-weight: 700 !important;
+        font-family: 'Work Sans';
+        font-size: 20px;
+        line-height: 28px;
+      }
+      .position {
+        a {
+          font-size: var(--bs-body-font-size);
+          font-weight: normal;
+          text-decoration: none;
+          color: $color-grey-dark;
+          &:hover {
+            color: #000000e6;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    @include media-max-640px {
+      .ps-5 {
+        padding-left: 10px !important;
+      }
+    }
+  }
+/*
+  @media (max-width: 1440px) {
+    .container.testimonials {
+      max-width: 1050px !important;
+      background-color: yellow;
+    }
+  }
+*/
+}

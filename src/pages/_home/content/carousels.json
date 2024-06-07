@@ -1,0 +1,45 @@
+[
+  {
+    "heading": "DELFOS",
+    "path": "/projects/delfos",
+    "quote": {
+      "es": "Trabajar con PRO es una muy buena experiencia, tanto por su dedicación como por su profesionalismo. Son un equipo muy eficaz y profesional. Fue muy grato colaborar con ellos en este proyecto.",
+      "en": "Working with PRO is a very good experience, both for their dedication and their professionalism. They are a very efficient and professional team. It was very pleasant to collaborate with them on this project."
+    },
+    "author": "– Ari Chamlian",
+    "position": "CEO Delfos",
+    "image": "testimonials/delfos.webp"
+  },
+  {
+    "heading": "ASTROSELLING",
+    "quote": {
+      "es": "Nuestra experiencia ha sido excepcional. Su enfoque colaborativo y profesionalismo han hecho que el proceso sea fluido y eficiente. Han demostrado una comunicación clara y constante, manteniéndonos informados en cada etapa del proyecto. Recomiendo ampilamente su servicio.",
+      "en": "Our experience has been exceptional. Their collaborative approach and professionalism have made the process smooth and efficient. They have demonstrated clear and constant communication, keeping us informed at every stage of the project. I highly recommend your service."
+    },
+    "author": "– Adrián Stagno",
+    "position": "COO Astroselling",
+    "image": "testimonials/astroselling.webp"
+  },
+  {
+    "heading": "HEPIC!",
+    "quote": {
+      "es": "Pro desarrolló la web de HEPIC y también trabajamos en conjunto varios proyectos y siempre la experiencia fue muy positiva, muy buena disposición para los requerimientos y lograr que las webs se adapten a cada necesidad.",
+      "en": "Pro developed the HEPIC website and we also worked together on several projects and the experience was always very positive, very good willingness to meet the requirements and ensure that the websites adapt to each need."
+    },
+    "author": "– Raquel Oberlander",
+    "position": "CEO y Co-founder HEPIC",
+    "image": "testimonials/hepic.webp"
+  },
+  {
+    "heading": "THINKUP",
+    "link": "https://thinkupsoft.com/fintech-app-development",
+    "anchor": "ThinkUp",
+    "quote": {
+      "es": "He tenido el privilegio de colaborar estrechamente con PRO en varios proyectos web innovadores. Nuestra asociación ha sido fundamental para impulsar la transformación digital y alcanzar nuevos niveles de éxito en el mercado digital.",
+      "en": "I have had the privilege of working closely with PRO on several innovative web projects. Our partnership has been instrumental in driving digital transformation and achieving new levels of success in the digital marketplace."
+    },
+    "author": "– Mauro Tarocco",
+    "position": "CEO y Co-founder ThinkUp - <a href='https://thinkupsoft.com/fintech-app-development' title='Fintech App Development Company' target='_blank' rel='opener noreferrer follow' >Fintech App Development Company</a>",
+    "image": "testimonials/thinkup.webp"
+  }
+]

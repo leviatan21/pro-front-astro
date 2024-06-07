@@ -1,0 +1,20 @@
+---
+import SectionComponent from '../../../components/Section.astro'
+import ServiceSection from './Service.astro'
+
+const {
+  lang='',
+  services=[]
+} = Astro.props
+---
+
+<SectionComponent>
+  <div class="container">
+    {services.map((service,index) => (
+      <>
+        <ServiceSection lang={lang} service={service} index={index} />
+        {(index+1 < services.length) && <hr/>}
+      </>
+    ))}
+  </div>
+</SectionComponent>

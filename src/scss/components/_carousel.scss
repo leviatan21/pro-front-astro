@@ -1,0 +1,24 @@
+
+.carousel-indicators [data-bs-target] {
+  background-color: $color-grey;
+}
+
+.carousel-control-prev {
+  justify-content: flex-start;
+}
+.carousel-control-next {
+  justify-content: flex-end;
+}
+
+.carousel-control-next-icon, 
+.carousel-control-prev-icon {
+  filter: invert(1) grayscale(40);
+}
+
+@include media-max-640px {
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 40px;
+    bottom: 0;
+  }
+}

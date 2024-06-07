@@ -1,0 +1,163 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import { t } from '../i18n/utils.astro'
+import { loadEnv } from 'vite'
+
+
+const {
+  lang='',
+  page=''
+} = Astro.props
+
+const env               = loadEnv(process.env.NODE_ENV, process.cwd(), '')
+const WebSiteUrl        = new URL(Astro.site)                     // https://pro-front.vercel.app
+const WebPageUrl        = new URL(Astro.url.pathname, Astro.site) // https://pro-front.vercel.app/projects
+const translationOfWork = getAbsoluteLocaleUrl((lang === 'es') ? 'en' : 'es')
+const inLanguage        = t(lang,'global:hrefLang')
+const ImageUrl          = `${WebSiteUrl}/assets/logo-pro-international.png`
+const LogoUrl           = `${WebSiteUrl}/assets/logo-pro-international.png`
+const datePublished     = env?.PUBLIC_DATE_PUBLISHED || ''
+const dateModified      = env?.PUBLIC_DATE_MODIFIED || ''
+const email             = env?.PUBLIC_MAIL_REPLY_ACCOUNT || ''
+let BreadcrumbList      = []
+
+const json = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {// WebSite
+      "@type": "WebSite",
+      "@id": `${WebSiteUrl}#WebSite`,
+      "url": WebSiteUrl,
+      "name": t(lang,'global:siteTitle'),
+      "description": t(lang,'global:siteDescription'),
+      "keywords": t(lang,'global:keywords'),
+      "publisher": {
+        "@id": `${WebSiteUrl}#Organization`
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": `${WebSiteUrl}?s={search_term_string}`
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ],
+      "inLanguage": inLanguage
+    },
+    {// WebPage
+      "@type": "WebPage",
+      "@id": WebPageUrl,
+      "url": WebPageUrl,
+      "name": t(lang,`${page}:title`),
+      "description": t(lang,`${page}:description`),
+      "keywords": t(lang,`${page}:keywords`),
+      "inLanguage": inLanguage,
+      ...(datePublished !== '' && { 'datePublished': `${datePublished}` }),
+      ...(dateModified !== '' && { 'dateModified': `${dateModified}` }),
+      "breadcrumb": {
+        "@id": `${WebSiteUrl}#BreadcrumbList`
+      },
+      "isPartOf": {
+        "@id": `${WebSiteUrl}#WebSite`
+      },
+      "about": {
+        "@id": `${WebSiteUrl}#LocalBusiness`
+      },
+      "publisher": {
+        "@id": `${WebSiteUrl}#Organization`
+      },
+      "translationOfWork": {
+        "@id": `${translationOfWork}#WebSite`
+      },
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            WebPageUrl
+          ]
+        }
+      ]
+    },
+    {// BreadcrumbList
+      "@type": "BreadcrumbList",
+      "@id": `${WebSiteUrl}#BreadcrumbList`,
+      "itemListElement": BreadcrumbList
+    },
+    {// LocalBusiness
+      "@type": "LocalBusiness",
+      "@id": `${WebSiteUrl}#LocalBusiness`,
+      "url": WebSiteUrl,
+      "legalName": t(lang,'global:siteTitle'),
+      "name": t(lang,'global:siteTitle'),
+      "description": t(lang,'global:siteDescription'),
+      "image": {
+        "@type": "ImageObject",
+        "url": ImageUrl
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": LogoUrl
+      },
+      "telephone": "+12122459600",
+      ...(email !== '' && { 'email': `${email}` }),
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dr. Mario Cassinoni 1011",
+        "addressLocality": "Montevideo",
+        "addressRegion": "UY",
+        "addressCountry": "UY",
+        "postalCode": "11200"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "18:00"
+        }
+      ],
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=-34.9099283,-56.1648242",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -34.9099283,
+        "longitude": -56.1648242
+      },
+    },
+    {// Organization
+      "@type": "Organization",
+      "@id": `${WebSiteUrl}#Organization`,
+      "url": WebSiteUrl,
+      "name": t(lang,'global:siteTitle'),
+      "description": t(lang,'global:siteDescription'),
+      "keywords": t(lang,'global:keywords'),
+      "logo": {
+        "@type": "ImageObject",
+        "inLanguage": inLanguage,
+        "@id": `${WebSiteUrl}#/schema/logo/image/`,
+        "image": ImageUrl,
+        "caption": t(lang,'global:siteTitle'),
+      },
+      "image": {
+        "@id": `${WebSiteUrl}#/schema/logo/image/`
+      },
+      "sameAs" : [
+        "https://www.linkedin.com/company/pro-internacional"
+      ]
+    }
+  ]
+}
+---
+
+<script
+  id="ldjson-script"
+  type="application/ld+json"
+  set:html={JSON.stringify(json)}
+></script>

@@ -1,0 +1,79 @@
+---
+import { loadEnv } from 'vite'
+import { t } from '../i18n/utils.astro'
+import HreflangComponent from './Hreflang.astro'
+import GoogleTagManager from './GoogleTagManager.astro'
+
+const {
+  lang='',
+  page='',
+  error=false
+} = Astro.props
+
+// Ejemplo: construye una URL canónica usando tu dominio de producción
+const canonicalURL  = new URL(Astro.url.pathname, Astro.site)
+const baseUrl       = new URL(Astro.site)
+const env           = loadEnv(process.env.NODE_ENV, process.cwd(), '')
+const GTMID         = env?.PUBLIC_GTM_ID || null
+const datePublished = env?.PUBLIC_DATE_PUBLISHED || ''
+const dateModified  = env?.PUBLIC_DATE_MODIFIED || ''
+
+const seo           = {
+  'title':          t(lang,`pages${page}:title`, false),
+  'description':    t(lang,`pages${page}:description`, false),
+  'keywords':       t(lang,`pages${page}:keywords`, false),
+}
+---
+
+<>
+  <link rel="preconnect"    href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch"  href="https://fonts.googleapis.com" />
+  <link rel="preconnect"    href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link rel="dns-prefetch"  href="https://fonts.gstatic.com" />
+
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="Shortcut Icon" type="image/x-icon" href={`${baseUrl}favicon.ico`}  />
+  <link rel="sitemap" type="application/xml" title="Site map" href={`${baseUrl}sitemap-index.xml`} />
+  <HreflangComponent lang={lang} />
+
+  {GTMID && <link rel="preconnect"    href="https://www.googletagmanager.com" crossorigin="anonymous" />}
+  {GTMID && <link rel="dns-prefetch"  href="https://www.googletagmanager.com" />}
+  {GTMID && <link rel="preload"       href={`https://www.googletagmanager.com/gtag/js?id=${GTMID}`} as="script" />}
+
+  {seo?.title && <title>{ `${seo.title} - ${t(lang,'global:siteTitle')}`}</title>}
+  {seo?.title && <meta name="title" content={seo.title} />}
+  {seo?.description && <meta name="description" content={seo.description} />}
+  {seo?.keywords && <meta name="keywords" content={seo.keywords} />}
+
+  {seo?.title && <meta property="og:title" content={seo.title} />}
+  {seo?.description && <meta name="og:description" content={seo.description} />}
+  <meta property="og:locale" content={t(lang,'global:hrefLang-ES')} />
+  <meta property="og:locale:alternate" content={t(lang,'global:hrefLang-EN')} />
+  <meta property="og:site_name" content={t(lang,'global:siteTitle')} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  {/* <meta property="og:image" content="Link preview image URL"> */}
+
+  <meta name="twitter:widgets:autoload" content="off" />
+  <meta name="twitter:widgets:csp" content="on" />
+  <meta name="twitter:widgets:theme" content="light" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content={canonicalURL} />
+  {seo?.title && <meta name="twitter:title" content={seo.title} />}
+  {seo?.description && <meta name="twitter:description" content={seo.description} />}
+  {/* <meta property="twitter:image" content="Twitter link preview image URL" /> */}
+
+  {datePublished && <meta property="article:published_time" content={datePublished} />}
+  {dateModified && <meta property="article:modified_time" content={dateModified} />}
+
+  {/* Do not use {error ? (<>...</>) : (<>...</>)} */}
+  {error  && <meta name="robots" content="noindex, nofollow" />}
+  {error  && <meta name="errorpage" content="true" />}
+  {error  && <meta name="errortype" content="404 - Not Found" />}
+  {error  && <meta name="prerender-status-code" content="404" />}
+  {!error && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+
+  {GTMID && <GoogleTagManager id={GTMID}/>}
+
+  <slot />
+</>

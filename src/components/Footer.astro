@@ -1,0 +1,62 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import Trans from '../i18n/utils.astro'
+import ScrollTopComponent from './ScrollTop.astro'
+import ImageAssetsComponent from './ImageAssets.astro'
+import ParagraphComponent from './Paragraph.astro'
+import BusinessGroupComponent from './BusinessGroup.astro'
+
+import LocationIcon from './icons/Location.astro'
+import LinkedInIcon from './icons/LinkedIn.astro'
+
+import GroupContent from '../content/group/index.json'
+
+const {
+  lang,
+} = Astro.props
+---
+
+<>
+  <footer class="footer">
+    <ScrollTopComponent />
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center pt-5 pb-5">
+        <div class="col-12 col-md-3 text-left">
+          <span class="text-light">
+            <a 
+              href={getAbsoluteLocaleUrl(lang, '') }
+              class="mb-3 me-2 mb-md-0 text-light text-decoration-none lh-1" 
+              aria-label="index"
+            >
+              <ImageAssetsComponent src="logo-pro-footer.webp" alt="Logo Pro" className="site-logo pro_footer" width={100} height={30}  />
+            </a>
+          </span>
+        </div>
+        <div class="col-12 col-md-6 my-3 my-md-0 text-md-center"> 
+          <LocationIcon class="d-inline text-light size-5 opacity-90" />
+          <ParagraphComponent className="text-light d-inline">
+            <Trans i18nKey='global:location' />
+          </ParagraphComponent>
+        </div>
+        <div class="col-12 col-md-3 text-md-center">
+          <ul class="list-unstyled m-0">
+            <li>
+              <a 
+                class="text-light" 
+                href="https://www.linkedin.com/company/pro-internacional" 
+                target="_blank" 
+                rel="opener noreferrer nofollow"
+                aria-label="linkedin"
+                title="opens in a new window"
+              >
+              <LinkedInIcon class="d-inline text-light size-5 opacity-90" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <BusinessGroupComponent group={GroupContent} index={1} />
+    </div>
+  </footer>
+  <BusinessGroupComponent group={GroupContent} index={2} />
+</>

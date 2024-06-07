@@ -1,0 +1,529 @@
+[
+  {
+    "name": "Paola Arnoni",
+    "title": {
+      "es": "Directora",
+      "en": "Director"
+    },
+    "image": "team_members/paola-arnoni.webp",
+    "linkedin": "https://www.linkedin.com/in/paola-arnoni",
+    "skills": [
+      {
+        "level": 10,
+        "es": "UX",
+        "en": "UX"
+      },
+      {
+        "level": 10,
+        "es": "UI",
+        "en": "UI"
+      },
+      {
+        "level": 9,
+        "es": "Accesibilidad",
+        "en": "Accessibility"
+      },
+      {
+        "level": 8,
+        "es": "Reclutadora de plugins para Figma",
+        "en": "Plugin recruiter for Figma"
+      }
+    ]
+  },
+  {
+    "name": "Mónica Pérez",
+    "title": {
+      "es": "Co-directora y gestión de proyectos",
+      "en": "Co-director and project management"
+    },
+    "image": "team_members/monica-perez.webp",
+    "linkedin": "https://www.linkedin.com/in/monica-perez-37528028",
+    "skills": [
+      {
+        "level": 10,
+        "es": "Gestión de proyectos",
+        "en": "Project management"
+      },
+      {
+        "level": 10,
+        "es": "Metodologías ágiles",
+        "en": "Agile methodologies"
+      },
+      {
+        "level": 9,
+        "es": "Desarrollo de equipo",
+        "en": "Team development"
+      },
+      {
+        "level": 8,
+        "es": "Experta en Excel",
+        "en": "Excel Expert"
+      }
+    ]
+  },
+  {
+    "name": "Ernesto Latierro",
+    "title": {
+      "es": "Coordinador",
+      "en": "Coordinator"
+    },
+    "image": "team_members/ernesto-latierro.webp",
+    "linkedin": "https://www.linkedin.com/in/ernesto-latierro",
+    "skills": [
+      {
+        "level": 10,
+        "es": "Joomla",
+        "en": "Joomla"
+      },
+      {
+        "level": 8,
+        "es": "HTML",
+        "en": "HTML"
+      },
+      {
+        "level": 9,
+        "es": "Accesibilidad",
+        "en": "Accessibility"
+      },
+      {
+        "level": 10,
+        "es": "Experto en playlist",
+        "en": "Playlist expert"
+      }
+    ]
+  },
+  {
+    "name": "Virginia Monteverde",
+    "title": {
+      "es": "Desarrolladora Frontend",
+      "en": "Frontend Developer"
+    },
+    "image": "team_members/virginia-monteverde.webp",
+    "linkedin": "https://www.linkedin.com/in/virginia-monteverde-1a387a56",
+    "skills": [
+      {
+        "level": 10,
+        "es": "HTML + CSS",
+        "en": "HTML + CSS"
+      },
+      {
+        "level": 8,
+        "es": "PHP",
+        "en": "PHP"
+      },
+      {
+        "level": 10,
+        "es": "Wordpress",
+        "en": "Wordpress"
+      },
+      {
+        "level": 10,
+        "es": "Experta en Excel",
+        "en": "Excel expert"
+      }
+    ]
+  },
+  {
+    "name": "Carla Gili",
+    "title": {
+      "es": "Diseñadora UI",
+      "en": "UI designer"
+    },
+    "image": "team_members/carla-gili.webp",
+    "linkedin": "https://www.linkedin.com/in/carla-gili-taccari-009ab188",
+    "skills": [
+      {
+        "level": 10,
+        "es": "Illustrator + Photoshop",
+        "en": "Illustrator + Photoshop"
+      },
+      {
+        "level": 9,
+        "es": "Figma",
+        "en": "Figma"
+      },
+      {
+        "level": 7,
+        "es": "Fotografía",
+        "en": "Photography"
+      },
+      {
+        "level": 9,
+        "es": "Experta en playlists",
+        "en": "Playlist expert"
+      }
+    ]
+  },
+  {
+    "name": "Federico Martínez",
+    "title": {
+      "es": "Desarrollador Fullstack",
+      "en": "Fullstack developer"
+    },
+    "image": "team_members/federico-martinez.webp",
+    "linkedin": "https://www.linkedin.com/in/juan-federico-martinez",
+    "skills": [
+      {
+        "level":10,
+        "es": "Drupal",
+        "en": "Drupal"
+      },
+      {
+        "level": 10,
+        "es": "PHP",
+        "en": "PHP"
+      },
+      {
+        "level": 10,
+        "es": "Wordpress",
+        "en": "Wordpress"
+      },
+      {
+        "level": 9,
+        "es": "Organizador de asados",
+        "en": "Barbacue organizer"
+      }
+    ]
+  },
+  {
+    "name": "Valentina Raggio",
+    "title": {
+      "es": "Diseñadora UX/UI",
+      "en": "UX/UI designer"
+    },
+    "image": "team_members/valentina-raggio.webp",
+    "linkedin": "https://www.linkedin.com/mwlite/in/valentinaraggio",
+    "skills": [
+      {
+        "level": 10,
+        "es": "UI/UX",
+        "en": "UI/UX"
+      },
+      {
+        "level": 9,
+        "es": "Figma",
+        "en": "Figma"
+      },
+      {
+        "level": 10,
+        "es": "Illustrator",
+        "en": "Illustrator"
+      },
+      {
+        "level": 9,
+        "es": "Conocedora de datos curiosos",
+        "en": "Connoisseur of curious facts"
+      }
+    ]
+  },
+  {
+    "name": "Gabriel Simonnetti",
+    "title": {
+      "es": "Desarrollador Frontend",
+      "en": "Frontend developer"
+    },
+    "image": "team_members/gabriel-simonnetti.webp",
+    "linkedin": "https://www.linkedin.com/in/gabosimonetti",
+    "skills": [
+      {
+        "level": 10,
+        "es": "Wordpress",
+        "en": "Wordpress"
+      },
+      {
+        "level": 10,
+        "es": "Joomla",
+        "en": "Joomla"
+      },
+      {
+        "level": 8,
+        "es": "HTML/CSS",
+        "en": "HTML/CSS"
+      },
+      {
+        "level": 10,
+        "es": "Experto en Gifs y Memes",
+        "en": "Expert in Gifs and Memes"
+      }
+    ]
+  },
+  {
+    "name": "Juan Arellano",
+    "title": {
+      "es": "Desarrollador Fullstack",
+      "en": "Fullstack developer"
+    },
+    "image": "team_members/juan-arellano.webp",
+    "linkedin": "https://www.linkedin.com/in/jfarellano",
+    "skills": [
+      {
+        "level": 10,
+        "es": "React",
+        "en": "React"
+      },
+      {
+        "level": 9,
+        "es": "JS",
+        "en": "JS"
+      },
+      {
+        "level": 9,
+        "es": "PHP",
+        "en": "PHP"
+      },
+      {
+        "level": 10,
+        "es": "Organizador de asados",
+        "en": "Barbacue organizer"
+      }
+    ]
+  },
+  {
+    "name": "Alexis Suárez",
+    "title": {
+      "es": "Desarrollador Frontend",
+      "en": "Frontend developer"
+    },
+    "image": "team_members/alexis-suarez.webp",
+    "linkedin": "https://www.linkedin.com/in/alexis-su%C3%A1rez",
+    "skills": [
+      {
+        "level": 10,
+        "es": "React",
+        "en": "React"
+      },
+      {
+        "level": 10,
+        "es": "Photoshop",
+        "en": "Photoshop"
+      },
+      {
+        "level": 10,
+        "es": "HTML+CSS",
+        "en": "HTML+CSS"
+      },
+      {
+        "level": 8,
+        "es": "Conocedor de datos curiosos",
+        "en": "Fun facts connoisseur"
+      }
+    ]
+  },
+  {
+    "name": "Nicolás Rama",
+    "title": {
+      "es": "Desarrollador Frontend",
+      "en": "Frontend developer"
+    },
+    "image": "team_members/nicolas-rama.webp",
+    "linkedin": "https://www.linkedin.com/in/nicolas-rama-45497214a",
+    "skills": [
+      {
+        "level": 10,
+        "es": "React",
+        "en": "React"
+      },
+      {
+        "level": 9,
+        "es": "Node",
+        "en": "Node"
+      },
+      {
+        "level": 10,
+        "es": "JS",
+        "en": "JS"
+      },
+      {
+        "level": 9,
+        "es": "Conocedor de shortcuts",
+        "en": "Shortcut connoisseur"
+      }
+    ]
+  },
+  {
+    "name": "Carolina González",
+    "title": {
+      "es": "Administración",
+      "en": "Administration"
+    },
+    "image": "team_members/carolina-gonzalez.webp",
+    "linkedin": "https://www.linkedin.com/in/ana-carolina-gonz%C3%A1lez-gonz%C3%A1lez-4a842894",
+    "skills": [
+      {
+        "level": 10,
+        "es": "Excel",
+        "en": "Excel"
+      },
+      {
+        "level": 9,
+        "es": "Atención al cliente",
+        "en": "Customer Support"
+      },
+      {
+        "level": 10,
+        "es": "Cobranzas",
+        "en": "Collections"
+      },
+      {
+        "level": 9,
+        "es": "Conocedora de datos curiosos",
+        "en": "Curious facts connoisseur"
+      }
+    ]
+  },
+  {
+    "name": "Nicolás Oleinizak",
+    "title": {
+      "es": "Desarrollador Fullstack",
+      "en": "Fullstack developer"
+    },
+    "image": "team_members/nicolas-oleinizak.webp",
+    "linkedin": "https://ar.linkedin.com/in/nicol%C3%A1s-oleinizak",
+    "skills": [
+      {
+        "level": 10,
+        "es": "Backend development",
+        "en": "Backend development"
+      },
+      {
+        "level": 9,
+        "es": "Javascript",
+        "en": "Javascript"
+      },
+      {
+        "level": 10,
+        "es": "PHP",
+        "en": "PHP"
+      },
+      {
+        "level": 9,
+        "es": "Maestro pizzero",
+        "en": "Pizza master"
+      }
+    ]
+  },
+  {
+    "name": "Gabriel Vazquez",
+    "title": {
+      "es": "Desarrollador Fullstack",
+      "en": "Fullstack developer"
+    },
+    "image": "team_members/gabriel-vazquez.webp",
+    "linkedin": "https://www.linkedin.com/in/gabriel-vazquez-84431531",
+    "skills": [
+      {
+        "level": 8,
+        "es": "HTML + CSS + Javascript",
+        "en": "HTML + CSS + Javascript"
+      },
+      {
+        "level": 8,
+        "es": "Backend NodeJs",
+        "en": "Backend NodeJs"
+      },
+      {
+        "level": 6,
+        "es": "Frontend ReactJs",
+        "en": "Frontend ReactJs"
+      },
+      {
+        "level": 9,
+        "es": "Referente para juniors",
+        "en": "Reference for juniors"
+      }
+    ]
+  },
+  {
+    "name": "Engels Baca Sevilla",
+    "title": {
+      "es": "Desarrollador Web",
+      "en": "Web developer"
+    },
+    "image": "team_members/engels-baca-sevilla.webp",
+    "linkedin": "https://www.linkedin.com/in/engels-baca-sevilla-60a03a122",
+    "skills": [
+      {
+        "level": 10,
+        "es": "Vue",
+        "en": "Vue"
+      },
+      {
+        "level": 8,
+        "es": "React",
+        "en": "React"
+      },
+      {
+        "level": 8,
+        "es": "Laravel",
+        "en": "Laravel"
+      },
+      {
+        "level": 9,
+        "es": "Gamer",
+        "en": "Gamer"
+      }
+    ]
+  },
+  {
+    "name": "Williams Blanco",
+    "title": {
+      "es": "Desarrollador Frontend",
+      "en": "Frontend developer"
+    },
+    "image": "team_members/williams-blanco.webp",
+    "linkedin": "https://www.linkedin.com/in/williams-blanco-022958143",
+    "skills": [
+      {
+        "level": 9,
+        "es": "HTML + CSS + JS",
+        "en": "HTML + CSS + JS"
+      },
+      {
+        "level": 9,
+        "es": "Accesibilidad",
+        "en": "Accesibility"
+      },
+      {
+        "level": 9,
+        "es": "React",
+        "en": "React"
+      },
+      {
+        "level": 10,
+        "es": "Pedagogía",
+        "en": "Pedagogy"
+      }
+    ]
+  },
+  {
+    "name": "Leonardo Alvarez",
+    "title": {
+      "es": "Desarrollador Fullstack",
+      "en": "Fullstack developer"
+    },
+    "image": "team_members/leonardo-alvarez.webp",
+    "linkedin": "https://www.linkedin.com/in/leo-alvarez",
+    "skills": [
+      {
+        "level": 9,
+        "es": "PHP",
+        "en": "PHP"
+      },
+      {
+        "level": 8,
+        "es": "Laravel",
+        "en": "Laravel"
+      },
+      {
+        "level": 8,
+        "es": "Javascript",
+        "en": "Javascript"
+      },
+      {
+        "level": 7,
+        "es": "Músico, baterista",
+        "en": "Musician, drummer"
+      }
+    ]
+  }
+]

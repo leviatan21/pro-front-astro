@@ -1,0 +1,142 @@
+
+.titulo_proyectos {
+  margin: 0px 0px 80px 0px!important;
+  padding-bottom: 0px!important;
+  &.rayita_azul {
+    &:after {
+      right:0;
+      bottom: -17px;
+      width: 6%;
+    }
+  }
+}
+
+.backgroundProjects {
+  background-repeat: repeat-x;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
+  img {
+    max-width: 280px
+  }
+}
+
+.smoothProjects {
+  .smoothShadow {
+    box-shadow: $box-shadow-gray;
+  }
+}
+
+section {
+  &.portfolios {
+    padding-right: 15px;
+    padding-left: 15px;
+    min-height: 380px;
+
+    .row > * {
+      padding-right: 0;
+      padding-left: 0;
+      padding-bottom: 15px;
+    }
+    @include media-max-640px {
+      min-height: initial;
+
+      &.my-5 {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+      }
+      .container {
+        &.pt-5 {
+          padding-top: 1rem !important;
+        }
+      }
+
+      .row > div {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+  }
+}
+.parallaxProjects {
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+  background-size: cover;
+  background-attachment: fixed;
+//background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: $box-shadow-black inset;
+
+  @include media-max-992px {
+    min-height: 480px;
+  }
+  @include media-max-640px {
+  //background-attachment: initial;
+    min-height: 380px;
+  }
+  
+  img {
+    max-width: 640px;
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    /*
+    top: 0;
+    bottom: -1px;
+    */
+    left: 0px;
+    right: 0px;
+    @include media-max-992px {
+      min-height: auto !important;
+    }
+  }
+}
+
+.projectSubTitle {
+  font-size: 20px;
+  color: $color-grey;
+}
+
+@include media-max-768px {
+  .project_mobile {
+    .py-5 {
+      padding-top: 0px!important;
+      padding-bottom: 0px!important;
+    }
+  }
+  .intro_project{
+    margin-top:20px;
+    margin-bottom: 20px;
+  }
+}
+
+.delfos {
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 8s ease infinite;
+  -moz-animation: AnimationName 8s ease infinite;
+  -o-animation: AnimationName 8s ease infinite;
+  animation: AnimationName 8s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 53%}
+  50%{background-position:100% 48%}
+  100%{background-position:0% 53%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 53%}
+  50%{background-position:100% 48%}
+  100%{background-position:0% 53%}
+}
+@-o-keyframes AnimationName {
+  0%{background-position:0% 53%}
+  50%{background-position:100% 48%}
+  100%{background-position:0% 53%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 53%}
+  50%{background-position:100% 48%}
+  100%{background-position:0% 53%}
+}

@@ -1,0 +1,27 @@
+---
+import Trans, { t } from '../i18n/utils.astro'
+import Section from './Section.astro'
+import Heading from './Heading.astro'
+const {
+  className='',
+  fluid=false,
+} = Astro.props
+---
+
+<Section 
+  className={`${className} d-flex align-items-end`} 
+  data-aos="zoom-in" 
+  data-aos-offset="60"
+  data-aos-once="true"
+>
+  <div class={`container${fluid ? '-fluid' : ''}`}>
+    <div class="row">
+      <div class="col d-flex justify-content-center align-self-end">
+        <Heading level={2} className="d-none">
+          <Trans i18nKey='pagesHome:us-btn-team' />
+        </Heading>
+        <slot />
+      </div>
+    </div>
+  </div>
+</Section>

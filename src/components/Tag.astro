@@ -1,0 +1,15 @@
+---
+import Trans from '../i18n/utils.astro'
+import dataTags from '../content/tags/index.json'
+
+const {
+  tagKey
+} = Astro.props
+const tag = dataTags?.[tagKey] || null
+---
+
+{tag && (
+  <li class={tag.className}>
+    <Trans i18nKey={tag.text} /> 
+  </li>
+)}

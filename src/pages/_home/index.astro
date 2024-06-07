@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import HeroSection from './sections/Hero.astro'
+import ParallaxSection from './sections/SectionParallax.astro'
+import WhatWeDoSection from './sections/SectionWhatWeDo.astro'
+import CarousellSection from './sections/SectionCarousell.astro'
+import UsSection from './sections/Us.astro'
+import PortfoliosSection from './sections/Portfolios.astro'
+import BottonComponent from '../../components/Botton.astro'
+
+import WhatWeDoContent from './content/whatWeDo.json'
+import CarouselsContent from './content/carousels.json'
+import CardsContent from './content/cards.json'
+
+const lang = Astro.currentLocale
+---
+
+<Layout page="Home">
+  <HeroSection lang={lang} />
+  <ParallaxSection lang={lang} />
+  <WhatWeDoSection tags={WhatWeDoContent} />
+  <CarousellSection lang={lang} slides={CarouselsContent} />
+  <UsSection lang={lang} />
+  <PortfoliosSection lang={lang} cards={CardsContent} />
+  <BottonComponent lang={lang} />
+</Layout>

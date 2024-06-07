@@ -1,0 +1,13 @@
+---
+const {
+  level=1,
+  className='',
+  ...attrs
+} = Astro.props
+
+const Element = `h${level}`
+---
+
+<Element class={className} {...attrs}>
+  <slot />
+</Element>

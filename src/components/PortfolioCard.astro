@@ -1,0 +1,52 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import ImageAssets from './ImageAssets.astro'
+import HeadingComponent from './Heading.astro'
+import ParagraphComponent from './Paragraph.astro'
+import CardComponent from '../components/Card.astro'
+
+const {
+  lang,
+  card,
+  index
+} = Astro.props
+---
+
+<div 
+  class="col-12 col-md-6 col-lg-3 portfolio-item" 
+  data-aos="flip-right" 
+  data-aos-delay={200 + (index*100)}
+  data-aos-offset="60"
+  data-aos-once="true"
+>
+  <CardComponent 
+    classCard='border-none'
+    href={getAbsoluteLocaleUrl(lang,card.path)} 
+    aria-label={ `${card.title} ${card.text?.[lang]}` }
+    >
+      <ImageAssets 
+        slot="image"
+        className="card-img" 
+        src={card.image} 
+        alt={ `${card.title} ${card.text?.[lang]}` }
+        width={544}
+        height={460}
+      />
+
+      <HeadingComponent 
+        slot="title"
+        level={3} 
+        className="card-title h5"
+        >
+        {card.title}
+      </HeadingComponent>
+
+      <ParagraphComponent
+        slot="text"
+        className="card-text"
+      >
+        {card.text?.[lang]}
+      </ParagraphComponent>
+
+  </CardComponent>
+</div>

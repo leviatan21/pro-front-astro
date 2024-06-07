@@ -1,0 +1,38 @@
+---
+import SectionComponent from '../../../components/Section.astro'
+import ImageAssetsComponent from '../../../components/ImageAssets.astro'
+import ImageTitleComponent from './ImageTitle.astro'
+
+const {
+  image={}
+} = Astro.props
+---
+
+<SectionComponent 
+  className="portfolios my-5"
+  style=""
+  data-section="double"
+  data-aos="fade-zoom-in"
+  data-aos-easing="ease-in-back"
+  data-aos-delay="100"
+  data-aos-offset="10"
+  data-aos-once="true"
+>
+  <div class="container pt-5">
+    {image?.title && (
+      <div class="row">
+        <div class="col text-center">
+          <ImageTitleComponent title={image.title} />
+        </div>
+      </div>
+    )}
+    <div class="row">
+      <div class="col-12 col-md-6 text-center">
+        {image?.src?.left && <ImageAssetsComponent src={image.src.left} alt={image.alt} className="w-100" />}
+      </div>
+      <div class="col-12 col-md-6 text-center">
+        {image?.src?.right && <ImageAssetsComponent src={image.src.right} alt={image.alt} className="w-100" />}
+      </div>
+    </div>
+  </div>
+</SectionComponent>

@@ -1,0 +1,59 @@
+---
+import Trans from '../i18n/utils.astro'
+import SectionComponent from './Section.astro'
+import HeadingComponent from './Heading.astro'
+import ParagraphComponent from './Paragraph.astro'
+
+const {
+  className,
+  title,
+  heading1,
+  heading2Like1,
+  heading2,
+  heading3Like2,
+  paragraph
+} = Astro.props
+---
+
+<SectionComponent className={`${className} d-flex align-items-center`}>
+  <div class="container">
+    <div class="row d-flex align-items-center">
+      <div class="col-12 col-md-6">
+        {title && (
+          <span class="color-lila">
+            <strong>
+              <Trans i18nKey={title} />
+            </strong>
+          </span>
+        )}
+        {heading1 && (
+          <HeadingComponent level={1} className="underlineLeftOrange">
+            <Trans i18nKey={heading1} />
+          </HeadingComponent>
+        )}
+        {heading2Like1 && (
+          <HeadingComponent level={2} className="h1 underlineLeftOrange">
+            <Trans i18nKey={heading2Like1} />
+          </HeadingComponent>
+        )}
+        {heading2 && (
+          <HeadingComponent level={2} className="subtitle">
+            <Trans i18nKey={heading2} />
+          </HeadingComponent>
+        )}
+        {heading3Like2 && (
+          <HeadingComponent level={3} className="h2 subtitle">
+            <Trans i18nKey={heading3Like2} />
+          </HeadingComponent>
+        )}
+      </div>
+      <div class="col-12 col-md-6">
+        {paragraph && (
+          <ParagraphComponent className="color-grey">
+            <Trans i18nKey={paragraph} />
+          </ParagraphComponent>
+        )}
+      </div>
+    </div>
+  </div>
+</SectionComponent>

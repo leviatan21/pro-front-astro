@@ -1,0 +1,31 @@
+---
+import SectionComponent from '../../../components/Section.astro'
+import ImageAssetsComponent, { ImageBackground } from '../../../components/ImageAssets.astro'
+
+const {
+  project="",
+  image={}
+} = Astro.props
+---
+
+<SectionComponent
+  className="portfolios my-5"
+  style="transform: initial !important"
+  data-section="parallax"
+  data-aos="fade-zoom-in"
+  data-aos-easing="ease-in-back"
+  data-aos-delay="100"
+  data-aos-offset="10"
+  data-aos-once="true"
+>
+  <div 
+    class={`container pt-5 parallaxProjects ${project}`}
+    style={{'backgroundImage': ImageBackground(image?.background)}}
+  >
+    <div class="row">
+      <div class="col-12 align-self-center">
+        {image?.src?.desktop && <ImageAssetsComponent src={image.src.desktop} alt={image.alt} loading="eager" className="d-block m-auto w-75" />}
+      </div>
+    </div>
+  </div>
+</SectionComponent>

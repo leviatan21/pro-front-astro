@@ -1,0 +1,49 @@
+@import "./language";
+@import "./navbar";
+
+header {
+  &.pro {
+    background: transparent !important;
+    width: 100%;
+    padding: 24px 0px !important;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+  }
+}
+
+.offcanvas {
+  display: none;
+}
+
+.offcanvas-top {
+  z-index: 5;
+  background: $color-blue;
+}
+
+@include media-max-992px {
+  .languageSwitch {
+    position: absolute;
+    bottom: 50px;
+    width: 95%;
+  }
+  .offcanvas{
+    display: block;
+    height: 100% !important;
+  }
+
+  .offcanvas-body {
+    .btn-close {
+      @include background-assets('icon/close.svg', 'no-repeat');
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      z-index: 5;
+    }
+    .btn-warning {
+      background: $color-orange !important;
+      border-color: $color-orange !important;
+    }
+  }
+}

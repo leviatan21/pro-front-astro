@@ -1,0 +1,57 @@
+---
+import MaintenanceComponent from '../components/Maintenance.astro'
+import HeadComponent from '../components/Head.astro'
+import SkipMainComponent from '../components/SkipMain.astro'
+import HeaderComponent from '../components/Header.astro'
+import SchemaMarkupComponent from '../components/SchemaMarkup.astro'
+import FooterComponent from '../components/Footer.astro'
+
+const currentLocale = Astro.currentLocale
+const disabled      = (import.meta.env.PUBLIC_MAINTENANCE || 'false')
+
+const {
+  page='home',
+  error=false
+} = Astro.props
+---
+
+<!doctype html>
+<html lang={currentLocale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <HeadComponent lang={currentLocale} page={page} error={error}/>
+	</head>
+	<body>
+    {disabled==='true' ? 
+    (
+      <MaintenanceComponent />
+    ) : (
+      <SkipMainComponent />
+      <HeaderComponent lang={currentLocale} />
+      <main>
+        <slot />
+      </main>
+      <FooterComponent lang={currentLocale} />
+    )}
+    {!error && (<SchemaMarkupComponent lang={currentLocale} page={page} />)}
+	</body>
+</html>
+
+<script>
+  /* https://github.com/zougari47/portfolio-template/blob/main/src/pages/index.astro */
+  import AOS from 'aos'
+  AOS.init({
+    'once': true,
+    'delay': 100
+  });
+</script>
+
+<script>
+  import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+</script>
+
+<style lang="scss" is:global>
+  @import '../scss/index.scss';
+</style>

@@ -1,0 +1,49 @@
+---
+import SectionComponent from '../../../components/Section.astro'
+import ImageAssetsComponent from '../../../components/ImageAssets.astro'
+import ImageTitleComponent from './ImageTitle.astro'
+
+const {
+  image={}
+} = Astro.props
+
+const uniqueClassName     = (image?.className ) ? `${image.className}`                      : 'w-100'
+const desktopClassName    = (image?.className ) ? `${image.className} d-none d-lg-block`    : 'w-100 d-none d-lg-block'
+const responsiveClassName = (image?.className ) ? `${image.className} w-100 py-2 d-lg-none` : 'w-100 py-2 d-lg-none'
+---
+
+<SectionComponent 
+  className="portfolios my-5"
+  style=""
+  data-section="unique responsive"
+  data-aos="fade-zoom-in"
+  data-aos-easing="ease-in-back"
+  data-aos-delay="100"
+  data-aos-offset="10"
+  data-aos-once="true"
+>
+  <div class="container">
+    {image?.title && (
+      <div class="row">
+        <div class="col text-center">
+          <ImageTitleComponent title={image.title} />
+        </div>
+      </div>
+    )}
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        {image?.src?.unique && (
+          <ImageAssetsComponent src={image.src.unique} alt={image.alt} className={uniqueClassName} />
+        )}
+        {image?.src?.desktop && (
+          <ImageAssetsComponent src={image.src.desktop} alt={image.alt} className={desktopClassName} />
+        )}
+        {image?.src?.responsive && (
+          image.src.responsive.map((src) => (
+            <ImageAssetsComponent src={src} alt={image.alt} className={responsiveClassName} />
+          ))
+        )}
+      </div>
+    </div>
+  </div>
+</SectionComponent>

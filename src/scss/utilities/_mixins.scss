@@ -1,0 +1,36 @@
+@mixin background-assets($name, $props) {
+  background: url("#{$assets}/#{$name}") #{$props};
+}
+@mixin content-assets($name) {
+  content: url("#{$assets}/#{$name}");
+}
+
+@mixin media-max-1440px {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin media-max-1200px {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin media-max-992px {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin media-max-768px {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-max-640px {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}

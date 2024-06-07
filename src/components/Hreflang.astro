@@ -1,0 +1,15 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import Config from '../../astro.config.mjs'
+
+const {
+  lang=''
+} = Astro.props
+---
+
+<>
+  <link rel="alternate" href={getAbsoluteLocaleUrl(lang)} hreflang="x-default" />
+  {Config.i18n.locales.map((lang:string) => (
+    <link rel="alternate" href={getAbsoluteLocaleUrl(lang)} hreflang={lang} />
+  ))}
+</>

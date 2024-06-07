@@ -1,0 +1,31 @@
+---
+import HeadingComponent from '../../../components/Heading.astro'
+import ParagraphComponent from '../../../components/Paragraph.astro'
+import TagGroupComponent from '../../../components/TagGroup.astro'
+
+const {
+  lang='',
+  index=0,
+  service={}
+} = Astro.props
+---
+
+<div 
+  class="row my-5 py-5" 
+  data-aos="fade-up" 
+  data-aos-anchor-placement="top-bottom" 
+  data-aos-offset={100 + (index*10)}
+  data-aos-once="true"
+>
+  <div class="col-12 col-md-6">
+    <HeadingComponent level={3} className="underline-2">
+      <Fragment set:html={service.title?.[lang]} />
+    </HeadingComponent>
+  </div>
+  <div class="col-12 col-md-6">
+    <ParagraphComponent className="color-grey">
+      <Fragment set:html={service.paragraph?.[lang]} /> 
+    </ParagraphComponent>
+    <TagGroupComponent className="my-3" tags={service.tags} />
+  </div>
+</div>

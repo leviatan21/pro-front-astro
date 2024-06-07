@@ -1,0 +1,12 @@
+---
+import Tag from './Tag.astro'
+
+const {
+  tags=[],
+  className=''
+} = Astro.props
+---
+
+<ul class={`tagGroup ${className}`}>
+  {tags.map((tag) => <Tag tagKey={tag} />)}
+</ul>

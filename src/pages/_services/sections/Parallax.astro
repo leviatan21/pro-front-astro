@@ -1,0 +1,49 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import Trans, { t } from '../../../i18n/utils.astro'
+import SectionComponent from '../../../components/Section.astro'
+import HeadingComponent from '../../../components/Heading.astro'
+import ParagraphComponent from '../../../components/Paragraph.astro'
+import ImageAssetsComponent from '../../../components/ImageAssets.astro'
+
+const {
+  lang='',
+} = Astro.props
+---
+
+<SectionComponent className="section-2 d-flex align-items-center bg-parallax">
+  <div class="container d-flex align-items-center">
+    <div class="row">
+      <div class="col-12 col-md-8 col1 col-lg-7">
+        <HeadingComponent level={2} className={'h1 text-white'}>
+          <span class="thin">
+            <Trans i18nKey='pagesServices:parallax-thin' />
+          </span>
+          <br/>
+          <strong>
+            <Trans i18nKey='pagesServices:parallax-strong' />
+          </strong>
+        </HeadingComponent>
+      </div>
+      <div class="col-12 col-md-4 col2 col-lg-5">
+        <div class="container d-flex align-items-center">
+          <div class="row">
+            <div class="col-12">
+              <ImageAssetsComponent src="logo-pro-white.svg" alt="logo" width={44} height={44} />
+              <ParagraphComponent className="text-light my-4">
+                <Trans i18nKey='pagesServices:parallax-paragraph' />
+              </ParagraphComponent>
+              <a 
+                href={getAbsoluteLocaleUrl(lang,'aboutus')} 
+                class="btn btn-warning"
+                aria-label={t(lang,'pagesServices:parallax-button')}
+              >
+                <Trans i18nKey='pagesServices:parallax-button' />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</SectionComponent>

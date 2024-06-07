@@ -1,0 +1,19 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import Trans, { t } from '../../../i18n/utils.astro'
+import UsComponent from '../../../components/Us.astro'
+
+const {
+  lang
+} = Astro.props
+---
+
+<UsComponent className="banner-aboutus">
+  <a 
+    href={getAbsoluteLocaleUrl(lang, 'aboutus')} 
+    class="btn btn-accent uppercase text-light"
+    aria-label={t(lang,'pagesHome:us-btn-team')}
+  >
+    <Trans i18nKey='pagesHome:us-btn-team' />
+  </a>
+</UsComponent>

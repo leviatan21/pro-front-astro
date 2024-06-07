@@ -1,0 +1,31 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import Trans, { t } from '../i18n/utils.astro'
+import SectionComponent from './Section.astro'
+import HeadingComponent from './Heading.astro'
+
+const {
+  lang
+} = Astro.props
+---
+
+<SectionComponent className="section-botton">
+  <div class="container my-5 patternBotton">
+    <div class="row d-flex align-items-center">
+      <div class="col-12 col-md-8 p-4"> 
+        <HeadingComponent level={2} className="w-75 h4">
+          <Trans i18nKey='global:bottom-heading' />
+        </HeadingComponent>
+      </div>
+      <div class="col-12 col-md-4 text-center d-flex justify-content-center">
+        <a 
+          href={getAbsoluteLocaleUrl(lang,'contact')} 
+          class="btn btn-warning uppercasemy-4" 
+          aria-label={t(lang,'global:bottom-btn')}
+        >
+          <Trans i18nKey='global:bottom-btn' />
+        </a>
+      </div>
+    </div>
+  </div>
+</SectionComponent>

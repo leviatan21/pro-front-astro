@@ -1,0 +1,57 @@
+[
+  {
+    "heading":"Astroselling",
+    "link": "https://www.astroselling.com/es/",
+    "image": "domus-group/astroselling.svg"
+  },
+  {
+    "heading":"Doomit",
+    "link": "https://boomit.us",
+    "image": "domus-group/boomit.svg"
+  },
+  {
+    "heading": "Buybutton",
+    "link": "https://www.buybutton.app",
+    "image": "domus-group/buybutton.svg"
+  },
+  {
+    "heading": "Corefone",
+    "link": "https://corefone.com",
+    "image": "domus-group/corefone.svg"
+  },
+  {
+    "heading": "Delfos",
+    "link": "https://delfoslabs.com",
+    "image": "domus-group/delfos.svg"
+  },
+  {
+    "heading": "Hepic",
+    "link": "https://hepicmarketing.com",
+    "image": "domus-group/hepic.svg"
+  },
+  {
+    "heading": "Iugo",
+    "link": "https://www.iugo.com.uy/?lang=es",
+    "image": "domus-group/iugo.svg"
+  },
+  {
+    "heading": "Nublit",
+    "link": "https://nublit.com",
+    "image": "domus-group/nublit.svg"
+  },
+  {
+    "heading": "Pro",
+    "link": "https://www.prointernacional.com/",
+    "image": "domus-group/pro.svg"
+  },
+  {
+    "heading": "Sabyk",
+    "link": "https://www.sabyk.com",
+    "image": "domus-group/sabik.svg"
+  },
+  {
+    "heading": "Thinkup",
+    "link": "https://thinkupsoft.com/",
+    "image": "domus-group/thinkup.svg"
+  }
+]

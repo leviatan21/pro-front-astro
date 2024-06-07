@@ -1,0 +1,32 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import Trans, { t } from '../i18n/utils.astro'
+
+const {
+  lang='',
+  route='',
+} = Astro.props
+
+const pages = [
+  {name:'global:aboutus',  path:'aboutus'},
+  {name:'global:projects', path:'projects'},
+  {name:'global:services', path:'services'}
+]
+---
+
+{pages.map((page) => {
+  const current = (route).includes(page.path) ? true : false
+  return (
+    <li class="nav-item">
+      <a 
+        class={`nav-link ${current ? 'active' : ''}`}
+        href={getAbsoluteLocaleUrl(lang, page.path)} 
+        tabindex={0}
+        aria-label={t(lang,page.name)}
+        aria-current={current ? 'page' : false }
+      >
+        <Trans i18nKey={page.name} />
+      </a>
+    </li>
+  )
+})}

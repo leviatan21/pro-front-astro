@@ -1,0 +1,23 @@
+
+.card {
+  transition: ease 0.3s;
+
+  .card-body {
+    padding: 20px 0px;
+    color: $color-blue;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  .card-img {
+    width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

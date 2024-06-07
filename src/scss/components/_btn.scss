@@ -1,0 +1,42 @@
+
+.btn {
+  text-transform: uppercase;
+  border-radius: 500px;
+
+  &.btn-home { 
+    background: $color-orange;
+    border-color: $color-orange;
+    color: $color-white;
+  }
+
+  &.btn-warning {
+    background-color: $color-blue;
+    border-color: $color-blue;
+    color: $color-white;
+    box-shadow: initial !important;
+    &:hover, &:active {
+      background: $color-orange !important;
+      border-color: $color-orange !important;
+      color: $color-white !important;
+    }
+  }
+
+  &.btn-accent {
+    background-color: $color-white;
+    color: $color-blue !important;
+    box-shadow: initial !important;
+    &:hover, &:active {
+      background: $color-orange-dark !important;
+      color: $color-white !important;
+    }
+  }
+
+  &.btn-outline {
+    background: transparent;
+    transition: ease 0.3s;
+    &:hover, &:active {
+      text-shadow: $text-shadow !important;
+      box-shadow: $box-shadow-light !important;
+    }
+  }
+}

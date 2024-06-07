@@ -1,0 +1,81 @@
+html {
+  &.modal-open {
+    overflow: hidden!important;
+  }
+}
+
+.modal {
+  background: $color-violet-background;
+}
+
+.modal-backdrop {
+  &.show {
+    z-index: 3;
+  }
+}
+
+.teamMemberModal {
+  .modal-header {
+    border: none;
+    background-color: $color-white-background;
+  }
+  .modal-body {
+    padding: 0 3rem 3rem 3rem;
+    background-color: $color-white-background;
+    border-bottom-left-radius: var(--bs-modal-inner-border-radius);
+    border-bottom-right-radius: var(--bs-modal-inner-border-radius);
+
+    .flex-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.teamMembers {
+  .socialIconGroup {
+    margin: 10px 0px;
+    a {
+      margin-left: 3px;
+      margin-right: 3px;
+      text-decoration: none;
+      svg {
+        fill: #0d6efd;
+        stroke: white;
+      }
+    }
+  }
+  img {
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: $box-shadow-black;
+    margin: 0 auto;
+    &.has-modal {
+      cursor: pointer;
+    }
+  }
+
+  h3.teamMember {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    text-decoration: none;
+    margin:12px 0px;
+  }
+
+  h4.teamMember {
+    text-transform: uppercase
+  }
+
+  div.teamMember {
+    text-decoration: none;
+    color: $color-blue;
+    cursor: pointer;
+  }
+}

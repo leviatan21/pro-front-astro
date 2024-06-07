@@ -1,0 +1,74 @@
+---
+import Trans from '../../../i18n/utils.astro'
+import SectionComponent from '../../../components/Section.astro'
+import HeadingComponent from '../../../components/Heading.astro'
+import ParagraphComponent from '../../../components/Paragraph.astro'
+import TagGroupComponent from '../../../components/TagGroup.astro'
+import ImageAssetsComponent from '../../../components/ImageAssets.astro'
+
+const {
+  tags={}
+} = Astro.props
+
+const tagsDo   = tags?.tagsDo || []
+const tagsTech = tags?.tagsTech || []
+---
+
+<>
+  <SectionComponent className="section-3">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div 
+        class="col-12 col-md-12 col-lg-6 order-2 order-md-2 order-lg-1" 
+          data-aos="fade-right" 
+          data-aos-once="true"
+        >
+          <HeadingComponent level={2} className="h3">
+            <Trans i18nKey='pagesHome:whatwedo-heading-3' />
+          </HeadingComponent>
+          <ParagraphComponent className="my-4 special parrafo_dedicamos">
+            <Trans i18nKey='pagesHome:whatwedo-paragraph' />
+          </ParagraphComponent>
+          <TagGroupComponent tags={tagsDo} />
+        </div>
+        <div 
+        class="col-12 col-md-12 col-lg-6 order-1 order-md-1 order-lg-2" 
+          data-aos="fade-left" 
+          data-aos-once="true"
+        >
+          <ImageAssetsComponent 
+            className="laptopPlaceholder" 
+            src="laptop.webp" 
+            alt="laptop" 
+            loading="eager"
+            width={727} 
+            height={672}
+          />
+        </div>
+      </div>
+    </div>
+  </SectionComponent>
+
+  <SectionComponent className="section-4">
+    <div class="container">
+      <div class="row d-flex">
+        <div class="col-12 col-md-4 col-lg-2 d-flex align-items-center mb20">
+          <HeadingComponent level={2} className="h5 uppercase">
+            <Trans i18nKey='pagesHome:whatwedo-heading-5' />
+            <br/>
+            <span class="accent1">
+              <Trans i18nKey='pagesHome:whatwedo-accent' />
+            </span>
+            <br/>
+            <span class="rayita_azul queusamos">
+              <Trans i18nKey='pagesHome:whatwedo-use' />
+            </span>
+          </HeadingComponent>
+        </div>
+        <div class="col-12 col-md-8 col-lg-10 d-flex align-items-center">
+          <TagGroupComponent tags={tagsTech} />
+        </div>
+      </div>
+    </div>  
+  </SectionComponent>
+</>

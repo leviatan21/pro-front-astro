@@ -1,0 +1,18 @@
+---
+---
+
+<a
+  href="#top"
+  title="Go Top"
+  aria-label="Go Top"
+  class="scrollTop"
+>
+  Top
+</a>
+<script is:inline>
+  const scrollTop = document.querySelector('a.scrollTop');
+  scrollTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({'top':0,'left':0,'behavior':'smooth'});
+  });
+</script>

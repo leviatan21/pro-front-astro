@@ -1,0 +1,20 @@
+{
+  "tagsDo": [
+    "design",
+    "development",
+    "uiux",
+    "accessibility"
+  ],
+  "tagsTech": [
+    "react",
+    "php",
+    "javascript",
+    "typescript",
+    "node",
+    "laravel",
+    "vue",
+    "scss",
+    "html",
+    "css"
+  ]
+}

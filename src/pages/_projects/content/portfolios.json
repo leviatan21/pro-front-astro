@@ -1,0 +1,494 @@
+[
+  {
+    "name": "DIRECTA24",
+    "path": "/projects/d24",
+    "link": "https://www.d24.com",
+    "image": "portfolios/d24/directa24.webp",
+    "tags": [
+      "design",
+      "development",
+      "architecture",
+      "flow",
+      "react",
+      "templates",
+      "uiux",
+      "html",
+      "css"
+    ],
+    "helmet": {
+      "es": {
+        "title": "Portfolio Directa24",
+        "description": "Landing desarrollada en React para la mayor pasarela de pagos de servicios en línea en economías emergentes.",
+        "keywords": "design,development,architecture,flow,react,templates,uiux,html,css"
+      
+      },
+      "en": {
+        "title": "Portfolio Directa24",
+        "description": "Landing developed in React for the largest payment gateway for online services in emerging economies.",
+        "keywords": "design,development,architecture,flow,react,templates,uiux,html,css"
+      
+      }
+    },
+    "paragraph": {
+      "es": "Landing desarrollada en React para la mayor pasarela de pagos de servicios en línea en economías emergentes.",
+      "en": "Landing developed in React for the largest payment gateway for online services in emerging economies."
+    },
+    "images": [
+      {
+        "type": "unique",
+        "alt": "directa24",
+        "src": {
+          "unique": "portfolios/d24/image-01.webp"
+        }
+      },
+      {
+        "type": "responsive",
+        "alt": "typography",
+        "src": {
+          "desktop": "portfolios/d24/typography.webp",
+          "responsive": ["portfolios/d24/typography-responsive.webp"]
+        }
+      },
+      {
+        "type": "responsive",
+        "alt": "colors",
+        "src": {
+          "desktop": "portfolios/d24/colors.webp",
+          "responsive": ["portfolios/d24/colors-responsive.webp"]
+        }
+      },
+      {
+        "type": "parallax",
+        "alt": "directa24",
+        "background": "portfolios/d24/parallax-background.webp",
+        "src": {
+          "desktop": "portfolios/d24/parallax.webp"
+        }
+      },
+      {
+        "type": "double",
+        "alt": "directa24",
+        "src": {
+          "left": "portfolios/d24/image-02.webp",
+          "right": "portfolios/d24/image-05.webp"
+        }
+      },
+      {
+        "type": "icons",
+        "alt": "iconography",
+        "title": "pagesProjects:iconography",
+        "src": [
+          "portfolios/d24/icons-01.webp",
+          "portfolios/d24/icons-02.webp",
+          "portfolios/d24/icons-03.webp",
+          "portfolios/d24/icons-04.webp"
+        ]
+      },
+      {
+        "type": "unique",
+        "alt": "uikit",
+        "title": "pagesProjects:uikit",
+        "src": {
+          "unique": "portfolios/d24/image-03.webp"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Banco Hipotecario del Uruguay",
+    "path": "/projects/bhu",
+    "link": "https://bhu.com.uy",
+    "image": "portfolios/bhu/bhu.webp",
+    "tags": [
+      "design",
+      "development",
+      "migration",
+      "cms",
+      "html",
+      "css",
+      "uiux",
+      "php",
+      "drupal",
+      "templates",
+      "accessibility"
+    ],
+    "helmet": {
+      "es": {
+        "title": "Portfolio Banco Hipotecario del Uruguay",
+        "description": "Diseño, desarrollo e implementación del portal corporativo de BHU, con foco en la migración del CMS anterior a uno más flexible y robusto (Drupal 9).",
+        "keywords": "design,development,migration,cms,html,css,uiux,php,drupal,templates,accessibility"
+      
+      },
+      "en": {
+        "title": "Portfolio Banco Hipotecario del Uruguay",
+        "description": "The design, development and implementation of the BHU corporate portal was carried out, focusing on the migration of the previous CMS to a more flexible and robust one (Drupal 9).",
+        "keywords": "design,development,migration,cms,html,css,uiux,php,drupal,templates,accessibility"
+      
+      }
+    },
+    "paragraph": {
+      "es": "Se realizó el diseño, desarrollo e implementación del portal corporativo de BHU, con foco en la migración del CMS anterior a uno más flexible y robusto (Drupal 9). Rediseño de interfaces y desarrollo de templates con el fin de presentar los contenidos de forma más clara para el usuario del Banco.",
+      "en": "The design, development and implementation of the BHU corporate portal was carried out, focusing on the migration of the previous CMS to a more flexible and robust one (Drupal 9). Redesign of interfaces and development of templates in order to present the contents more clearly for the Bank user."
+    },
+    "images": [
+      {
+        "type": "parallax",
+        "alt": "bhu",
+        "background": "portfolios/bhu/parallax-background.webp",
+        "src": {
+          "desktop": "portfolios/bhu/parallax.webp"
+        }
+      },
+      {
+        "type": "responsive",
+        "alt": "typography",
+        "src": {
+          "desktop": "portfolios/bhu/typography.webp",
+          "responsive": ["portfolios/bhu/typography-responsive.webp"]
+        }
+      },
+      {
+        "type": "responsive",
+        "alt": "colors",
+        "src": {
+          "desktop": "portfolios/bhu/colors.webp",
+          "responsive": ["portfolios/bhu/colors-responsive.webp"]
+        }
+      },
+      {
+        "type": "unique",
+        "alt": "directa24",
+        "src": {
+          "unique": "portfolios/bhu/image-03.webp"
+        }
+      },
+      {
+        "type": "double",
+        "alt": "bhu",
+        "src": {
+          "left": "portfolios/bhu/image-01.webp",
+          "right": "portfolios/bhu/image-02.webp"
+        }
+      },
+      {
+        "type": "unique",
+        "alt": "iconography",
+        "title": "pagesProjects:iconography",
+        "src": {
+          "unique": "portfolios/bhu/icons.webp"
+        }
+      },
+      {
+        "type": "unique",
+        "alt": "bhu",
+        "src": {
+          "unique": "portfolios/bhu/image-05.webp"
+        }
+      },
+      {
+        "type": "responsive",
+        "alt": "uikit",
+        "title": "pagesProjects:uikit",
+        "src": {
+          "desktop": "portfolios/bhu/uikit.webp",
+          "responsive": [
+            "portfolios/bhu/uikit-responsive-01.webp",
+            "portfolios/bhu/uikit-responsive-02.webp",
+            "portfolios/bhu/uikit-responsive-03.webp"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "CCEAU",
+    "path": "/projects/cceau",
+    "link": "https://ccea.com.uy",
+    "image": "portfolios/cceau/cceau.webp",
+    "tags": [
+      "design",
+      "development",
+      "migration",
+      "cms",
+      "architecture",
+      "frontend",
+      "uiux",
+      "html",
+      "css",
+      "php",
+      "wordpress"
+    ],
+    "helmet": {
+      "es": {
+        "title": "Portfolio Colegio de economistas y administradores de Uruguay",
+        "description": "Esta plataforma online proporcionará información actualizada sobre las actividades, eventos y servicios ofrecidos por el colegio, incluyendo noticias relevantes y artículos jurídicos de interés.",
+        "keywords": "design,development,migration,cms,architecture,frontend,uiux,html,css,php,wordpress"
+      
+      },
+      "en": {
+        "title": "Portfolio Colegio de economistas y administradores de Uruguay",
+        "description": "This online platform will provide updated information on the activities, events and services offered by the school, including relevant news and legal articles of interest.",
+        "keywords": "design,development,migration,cms,architecture,frontend,uiux,html,css,php,wordpress"
+      
+      }
+    },
+    "paragraph": {
+      "es": "Esta plataforma online proporcionará información actualizada sobre las actividades, eventos y servicios ofrecidos por el colegio, incluyendo noticias relevantes y artículos jurídicos de interés.",
+      "en": "This online platform will provide updated information on the activities, events and services offered by the school, including relevant news and legal articles of interest."
+    },
+    "images": [
+      {
+        "type": "parallax",
+        "alt": "bhu",
+        "background": "portfolios/cceau/parallax-background.webp",
+        "src": {
+          "desktop": "portfolios/cceau/parallax.webp"
+        }
+      },
+      {
+        "type": "responsive",
+        "alt": "typography",
+        "src": {
+          "desktop": "portfolios/cceau/typography.webp",
+          "responsive": ["portfolios/cceau/typography-responsive.webp"]
+        }
+      },
+      {
+        "type": "responsive",
+        "alt": "colors",
+        "src": {
+          "desktop": "portfolios/cceau/colors.webp",
+          "responsive": ["portfolios/cceau/colors-responsive.webp"]
+        }
+      },
+      {
+        "type": "double",
+        "alt": "ccea",
+        "src": {
+          "left": "portfolios/cceau/image-01.webp",
+          "right": "portfolios/cceau/image-02.webp"
+        }
+      },
+      {
+        "type": "unique",
+        "alt": "ccea",
+        "title": "pagesProjects:conceptualization",
+        "src": {
+          "unique": "portfolios/cceau/image-03.webp"
+        }
+      },
+      {
+        "type": "unique",
+        "alt": "uikit",
+        "title": "pagesProjects:uikit",
+        "src": {
+          "unique": "portfolios/cceau/image-04.webp"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Nublit",
+    "path": "/projects/nublit",
+    "link": "https://nublit.com",
+    "image": "portfolios/nublit/nublit.webp",
+    "tags": [
+      "design",
+      "development",
+      "cms",
+      "frontend",
+      "uiux",
+      "html",
+      "css",
+      "php",
+      "wordpress"
+    ],
+    "helmet": {
+      "es": {
+        "title": "Portfolio Nublit",
+        "description": "PRO rediseñó, desarrolló e implementó el portal web de Nublit, con foco en SEO y autonomía en la administración, utilizando WordPress por su versatilidad, con un template 100% customizado, con integración al CRM del cliente.",
+        "keywords": "design,development,cms,frontend,uiux,html,css,php,wordpress"
+      
+      },
+      "en": {
+        "title": "Portfolio Nublit",
+        "description": "PRO redesigned, developed and implemented the Nublit web portal, with a focus on SEO and autonomy in administration, using WordPress for its versatility, with a 100% customized template, with integration to the client\"s CRM.",
+        "keywords": "design,development,cms,frontend,uiux,html,css,php,wordpress"
+      
+      }
+    },
+    "paragraph": {
+      "es": "PRO rediseñó, desarrolló e implementó el portal web de Nublit, con foco en SEO y autonomía en la administración, utilizando WordPress por su versatilidad, con un template 100% customizado, con integración al CRM del cliente.",
+      "en": "PRO redesigned, developed and implemented the Nublit web portal, with a focus on SEO and autonomy in administration, using WordPress for its versatility, with a 100% customized template, with integration to the client\"s CRM."
+    },
+    "images": [
+      {
+        "type": "responsive",
+        "alt": "typography",
+        "src": {
+          "desktop": "portfolios/nublit/typography.webp",
+          "responsive": ["portfolios/nublit/typography-responsive.webp"]
+        }
+      },
+      {
+        "type": "responsive",
+        "alt": "colors",
+        "src": {
+          "desktop": "portfolios/nublit/colors.webp",
+          "responsive": ["portfolios/nublit/colors-responsive.webp"]
+        }
+      },
+      {
+        "type": "parallax",
+        "alt": "nublit",
+        "background": "portfolios/nublit/parallax-background.webp",
+        "src": {
+          "desktop": "portfolios/nublit/parallax.webp"
+        }
+      },
+      {
+        "type": "double",
+        "alt": "uikit",
+        "title": "pagesProjects:uikit",
+        "src": {
+          "left": "portfolios/nublit/image-02.webp",
+          "right": "portfolios/nublit/image-03.webp"
+        }
+      },
+      {
+        "type": "icons",
+        "alt": "iconography",
+        "title": "pagesProjects:iconography",
+        "src": [
+          "portfolios/nublit/icons-01.webp",
+          "portfolios/nublit/icons-02.webp",
+          "portfolios/nublit/icons-03.webp",
+          "portfolios/nublit/icons-04.webp",
+          "portfolios/nublit/icons-05.webp",
+          "portfolios/nublit/icons-06.webp",
+          "portfolios/nublit/icons-07.webp",
+          "portfolios/nublit/icons-08.webp",
+          "portfolios/nublit/icons-09.webp",
+          "portfolios/nublit/icons-10.webp",
+          "portfolios/nublit/icons-11.webp",
+          "portfolios/nublit/icons-12.webp"
+        ]
+      },
+      {
+        "type": "unique",
+        "alt": "nublit",
+        "className": "w-75 h-auto",
+        "src": {
+          "unique": "portfolios/nublit/image-05.webp"
+        }
+      },
+      {
+        "type": "triple",
+        "alt": "cards",
+        "background": "portfolios/nublit/cards-background.webp",
+        "src": {
+          "left": "portfolios/nublit/card-01.webp",
+          "center": "portfolios/nublit/card-02.webp",
+          "right": "portfolios/nublit/card-03.webp"
+        }
+      },
+      {
+        "type": "triple",
+        "alt": "smooth",
+        "className": "w-100 h-auto smoothShadow",
+        "src": {
+          "left": "portfolios/nublit/image-06.webp",
+          "center": "portfolios/nublit/image-07.webp",
+          "right": "portfolios/nublit/image-08.webp"
+        }
+      },
+      {
+        "type": "unique",
+        "alt": "nublit",
+        "className": "w-75 h-auto",
+        "src": {
+          "unique": "portfolios/nublit/image-04.webp"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Delfos",
+    "path": "/projects/delfos",
+    "link": "https://delfoslabs.com",
+    "image": "portfolios/delfos/delfos.webp",
+    "tags": [
+      "design",
+      "development",
+      "cms",
+      "frontend",
+      "uiux",
+      "html",
+      "css",
+      "php",
+      "wordpress"
+    ],
+    "helmet": {
+      "es": {
+        "title": "Portfolio Delfos",
+        "description": "El proyecto consta de una landing multidioma. Busca mostrar de manera simple y cercana de que trata la empresa así como sus servicios y un contacto para potenciales clientes.",
+        "keywords": "design,development,cms,frontend,uiux,html,css,php,wordpress"
+      
+      },
+      "en": {
+        "title": "Portfolio Delfos",
+        "description": "The project consists of a multilanguage landing. It seeks to show in a simple and close way what the company is about as well as its services and a contact for potential clients.",
+        "keywords": "design,development,cms,frontend,uiux,html,css,php,wordpress"
+      
+      }
+    },
+    "paragraph": {
+      "es": "El proyecto consta de una landing multidioma. Busca mostrar de manera simple y cercana de que trata la empresa así como sus servicios y un contacto para potenciales clientes.",
+      "en": "The project consists of a multilanguage landing. It seeks to show in a simple and close way what the company is about as well as its services and a contact for potential clients."
+    },
+    "images": [
+      {
+        "type": "parallax",
+        "alt": "delfos",
+        "background": "linear-gradient(63deg,#f7b16c,#fd756c,#fded6c)",
+        "src": {
+          "desktop": "portfolios/delfos/parallax.webp"
+        }
+      },
+      {
+        "type": "responsive",
+        "alt": "typography",
+        "src": {
+          "desktop": "portfolios/delfos/typography.webp",
+          "responsive": ["portfolios/delfos/typography-responsive.webp"]
+        }
+      },
+      {
+        "type": "responsive",
+        "alt": "colors",
+        "src": {
+          "desktop": "portfolios/delfos/colors.webp",
+          "responsive": ["portfolios/delfos/colors-responsive.webp"]
+        }
+      },
+      {
+        "type": "double",
+        "alt": "delfos",
+        "src": {
+          "left": "portfolios/delfos/image-01.webp",
+          "right": "portfolios/delfos/image-02.webp"
+        }
+      },
+      {
+        "type": "responsive",
+        "alt": "uikit",
+        "className": "w-75 h-auto",
+        "title": "pagesProjects:uikit",
+        "src": {
+          "desktop": "portfolios/delfos/uikit.webp",
+          "responsive": ["portfolios/delfos/uikit-responsive.webp"]
+        }
+      }
+    ]
+  }
+]

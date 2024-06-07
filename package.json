@@ -1,0 +1,32 @@
+{
+  "name": "prointernational",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/node": "^8.2.5",
+    "@astrojs/react": "^3.4.0",
+    "@astrojs/sitemap": "^3.1.5",
+    "@astrojs/tailwind": "^5.1.0",
+    "@popperjs/core": "^2.11.8",
+    "@types/bootstrap": "^5.2.10",
+    "aos": "^2.3.4",
+    "astro": "^4.9.2",
+    "astro-bootstrap": "^0.6.2",
+    "astro-robots-txt": "^1.0.0",
+    "autoprefixer": "^10.4.19",
+    "bootstrap": "^5.3.3",
+    "cssnano": "^7.0.1",
+    "sass": "^1.77.4",
+    "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "vite": "^5.2.12"
+  }
+}

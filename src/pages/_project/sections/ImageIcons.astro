@@ -1,0 +1,39 @@
+---
+import SectionComponent from '../../../components/Section.astro'
+import ImageAssetsComponent from '../../../components/ImageAssets.astro'
+import ImageTitleComponent from './ImageTitle.astro'
+
+const {
+  images={}
+} = Astro.props
+
+const className = (images?.src?.length < 6) ? 'col-6 col-sm-3 p-4 text-center' : 'col-4 col-sm-3 col-md-2 p-3 text-center'
+---
+
+<SectionComponent 
+  className="portfolios my-5"
+  style=""
+  data-section="icons"
+  data-aos="fade-zoom-in"
+  data-aos-easing="ease-in-back"
+  data-aos-delay="100"
+  data-aos-offset="10"
+  data-aos-once="true"
+>
+  <div class="container">
+    {images?.title && (
+      <div class="row">
+        <div class="col text-center">
+          <ImageTitleComponent title={images.title} />
+        </div>
+      </div>
+    )}
+    <div class="row">
+      {images?.src?.map((image) => (
+        <div class={className}>
+          <ImageAssetsComponent src={image} alt={images.alt} className="w-75" />
+        </div>
+      ))}
+    </div>
+  </div>
+</SectionComponent>

@@ -1,0 +1,117 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import Trans, { t, getRouteFromUrl } from '../i18n/utils.astro'
+import Navigation from './Navigation.astro'
+import Language from './Language.jsx'
+import MenuMobile from './MenuMobile.jsx'
+import ImageAssets from './ImageAssets.astro'
+
+const {
+  lang,
+  props
+} = Astro.props
+
+const pathname      = Astro.url.pathname
+const isContactPage = (pathname.includes('/contact'))
+const route         = getRouteFromUrl(pathname)
+---
+
+<>
+  <header id="top" class={`p-3 mb-3 ${(isContactPage) ? '' : 'pro'}`} {...props}>
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <nav class="navbar navbar-expand-lg w-100 navbar-light">
+          <div class="container-fluid">
+              <a 
+                href={getAbsoluteLocaleUrl(lang, '')} 
+                class="d-flex align-items-center mb-lg-0 text-dark text-decoration-none me-5" 
+                tabindex={0}
+                aria-label="index"
+              >
+                <ImageAssets src="logo-pro.svg" alt="Logo Pro" loading="eager" class="site-logo" width={100} height={30} />
+              </a>
+              {/* Mobile menu - Start */}
+              <MenuMobile transition:persist client:visible>
+                <>
+                  <a 
+                    href={getAbsoluteLocaleUrl(lang, '')} 
+                    class="d-flex justify-content-center text-decoration-none" 
+                    tabindex={0}
+                    aria-label="index"
+                  >
+                      <ImageAssets class="align-items-center" src="logo-pro-white.svg" alt="logo" width={44} height={44} />
+                  </a>
+                  <ul class="navbar-nav w-100 py-3">
+                    <Navigation lang={lang} route={route} />
+                  </ul>
+                  {/* CTA & Language switcher - start */}
+                  <div class="cta-menu text-center">
+                    {!isContactPage && (
+                      <a 
+                        href={getAbsoluteLocaleUrl(lang, 'contact')} 
+                        class="btn btn-warning uppercase d-inline-block" 
+                        aria-label={t(lang, 'global:contact')}
+                        tabindex={0}
+                      >
+                        <Trans i18nKey='global:contact' />
+                      </a>
+                    )}
+                    <div class="languageSwitch">
+                      <Language transition:persist client:visible 
+                        lang={lang} 
+                        aria='mobile'
+                        labelTop= {lang==='es' ? t('es','global:lang-ES') : t('en','global:lang-EN')}
+                        textTop=  {lang==='es' ? t('es','global:lang-ES') : t('en','global:lang-EN')}
+                        labelMenu={lang==='es' ? t('es','global:lang-EN') : t('en','global:lang-ES')}
+                        textMenu= {lang==='es' ? t('es','global:lang-EN') : t('en','global:lang-ES')}
+                        hrefLang= {lang==='es' ? t('es','global:hrefLang-EN'): t('en','global:hrefLang-ES')}
+                        href={getAbsoluteLocaleUrl((lang==='en' ? 'es' : 'en'), route)}
+                      />
+                    </div>
+                  </div>
+                  {/* CTA & Language switcher - start */}
+                </>
+              </MenuMobile>
+              {/* Mobile menu - Ends */}
+
+              {/* Desktop menu - Start */}
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav w-100">
+                  <Navigation lang={lang} route={route}/>
+                </ul>
+          
+                {/* CTA & Language switcher - start */}
+                <div class="w-100 d-flex justify-content-end gap-2">
+                  {!isContactPage && (
+                    <a 
+                      href={getAbsoluteLocaleUrl(lang, 'contact')} 
+                      class="btn btn-warning uppercase d-inline-block" 
+                      aria-label={t(lang,'global:contact')}
+                      tabindex={0}
+                    >
+                      <Trans i18nKey='global:contact' />
+                    </a>
+                  )}
+
+                  <div class="dropdown d-inline">
+                    <Language transition:persist client:visible 
+                      lang={lang} 
+                      aria='desktop'
+                      labelTop= {lang==='es' ? t('es','global:lang-ES') : t('en','global:lang-EN')}
+                      textTop=  {lang==='es' ? t('es','global:lang-ES') : t('en','global:lang-EN')}
+                      labelMenu={lang==='es' ? t('es','global:lang-EN') : t('en','global:lang-ES')}
+                      textMenu= {lang==='es' ? t('es','global:lang-EN') : t('en','global:lang-ES')}
+                      hrefLang= {lang==='es' ? t('es','global:hrefLang-EN'): t('en','global:hrefLang-ES')}
+                      href={getAbsoluteLocaleUrl((lang==='es' ? 'en' : 'es'), route)}
+                    />
+                  </div>
+                </div>  
+                {/* CTA & Language switcher - Ends */}
+              </div>
+              {/* Desktop menu - Ends */}
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+</>

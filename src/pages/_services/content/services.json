@@ -1,0 +1,68 @@
+[
+  {
+    "title": {
+      "es": "Diseño y<br/>desarrollo web",
+      "en": "Design &<br/>Web development"
+    },
+    "paragraph": {
+      "es": "Creamos sitios web personalizados que reflejan la identidad visual de tu marca y ofrecen una experiencia intuitiva para los usuarios.",
+      "en": "We create custom websites that reflect your brand identity and offer an intuitive experience for users."
+    },
+    "tags": ["figma","wordpress","html","css","cms","react","seo","angular","vue","javascript"]
+  },
+  {
+    "title": {
+      "es": "Desarrollo<br/>frontend y<br/>backend",
+      "en": "Frontend &<br/>backend development"
+    },
+    "paragraph": {
+      "es": "Creamos una experiencia de uso fluida y atractiva mediante el desarrollo frontend, garantizando un diseño visualmente impactante y una navegación intuitiva. Además, nuestro equipo de desarrollo backend se encargará de la implementación técnica, asegurando un funcionamiento eficiente, seguro y escalable de tu sitio web o aplicación.",
+      "en": "We create a smooth and engaging user experience through frontend development, ensuring a visually stunning design and intuitive navigation. In addition, our backend development team will take care of the technical implementation, ensuring efficient, secure and scalable websites and applications."
+    },
+    "tags": ["react","angular","php","node","python","next","javascript","net","nuxt"]
+  },
+  {
+    "title": {
+      "es": "Integración de<br> sistemas",
+      "en": "System integration"
+    },
+    "paragraph": {
+      "es": "A través de APIs, plugins o módulos personalizados, conectaremos tus diferentes sistemas y plataformas para un intercambio de datos fluido y automatizado. Simplifica tus procesos y mejora la productividad al tener toda la información centralizada y sincronizada.",
+      "en": "Through API\"s, plugins and custom modules, we will connect your different systems and platforms for a fluid and automated data exchange. Simplify your processes and improve productivity by having all the information centralized and synchronized."
+    },
+    "tags": ["api","plugins","modules","systems","data","productivity"]
+  },
+  {
+    "title": {
+      "es": "Diseño de <br>interfaces (UI)",
+      "en": "User interfaces design (UI)"
+    },
+    "paragraph": {
+      "es": "Destaca visualmente y cautiva a tus usuarios con nuestro servicio de diseño de interfaces (UI). Nuestro talentoso equipo de diseñadores creará una interfaz intuitiva y atractiva que refleje la identidad de tu marca y mejore la experiencia del usuario. Cada elemento visual y cada interacción serán cuidadosamente diseñados para garantizar que tu sitio web o aplicación sea agradable a la vista y fácil de usar.",
+      "en": "Visually stand out and captivate your users with our interface (UI) design service. Our talented team of designers will create an intuitive and engaging interface that reflects your brand identity and enhances the user experience. Every visual element and every interaction will be carefully designed to ensure that your website or app is easy on the eyes and easy to use."
+    },
+    "tags": ["ui-kit","responsive","visual","wireframes","icons","interaction","figma"]
+  },
+  {
+    "title": {
+      "es": "Diseño de<br/> experiencia de <br/>usuario (UX)",
+      "en": "User experience design (UX)"
+    },
+    "paragraph": {
+      "es": "Mejora la experiencia de tus usuarios y maximiza el éxito de tu proyecto con nuestro servicio de diseño de experiencia de usuario (UX). Nuestro equipo experto se enfoca en comprender las necesidades y comportamientos de tus usuarios, para crear soluciones intuitivas y agradables.",
+      "en": "Improve the experience of your users and maximize the success of your project with our user experience (UX) design service. Our expert team focuses on understanding the needs and behaviors of your users, to create intuitive and pleasant solutions."
+    },
+    "tags": ["testing","usability","architecture","accessibility","ux-research","metrics","cards","ux-person","ux-flow","benchmarking","heuristic"]
+  },
+  {
+    "title": {
+      "es": "Branding",
+      "en": "Branding"
+    },
+    "paragraph": {
+      "es": "Destaca y deja una impresión duradera con nuestro servicio de branding. Nos enfocamos en crear una identidad de marca sólida y coherente que refleje tus valores y atraiga a tu audiencia objetivo. Desde el diseño de logotipos hasta la selección de colores, tipografía y tono de voz, construiremos una imagen de marca distintiva y memorable. Ya sea que estés empezando desde cero o busques renovar tu imagen, nuestro equipo de expertos en branding te guiará en el camino hacia el reconocimiento y el éxito de tu negocio.",
+      "en": "Stand out and leave a lasting impression with our branding services. We focus on creating a strong and consistent brand identity that reflects your values and engages your target audience. From logo design to color selection, typography and tone of voice, we will build a distinctive and memorable brand image. Whether you are starting from scratch or looking to renew your image, our team of branding experts will guide you on the path to recognition and success for your business."
+    },
+    "tags": ["branding","typography","identity","icons","brandarq","colorpalette","logo"]
+  }
+]

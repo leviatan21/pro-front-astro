@@ -1,0 +1,36 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import Layout from '../layouts/Layout.astro'
+import Trans, { t, getRouteFromUrl } from '../i18n/utils.astro'
+import SectionComponent from '../components/Section.astro'
+import HeadingComponent from '../components/Heading.astro'
+import ParagraphComponent from '../components/Paragraph.astro'
+
+const lang = Astro.currentLocale
+---
+
+<Layout
+  page="global",
+  error=true
+>
+  <SectionComponent className="top internal d-flex align-items-center full">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 mx-auto pattern01">
+          <HeadingComponent level={1} className="text-black">
+            <Trans i18nKey='global:404heading-1' />
+          </HeadingComponent>
+          <br/>
+          <ParagraphComponent className="text-center h5">
+            <a 
+            href={getAbsoluteLocaleUrl(lang, '')} 
+            aria-label="home"
+            >
+            <Trans i18nKey='global:404gotoPage' />
+          </a>
+        </ParagraphComponent>
+      </div>
+    </div>
+  </div>
+  </SectionComponent>
+</Layout>

@@ -1,0 +1,75 @@
+.tagGroup {
+  list-style-type: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 0;
+  
+  li {
+    display: inline-block;
+    border-radius: 0px;
+    padding: 3px 12px;
+    margin: 5px 5px 5px 0;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-size: 14px;
+    color: $color-white;
+
+    @include media-max-992px {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+
+    &.solidSkyBlueTag {
+      background: #{$color-blue-light}d0;
+      color: #{$color-black}d0;
+    }
+    &.solidGreenTag {
+      background: #{$color-green}d0;
+      color: #{$color-black}d0;
+    }
+    &.solidLilaTag {
+      background: #{$color-violet}d0;
+    }
+    &.solidBlueTag {
+      background: #{$color-blue}d0;
+    }
+    &.lineBlueTag {
+      border: solid 1px $color-blue;
+      color: $color-blue;
+    }
+    &.lineSkyBlueTag {
+      border: solid 1px $color-blue-light;
+      color: $color-blue-light;
+    }
+    &.linedGreenTag {
+      border: solid 1px $color-green;
+      color: $color-green;
+    }
+    &.lineLilaTag {
+      border: solid 1px $color-violet;
+      color: $color-violet;
+    }
+  }
+}
+
+.skillsGroup {
+  ul {
+    margin: 10px 0px;
+    padding: 0px 0px 10px;
+  }
+
+  li {
+    width: 10%;
+    height: 40px;
+    max-height: 100px;
+    min-width: 5px;
+    max-width: 15px;
+    margin-right: 6px;
+    display: inline-block;
+    background-color: $color-grey-background;
+
+    &.active {
+      background-color: $color-violet-light;
+    }
+  }
+}

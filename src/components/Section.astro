@@ -1,0 +1,10 @@
+---
+const {
+  className,
+  ...attrs
+} = Astro.props
+---
+
+<section class={className} {...attrs}>
+  <slot />
+</section>

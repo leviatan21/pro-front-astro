@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Directa24",
+    "path": "/projects/d24",
+    "image": "portfolios/d24/card.webp",
+    "text": {
+      "es": "Sitio web corporativo",
+      "en": "Corporative website"
+    }
+  },
+  {
+    "title": "Banco Hipotecario del Uruguay",
+    "path": "/projects/bhu",
+    "image": "portfolios/bhu/card.webp",
+    "text": {
+      "es": "Portal del Estado",
+      "en": "State portal"
+    }
+  },
+  {
+    "title": "CCEAU",
+    "path": "/projects/cceau",
+    "image": "portfolios/cceau/card.webp",
+    "text": {
+      "es": "Sitio web corporativo",
+      "en": "Corporative website"
+    }
+  },
+  {
+    "title": "Delfos Website",
+    "path": "/projects/delfos",
+    "image": "portfolios/delfos/card.webp",
+    "text": {
+      "es": "Sitio web corporativo",
+      "en": "Corporative website"
+    }
+  }
+]

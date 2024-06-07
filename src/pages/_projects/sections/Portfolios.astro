@@ -1,0 +1,17 @@
+---
+import SectionComponent from '../../../components/Section.astro'
+import PortfolioSection from './Portfolio.astro'
+
+const {
+  lang='',
+  portfolios=[]
+} = Astro.props
+---
+
+<SectionComponent className="project_mobile">
+  <div class="container project py-5 ">
+    {portfolios.map((item) => (
+      <PortfolioSection  lang={lang} portfolio={item} />
+    ))}
+  </div>
+</SectionComponent>

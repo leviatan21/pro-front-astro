@@ -1,0 +1,39 @@
+---
+import Trans from '../../../i18n/utils.astro'
+import SectionComponent from '../../../components/Section.astro'
+import HeadingComponent from '../../../components/Heading.astro'
+import ImageAssetsComponent from '../../../components/ImageAssets.astro'
+---
+
+<SectionComponent class="top hero d-flex align-items-center">
+  <div class="container">
+    <div class="row"> 
+      <div class="col-12 order-2 order-lg-1 col-lg-5 col1">
+        <div class="pattern01">
+          <HeadingComponent level={1}>
+            <Trans i18nKey='pagesHome:hero-heading' />
+          </HeadingComponent>
+          <HeadingComponent level={2}>
+            <span class="thin uppercase">
+              <Trans i18nKey='pagesHome:hero-thin' />
+            </span>
+            <br />
+            <strong class="uppercase">
+              <Trans i18nKey='pagesHome:hero-strong' />
+            </strong>
+          </HeadingComponent>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7 order-1 order-lg-2 text-center">
+        <ImageAssetsComponent 
+          className="w-75 ipad opacity" 
+          src="ipad.webp" 
+          alt="ipad" 
+          loading="eager"
+          width={727} 
+          height={672}
+        />
+      </div>
+    </div>
+  </div>
+</SectionComponent>

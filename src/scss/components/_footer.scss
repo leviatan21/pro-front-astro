@@ -1,0 +1,73 @@
+@import './scrolltop';
+@import './group';
+
+
+footer {
+  position: relative;
+  background: $color-blue;
+
+  .text-left {
+    .text-light {
+      display: block;
+      a {
+        display: flex;
+      }
+    }
+  }
+
+  .text-light {
+    a {
+      color: $color-grey-background;
+      text-decoration: none;
+      &:hover {
+        color: $color-white-background;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer-block-group {
+    padding: 0 0 2rem 0;
+    .container {
+      padding: 0;
+
+      .domus-group {
+        img {
+          height: auto;
+          margin: 0;
+          width: 120px;
+          filter: invert(0) grayscale(1);
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          .group-image {
+            img {
+              display: none !important;
+              filter: invert(1) grayscale(1);
+              &:hover {
+                filter: invert(1) grayscale(1);
+              }
+            }
+            span {
+              display: block !important
+            }
+          }
+        }
+      }
+
+      a {
+        color: $color-white;
+        opacity: 0.7;
+        &:hover, &:active {
+          color: $color-white;
+          text-decoration: underline;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+---
+// https://docs.astro.build/es/guides/images/
+// import { Image } from 'astro:assets'
+
+const {
+  src='',
+  alt='',
+  className='',
+  loading='lazy',
+  ...attrs
+} = Astro.props
+
+export function ImageBackground(src='') {
+  return src.includes('/') ? `url(/assets/${src})` : src
+}
+---
+
+<img 
+  src={`/assets/${src}`}
+  alt={alt}
+  class={`image-assets initial ${className}`}
+  decoding="async"
+  fetchpriority={loading==='lazy' ? 'low' : 'high'}
+  loading={loading}
+  {...attrs}
+/>

@@ -1,0 +1,22 @@
+---
+import SkillsItem from './SkillsItem.astro'
+
+const {
+  lang,
+  skills=[]
+} = Astro.props
+---
+
+{skills.map((skill,index) => {
+  let {level, ...langs} = skill
+  return (
+    <div class={`skill-${index+1}`}>
+      <span>
+        {langs?.[lang]}
+      </span>
+      <ul>
+        <SkillsItem level={level} />
+      </ul>
+    </div>
+  )
+})}

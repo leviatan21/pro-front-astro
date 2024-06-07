@@ -1,0 +1,28 @@
+
+.patternBotton {
+  @include background-assets('pattern-bottom.svg', 'right center no-repeat');
+  background-size: 30%;
+  box-shadow: $box-shadow-black;
+  /*
+  border: 1px solid $color-white-border;
+  background-color: $color-white;
+  box-shadow: $box-shadow-black;
+  background-color: #00000020;
+  */
+
+  @include media-max-992px {
+    @include background-assets('pattern-bottom-responsive.svg', 'right center no-repeat');
+    background-size: contain;
+    padding: 0px 0px 20px 30px;
+  }
+  
+  .row {
+    padding: 40px 0px;
+    @include media-max-992px {
+      padding: 0px;
+    }
+    @include media-max-640px {
+      --bs-gutter-x: 0!important
+    }
+  }
+}

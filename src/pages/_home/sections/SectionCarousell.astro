@@ -1,0 +1,84 @@
+---
+// https://astro-bootstrap.github.io/components/components/carousel/#
+import { Carousel } from 'astro-bootstrap'
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import Trans from '../../../i18n/utils.astro'
+import SectionComponent from '../../../components/Section.astro'
+import HeadingComponent from '../../../components/Heading.astro'
+import ImageAssetsComponent from '../../../components/ImageAssets.astro'
+
+const {
+  lang='',
+  slides={}
+} = Astro.props
+
+slides[0].active = true
+const id = 'testimonials-carousel'
+---
+
+<SectionComponent className="testimonials-home my-5">
+  <Carousel id={id}>
+    <Carousel.Indicators {id} {slides} />
+    <Carousel.Inner>
+    {slides.map((slide) => (
+      <Carousel.Item active={slide.active} class="py-5 mb-5">
+        <div class="container testimonials">
+          <div class="row">
+            <div class="col-12 col-md-6 col1">
+              <div class="d-block uppercase d-inline">
+                <span class="dinline"> <Trans i18nKey='pagesHome:carousel-ours' /> </span>
+                <span class="accent3"> <Trans i18nKey='pagesHome:carousel-clients' /></span>
+                <br/>
+                <span class="rayita_azul"> <Trans i18nKey='pagesHome:carousel-think' /> </span>
+              </div>
+              <div class="my-4">
+                <HeadingComponent level={3}> {slide.heading} </HeadingComponent>
+                <div class="autor">
+                  <blockquote class="quote">
+                    <Fragment set:html={`“${slide.quote?.[lang]}”`} />
+                  </blockquote>
+                  <strong class="name">
+                    <Fragment set:html={slide.author} />
+                  </strong>
+                  <span class="position">
+                    <Fragment set:html={slide.position} />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col2 d-flex justify-content-center">
+              <ImageAssetsComponent 
+                src={slide.image} 
+                className="w-100 carousel-testimonials cover" 
+                alt={slide.heading} 
+                width={636}
+                height={420}
+              />
+              {slide?.path && (
+                <a 
+                  href={getAbsoluteLocaleUrl(lang, slide.path)} 
+                  class="btn btn-outline btn-more"
+                >
+                  <Trans i18nKey='pagesHome:carousel-btn' />
+                </a>
+              )}
+              {slide?.link && (
+                <a 
+                  href={slide.link} 
+                  target="_blank" 
+                  class="btn btn-outline btn-more"
+                  rel="opener noreferrer follow" 
+                  title="opens in a new window"
+                >
+                  {slide.anchor}
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </Carousel.Item>
+    ))}
+    </Carousel.Inner>
+    <Carousel.Controls id={id} />
+  </Carousel>
+</SectionComponent>

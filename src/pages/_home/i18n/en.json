@@ -1,0 +1,30 @@
+{
+  "title": "We turn ideas into digital impact",
+  "description": "We develop websites, apps, e-commerce, engagement actions, SEO campaigns and everything that involves digital transformation services for our clients.",
+  "keywords": "website, web, websites, pro, apps, e-commerce, seo, design, development, ux, ui, accesibility, react, php, javascript, typescript, nodejs, laravel, vue, scss, html, css, web design agency, creativity, quality, experts, mobile, design project, personalized solutions, wordpress, joomla, html, css, react, cms, next.js, nuxt.js, .net, plugins, modules, systems, responsive, benchmarking, visual identity, logo, logotipo, wix, drupal, web development",
+
+  "hero-heading": "More than 800 clients in 15 countries",
+  "hero-thin": "WE TURN IDEAS INTO",
+  "hero-strong": "digital impact",
+
+  "parallax-thin": "We are<br/> creators of",
+  "parallax-strong": "digital experiences.",
+  "parallax-paragraph": "15 years helping companies create solutions that impact people's lives.",
+  "parallax-button": "+ About us",
+
+  "whatwedo-heading-3": "What we do / our expertise",
+  "whatwedo-paragraph": "We develop websites, apps, e-commerce, engagement actions, SEO campaigns and everything that involves digital transformation services for our clients.",
+  "whatwedo-heading-5": "SOME OF THE",
+  "whatwedo-accent": "TECHNOLOGIES",
+  "whatwedo-use": "WE USE:",
+
+  "carousel-ours": "What our",
+  "carousel-clients": "clients",
+  "carousel-think": "think",
+  "carousel-btn": "Project",
+
+  "us-btn-team": "Our team",
+
+  "portfolio-heading": "Project",
+  "portfolio-btn-more": "View more +"
+}

@@ -1,0 +1,56 @@
+
+.navbar-collapse {
+  &.collapse {
+    visibility: visible;
+  }
+}
+
+.navbar-toggler-icon {
+  @include background-assets('icon/navbar-close.svg', 'center no-repeat');
+  color: $color-white;
+  border: none;
+}
+
+.navbar-nav {
+  .nav-link.active, 
+  .show>.nav-link {
+    border-bottom: 1px solid $color-blue;
+  } 
+}
+
+@include media-max-992px {
+
+  .navbar-toggler-icon {
+    color: $color-white;
+    box-shadow: none;
+  }
+
+  .navbar-nav {
+    .nav-link.active {
+      color: $color-green;
+    }
+    .nav-link {
+      color: white;
+      &:hover{
+        color: $color-green;
+      }
+      &:link active {
+        color:$color-white;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .navbar-collapse {
+    color: $color-white;
+    background-color: $color-blue;
+    padding: 24px;
+    margin-left: -30px;
+    margin-right: -30px;
+    position: absolute;
+    left: 0;
+    right: 0px;
+    top:-30px;
+  }
+
+}

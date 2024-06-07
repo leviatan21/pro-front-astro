@@ -1,0 +1,68 @@
+---
+import Trans from '../../../i18n/utils.astro'
+import { Modal } from 'astro-bootstrap'
+import ImageAssetsComponent from '../../../components/ImageAssets.astro'
+import HeadingComponent from '../../../components/Heading.astro'
+import LinkedInIcon from '../../../components/icons/LinkedIn.astro'
+import SkillsTeamComponent from './SkillsTeam.astro'
+
+const {
+  lang,
+  team,
+  id
+} = Astro.props
+---
+
+<Modal
+  id={id}
+  class="teamMemberModal teamMembers"
+  dialog="modal-lg modal-dialog-centered"
+  fade
+>
+  <Modal.Header parent={id}></Modal.Header>
+  <Modal.Body>
+    <div class="container p-0">
+      <div class="row">
+        <div class="col-12 col-lg-6 flex-center">
+          <ImageAssetsComponent className="w-75" src={team.image} alt={team.name} width="200" height="200" />
+          <HeadingComponent level={3} className="teamMember">
+            {team.name}
+          </HeadingComponent>
+          <div class='text-center'>
+            <span>{team.title?.[lang]}</span>
+            {team.linkedin && (
+              <div class="socialIconGroup"> 
+                <a 
+                  class="social" 
+                  href={team.linkedin} 
+                  target="_blank" 
+                  rel="opener noreferrer" 
+                  aria-label="linkedin"
+                  title="opens in a new window"
+                >
+                  <LinkedInIcon className="size-8 d-inline-block" alt="linkedin" />
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <HeadingComponent level={4} className="teamMember">
+            <Trans i18nKey='pagesAboutus:team-title' />
+          </HeadingComponent>
+          <div class="skillsGroup">
+            <SkillsTeamComponent lang={lang} skills={team.skills} />
+          </div>
+        </div>
+      </div>
+    </div>
+</Modal>
+
+<script define:vars={{ 'modalId':id }} is:inline>
+  document.getElementById(modalId).addEventListener('show.bs.modal', function (e) {
+    document.querySelector('html').classList.add('modal-open');
+  });
+  document.getElementById(modalId).addEventListener('hide.bs.modal', function (e) {
+    document.querySelector('html').classList.remove('modal-open');
+  });
+</script>

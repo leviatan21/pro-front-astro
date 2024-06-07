@@ -1,0 +1,40 @@
+---
+// /node_modules/astro/dist/virtual-modules/i18n.d.ts
+// https://github.com/alexandre-fernandez/astro-i18n
+// https://github.com/kslstn/astro-i18n-blog-starter
+import Config from '../../astro.config.mjs'
+
+export const defaultLang  = Config.i18n.defaultLocale
+export const languages    = Config.i18n.locales
+
+import es from './es/index.js'
+import en from './en/index.js'
+
+export const trans = {
+  'es': es,
+  'en': en,
+}
+
+export function getLangFromUrl(url:URL) {
+  const [, lang] = url.pathname.split('/')
+  if (lang in trans) return lang
+  return defaultLang
+}
+
+export function getRouteFromUrl(pathname:string) {
+  let [,lang, route, ..._rest ] = pathname.split('/')
+  if (lang in trans) return [route,..._rest].join('/')
+  return [lang,route,..._rest].join('/')
+}
+
+export function t(i18Lang:string, i18nKey:string, fallback=true) {
+  const [ page, key ] = i18nKey.split( ':' )
+  return trans?.[ i18Lang ]?.[ page ]?.[ key ] || trans?.[ defaultLang ]?.[ page ]?.[ key ] || (fallback ? key : null)
+}
+
+const {
+  i18Lang=Astro.currentLocale,
+  i18nKey='siteTitle',
+} = Astro.props
+---
+<Fragment set:html={t(i18Lang,i18nKey)} />

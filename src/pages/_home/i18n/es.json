@@ -1,0 +1,30 @@
+{
+  "title": "Convertimos ideas en impacto digital",
+  "description": "Diseño y desarrollo web. Somos una agencia creativa especializada en la creación de sitios web a medida y soluciones digitales. Nuestro equipo de diseñadores y desarrolladores web está listo para convertir tu visión en realidad. ¡Contáctanos para impulsar tu presencia en línea!",
+  "keywords": "sitio, web, sitios, pro, apps, e-commerce, seo, diseño, desarrollo, ux, ui, accesibilidad, react, php, javascript, typescript, nodejs, laravel, vue, scss, html, css, agencia, creativa, calidad, expertos, mobile, móvil, proyecto, soluciones, personalizadas, wordpress, joomla, html, css, react, cms, next.js, nuxt.js, .net, plugins, módulos, sistemas, responsive, benchmarking, identidad, visual, logo, logotipo, wix, drupal, diseño web, desarrollo web, desarrollo y diseño web",
+
+  "hero-heading": "Más de 800 clientes en 15 países",
+  "hero-thin": "convertimos ideas en",
+  "hero-strong": "impacto digital",
+
+  "parallax-thin": "Somos<br/> creadores de",
+  "parallax-strong": "experiencias<br/> digitales.",
+  "parallax-paragraph": "Desde hace más de 15 años ayudamos a empresas a crear soluciones de impacto en la vida de sus clientes.",
+  "parallax-button": "+ de nosotros",
+
+  "whatwedo-heading-3": "¿A qué nos dedicamos?",
+  "whatwedo-paragraph": "Desarrollamos sitios web, apps, e-commerce, acciones de engagement, campañas de SEO y todo lo que implique servicios de transformación digital para nuestros clientes.",
+  "whatwedo-heading-5": "ALGUNAS",
+  "whatwedo-accent": "tecnologías",
+  "whatwedo-use": "que usamos:",
+
+  "carousel-ours": "Nuestros",
+  "carousel-clients": "clientes",
+  "carousel-think": "opinan",
+  "carousel-btn": "Ver proyecto",
+
+  "us-btn-team": "Conocé nuestro equipo",
+
+  "portfolio-heading": "Proyectos",
+  "portfolio-btn-more": "Ver más +"
+}
