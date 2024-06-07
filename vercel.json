@@ -1,0 +1,8 @@
+{
+  "name": "pro-front-astro",
+  "framework": "astro",
+  "installCommand": "npm install",
+  "buildCommand": "astro build",
+  "outputDirectory": "build",
+  "trailingSlash": true
+}
