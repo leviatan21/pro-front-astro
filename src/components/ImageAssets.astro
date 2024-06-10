@@ -10,13 +10,21 @@ const {
   ...attrs
 } = Astro.props
 
+const baseUrl = new URL(Astro.site)   
+
 export function ImageBackground(src='') {
-  return src.includes('/') ? `url(/assets/${src})` : src
+  const baseUrl = new URL(Astro.site)  
+  return src.includes('/') ? `url(${baseUrl}assets/${src})` : src
+}
+
+export function ImageSrc(src='') {
+  const baseUrl = new URL(Astro.site)  
+  return `${baseUrl}assets/${src}`
 }
 ---
 
 <img 
-  src={`/assets/${src}`}
+  src={`${baseUrl}assets/${src}`}
   alt={alt}
   class={`image-assets initial ${className}`}
   decoding="async"
