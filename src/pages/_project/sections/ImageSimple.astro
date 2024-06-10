@@ -31,7 +31,7 @@ const responsiveClassName = (image?.className ) ? `${image.className} w-100 py-2
       </div>
     )}
     <div class="row">
-      <div class="col-12 d-flex justify-content-center">
+      <div class="col-12 justify-content-center">
         {image?.src?.unique && (
           <ImageAssetsComponent src={image.src.unique} alt={image.alt} className={uniqueClassName} />
         )}
