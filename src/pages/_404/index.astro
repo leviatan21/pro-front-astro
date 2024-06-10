@@ -10,15 +10,15 @@ const lang = Astro.currentLocale
 ---
 
 <Layout page='404' error=true>
-  <SectionComponent className="top internal d-flex align-items-center full">
+  <SectionComponent className='top internal d-flex align-items-center full'>
     <div class="container">
       <div class="row">
         <div class="col-6 mx-auto pattern01">
-          <HeadingComponent level={1} className="text-black">
+          <HeadingComponent level={1} className='text-black'>
             <Trans i18nKey='pages404:heading-1' />
           </HeadingComponent>
           <br/>
-          <ParagraphComponent className="text-center h5">
+          <ParagraphComponent className='text-center h5'>
             <a 
               href={getAbsoluteLocaleUrl(lang, '')} 
               aria-label="home"

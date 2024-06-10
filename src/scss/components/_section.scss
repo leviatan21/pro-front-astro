@@ -39,6 +39,7 @@ section {
       }
 
       .col2 {
+        padding: 40px 0px 0px 40px; 
         &:before {
           @include content-assets('ornament-02.webp');
           position: absolute;
@@ -171,6 +172,7 @@ section {
           padding: 10px 0 0 0;
         }
         .col2 {
+          padding: 10px 0 0 0;
           &:before{
             display: none;
           }

@@ -28,7 +28,7 @@ const route         = getRouteFromUrl(pathname)
                 tabindex={0}
                 aria-label="index"
               >
-                <ImageAssets src="logo-pro.svg" alt="Logo Pro" loading="eager" class="site-logo" width={100} height={30} />
+                <ImageAssets src='logo-pro.svg' alt='Logo Pro' loading='eager' class='site-logo' width={100} height={30} />
               </a>
               {/* Mobile menu - Start */}
               <MenuMobile transition:persist client:visible>
@@ -39,7 +39,7 @@ const route         = getRouteFromUrl(pathname)
                     tabindex={0}
                     aria-label="index"
                   >
-                      <ImageAssets class="align-items-center" src="logo-pro-white.svg" alt="logo" width={44} height={44} />
+                      <ImageAssets class='align-items-center' src='logo-pro-white.svg' alt='logo' width={44} height={44} />
                   </a>
                   <ul class="navbar-nav w-100 py-3">
                     <Navigation lang={lang} route={route} />

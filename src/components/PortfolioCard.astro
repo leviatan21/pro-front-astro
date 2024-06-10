@@ -22,11 +22,11 @@ const {
   <CardComponent 
     classCard='border-none'
     href={getAbsoluteLocaleUrl(lang,card.path)} 
-    aria-label={ `${card.title} ${card.text?.[lang]}` }
+    aria-label={`${card.title} ${card.text?.[lang]}`}
     >
       <ImageAssets 
-        slot="image"
-        className="card-img" 
+        slot='image'
+        className='card-img' 
         src={card.image} 
         alt={card.title}
         width={544}
@@ -34,7 +34,7 @@ const {
       />
 
       <HeadingComponent 
-        slot="title"
+        slot='title'
         level={3} 
         className="card-title h5"
         >
@@ -42,8 +42,8 @@ const {
       </HeadingComponent>
 
       <ParagraphComponent
-        slot="text"
-        className="card-text"
+        slot='text'
+        className='card-text'
       >
         {card.text?.[lang]}
       </ParagraphComponent>
