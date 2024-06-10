@@ -1,17 +1,17 @@
 ---
 const {
-  classCard,
-  href,
-  label
+  classCard='',
+  href='',
+  label=''
 } = Astro.props
 ---
 
 <div class={`card ${classCard}`}>
   <a href={href} aria-label={label}>
-    <slot name="image" />
+    <slot name='image' />
     <div class="card-body">
-      <slot name="title" />
-      <slot name="text" />
+      <slot name='title' />
+      <slot name='text' />
     </div>
   </slot>
 </div>
