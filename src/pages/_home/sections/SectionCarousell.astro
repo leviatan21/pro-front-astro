@@ -16,7 +16,7 @@ slides[0].active = true
 const id = 'testimonials-carousel'
 ---
 
-<SectionComponent className="testimonials-home my-5">
+<SectionComponent className='testimonials-home my-5'>
   <Carousel id={id}>
     <Carousel.Indicators {id} {slides} />
     <Carousel.Inner>
@@ -26,13 +26,23 @@ const id = 'testimonials-carousel'
           <div class="row">
             <div class="col-12 col-md-6 col1">
               <div class="d-block uppercase d-inline">
-                <span class="dinline"> <Trans i18nKey='pagesHome:carousel-ours' /> </span>
-                <span class="accent3"> <Trans i18nKey='pagesHome:carousel-clients' /></span>
-                <br/>
-                <span class="rayita_azul"> <Trans i18nKey='pagesHome:carousel-think' /> </span>
+                <HeadingComponent level={2}>
+                  <span class="dinline">
+                    <Trans i18nKey='pagesHome:carousel-ours' />
+                  </span>
+                  <span class="accent3">
+                    <Trans i18nKey='pagesHome:carousel-clients' />
+                  </span>
+                  <br/>
+                  <span class="rayita_azul">
+                    <Trans i18nKey='pagesHome:carousel-think' />
+                  </span>
+                </HeadingComponent>
               </div>
               <div class="my-4">
-                <HeadingComponent level={3}> {slide.heading} </HeadingComponent>
+                <HeadingComponent level={3}>
+                  {slide.heading}
+                </HeadingComponent>
                 <div class="autor">
                   <blockquote class="quote">
                     <Fragment set:html={`“${slide.quote?.[lang]}”`} />
@@ -49,7 +59,7 @@ const id = 'testimonials-carousel'
             <div class="col-12 col-md-6 col2 d-flex justify-content-center">
               <ImageAssetsComponent 
                 src={slide.image} 
-                className="w-100 carousel-testimonials cover" 
+                className='w-100 carousel-testimonials cover' 
                 alt={slide.heading} 
                 width={636}
                 height={420}
