@@ -12,7 +12,8 @@ export function getStaticPaths() {
 }
 
 const {
-  project=""
+  project=''
 } = Astro.params
 ---
+
 <Page project={project} />

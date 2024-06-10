@@ -10,9 +10,19 @@
     @content;
   }
 }
+@mixin media-min-1440px {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
 
 @mixin media-max-1200px {
   @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin media-min-1200px {
+  @media screen and (min-width: 1200px) {
     @content;
   }
 }
@@ -22,15 +32,30 @@
     @content;
   }
 }
+@mixin media-min-992px {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
 
 @mixin media-max-768px {
   @media screen and (max-width: 768px) {
     @content;
   }
 }
+@mixin media-min-768px {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
 
 @mixin media-max-640px {
   @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+@mixin media-min-640px {
+  @media screen and (min-width: 640px) {
     @content;
   }
 }

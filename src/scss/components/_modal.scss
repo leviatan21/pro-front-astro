@@ -14,6 +14,12 @@ html {
   }
 }
 
+@include media-min-992px {
+  .modal-dialog {
+    max-width: 800px;
+  }
+}
+
 .teamMemberModal {
   .modal-header {
     border: none;
@@ -52,7 +58,8 @@ html {
     }
   }
   img {
-    max-width: 200px;
+    width: 200px;
+    height: auto;
     border-radius: 50%;
     box-shadow: $box-shadow-black;
     margin: 0 auto;
