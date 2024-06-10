@@ -13,7 +13,7 @@ const {
 // Ejemplo: construye una URL canónica usando tu dominio de producción
 const canonicalURL  = new URL(Astro.url.pathname, Astro.site)
 const baseUrl       = new URL(Astro.site)
-const ImageUrl      = `${baseUrl}/assets/logo-pro-international.jpg`
+const ImageUrl      = `${baseUrl}assets/logo-pro-international.jpg`
 const env           = loadEnv(process.env.NODE_ENV, process.cwd(), '')
 const GTMID         = env?.PUBLIC_GTM_ID || null
 const datePublished = env?.PUBLIC_DATE_PUBLISHED || ''

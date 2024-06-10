@@ -15,8 +15,8 @@ const WebSiteUrl        = new URL(Astro.site)                     // https://pro
 const WebPageUrl        = new URL(Astro.url.pathname, Astro.site) // https://pro-front.vercel.app/projects
 const translationOfWork = getAbsoluteLocaleUrl((lang === 'es') ? 'en' : 'es')
 const inLanguage        = t(lang,'global:hrefLang')
-const ImageUrl          = `${WebSiteUrl}/assets/logo-pro-international.jpg`
-const LogoUrl           = `${WebSiteUrl}/assets/logo-pro-international.jpg`
+const ImageUrl          = `${WebSiteUrl}assets/logo-pro-international.jpg`
+const LogoUrl           = `${WebSiteUrl}assets/logo-pro-international.jpg`
 const datePublished     = env?.PUBLIC_DATE_PUBLISHED || ''
 const dateModified      = env?.PUBLIC_DATE_MODIFIED || ''
 const email             = env?.PUBLIC_MAIL_REPLY_ACCOUNT || ''
