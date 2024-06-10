@@ -1,0 +1,5 @@
+[
+  {"name":"global:aboutus",  "path":"aboutus"},
+  {"name":"global:projects", "path":"projects"},
+  {"name":"global:services", "path":"services"}
+]

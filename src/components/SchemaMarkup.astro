@@ -1,8 +1,9 @@
 ---
+import { loadEnv } from 'vite'
 import { getAbsoluteLocaleUrl } from 'astro:i18n'
 import { t } from '../i18n/utils.astro'
-import { loadEnv } from 'vite'
 
+import pages from '../content/pages/index.json'
 
 const {
   lang='',
@@ -19,7 +20,16 @@ const LogoUrl           = `${WebSiteUrl}/assets/logo-pro-international.png`
 const datePublished     = env?.PUBLIC_DATE_PUBLISHED || ''
 const dateModified      = env?.PUBLIC_DATE_MODIFIED || ''
 const email             = env?.PUBLIC_MAIL_REPLY_ACCOUNT || ''
+
 let BreadcrumbList      = []
+pages.forEach((route, index) => {
+  BreadcrumbList.push({
+    '@type': 'ListItem',
+    'position': index+1,
+    'name': t(lang,route.name),
+    'item': `${WebSiteUrl}${route.path}`
+  })
+})
 
 const json = {
   "@context": "https://schema.org",

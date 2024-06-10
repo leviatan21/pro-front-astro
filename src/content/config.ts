@@ -9,6 +9,7 @@ const schema = defineCollection({
 
 // Export the collections
 export const collections = {
+  'pages': schema,
   'tags': schema,
-  'group': schema
+  'group': schema,
 }
