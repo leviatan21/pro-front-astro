@@ -1,0 +1,33 @@
+{
+  "title": "We want to know your ideas",
+  "description": "We will help you with the solution that best fits your needs.",
+  "keywords": "website, web, websites, pro, apps, e-commerce, seo, design, development, ux, ui, accesibility, react, php, javascript, typescript, nodejs, laravel, vue, scss, html, css, web design agency, creativity, quality, experts, mobile, design project, personalized solutions, wordpress, joomla, html, css, react, cms, next.js, nuxt.js, .net, plugins, modules, systems, responsive, benchmarking, visual identity, logo, logotipo, wix, drupal, web development",
+
+  "heading-1-1": "We want to",
+  "heading-1-2": "know",
+  "heading-1-3": "your ideas",
+  "heading-1-4": "",
+  "heading-2-thin-1": "we will help you with",
+  "heading-2-strong-1": "the",
+  "heading-2-strong-2": "solution",
+  "heading-2-thin-2": "that",
+  "heading-2-thin-3": "best",
+  "heading-2-thin-4": "fits your needs.",
+
+  "form-disabled-title": "The form is out of order.",
+  "form-disabled-message": "Please email us at info@prointernacional.com",
+
+  "form-label": "We want to know your ideas",
+  "labelName": "Name",
+  "placeholderName": "Name",
+  "labelEmail": "Email",
+  "placeholderEmail": "Email",
+  "labelPhone": "Phone",
+  "placeholderPhone": "Phone",
+  "labelComments": "Comments",
+  "placeholderComments": "Comments",
+  "form-button": "Send",
+  "messageTitle": "Thank you for your message.",
+  "messageSuccess": "We will contact you as soon as possible",
+  "messageError": "An error ocurred.<br/>Please try again or email us at info@prointernacional.com"
+}

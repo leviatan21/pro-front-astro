@@ -1,0 +1,33 @@
+{
+  "title": "Queremos conocer tu idea o proyecto",
+  "description": "Te ayudaremos con la solución que más se ajuste a ti.",
+  "keywords": "sitio, web, sitios, pro, apps, e-commerce, seo, diseño, desarrollo, ux, ui, accesibilidad, react, php, javascript, typescript, nodejs, laravel, vue, scss, html, css, agencia, creativa, calidad, expertos, mobile, móvil, proyecto, soluciones, personalizadas, wordpress, joomla, html, css, react, cms, next.js, nuxt.js, .net, plugins, módulos, sistemas, responsive, benchmarking, identidad, visual, logo, logotipo, wix, drupal, diseño web, desarrollo web, desarrollo y diseño web",
+
+  "heading-1-1": "Queremos",
+  "heading-1-2": "conocer",
+  "heading-1-3": "tu idea",
+  "heading-1-4": "o proyecto",
+  "heading-2-thin-1": "te ayudaremos con",
+  "heading-2-strong-1": "la",
+  "heading-2-strong-2": "solución",
+  "heading-2-thin-2": "que",
+  "heading-2-thin-3": "más",
+  "heading-2-thin-4": "se ajuste a ti.",
+
+  "form-disabled-title": "El formulario se encuentra desabilitado.",
+  "form-disabled-message": "Por favor envíe un mail a info@prointernacional.com",
+
+  "form-label": "Queremos conocer tu idea o proyecto",
+  "labelName": "Nombre",
+  "placeholderName": "Nombre",
+  "labelEmail": "Email",
+  "placeholderEmail": "Email",
+  "labelPhone": "Telefono",
+  "placeholderPhone": "Telefono",
+  "labelComments": "Commentarios",
+  "placeholderComments": "Commentarios",
+  "form-button": "Enviar",
+  "messageTitle": "Gracias por contactarte con nosotros.",
+  "messageSuccess": "Nos comunicaremos a la brevedad.",
+  "messageError": "Ocurrió un error al enviar el formulario.<br/>Por favor vuelva a intentarlo más tarde o envíe un mail a info@prointernacional.com"
+}

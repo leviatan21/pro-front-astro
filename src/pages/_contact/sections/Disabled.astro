@@ -1,0 +1,21 @@
+---
+import { t } from '../../../i18n/utils.astro'
+import SectionComponent from '../../../components/Section.astro'
+import MessageComponent from '../../../components/Message.astro'
+
+const  {
+  lang=''
+} = Astro.props
+---
+
+<SectionComponent className="top hero d-flex align-items-center full">
+  <div class="container">
+    <div class="row">
+      <MessageComponent 
+        className='div_res_contacto'
+        title={t(lang, 'pagesContact:form-disabled-title')} 
+        message={t(lang,'pagesContact:form-disabled-message')}
+      />
+    </div>
+  </div>
+</SectionComponent>

@@ -1,6 +1,6 @@
 ---
 import { getAbsoluteLocaleUrl } from 'astro:i18n'
-import ImageAssets from './ImageAssets.astro'
+import ImageAssetsComponent from './ImageAssets.astro'
 import HeadingComponent from './Heading.astro'
 import ParagraphComponent from './Paragraph.astro'
 import CardComponent from '../components/Card.astro'
@@ -24,7 +24,7 @@ const {
     href={getAbsoluteLocaleUrl(lang,card.path)} 
     aria-label={`${card.title} ${card.text?.[lang]}`}
     >
-      <ImageAssets 
+      <ImageAssetsComponent 
         slot='image'
         className='card-img' 
         src={card.image} 

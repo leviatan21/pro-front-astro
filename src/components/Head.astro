@@ -3,7 +3,7 @@ import { loadEnv } from 'vite'
 import { t } from '../i18n/utils.astro'
 import { ImageSrc } from './ImageAssets.astro'
 import HreflangComponent from './Hreflang.astro'
-import GoogleTagManager from './GoogleTagManager.astro'
+import GTMComponent from './GoogleTagManager.astro'
 
 const {
   lang='',
@@ -75,7 +75,7 @@ const seo           = {
   {error  && <meta name="prerender-status-code" content="404" />}
   {!error && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
 
-  {GTMID && <GoogleTagManager id={GTMID}/>}
+  {GTMID && <GTMComponent id={GTMID}/>}
 
   <slot />
 </>

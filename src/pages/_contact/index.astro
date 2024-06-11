@@ -1,0 +1,26 @@
+---
+import { loadEnv } from 'vite'
+import Layout from '../../layouts/Layout.astro'
+import DisabledSection from './sections/Disabled.astro'
+// import FormSection from './sections/Form.jsx'
+
+const lang        = Astro.currentLocale
+
+const env         = loadEnv(process.env.NODE_ENV, process.cwd(), '')
+const publicKey   = env?.PUBLIC_MAIL_PUBLIC_KKEY || null
+const serviceId   = env?.PUBLIC_MAIL_SERVICE_ID || null
+const templateId  = env?.PUBLIC_MAIL_TEMPLATE_ID || null
+const from_name   = env?.PUBLIC_MAIL_FROM_NAME
+const from_email  = env?.PUBLIC_MAIL_FROM_ACCOUNT
+const reply_to    = env?.PUBLIC_MAIL_REPLY_ACCOUNT
+
+const disabled    = publicKey==null || serviceId==null || templateId==null || from_name=='' || from_email=='' || reply_to==''
+---
+
+<Layout page='Contact'>
+  {disabled ? (
+    <DisabledSection lang={lang} />
+  ) : (
+    <DisabledSection lang={lang} />
+  )}
+</Layout>

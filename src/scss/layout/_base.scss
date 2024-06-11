@@ -197,25 +197,28 @@ h5.card-title {
     @include background-assets('ornament-01.svg', '100% no-repeat');
     height: 310px;
     width: 250px;
+    background-repeat: no-repeat;
     background-size: 90%;
     background-position-x: left;
     @include media-max-992px {
+      background-image: none;
       //@include background-assets('ornament-01-responsive', '100% no-repeat');
-        background-image: none;
-        background-repeat: no-repeat;
-        background-size: 50%;
-        left: -40px;
-        width: 200px;
-        top: -50px;
+      //background-size: 50%;
+      //left: -40px;
+      //width: 210px;
+      //top: -50px;
     }
   }
 
   &:after {
-    @include background-assets('ornament-02.webp', '');
     position: absolute;
     right: -70px;
+    @include content-assets('ornament-02.webp');
     z-index: -1;
     transform: scale(0.7);
+    @include media-max-992px {
+    //content: "";
+    }
   }
 }
 

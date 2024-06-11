@@ -1,5 +1,5 @@
 ---
-import Tag from './Tag.astro'
+import TagComponent from './Tag.astro'
 
 const {
   tags=[],
@@ -8,5 +8,5 @@ const {
 ---
 
 <ul class={`tagGroup ${className}`}>
-  {tags.map((tag) => <Tag tagKey={tag} />)}
+  {tags.map((tag) => <TagComponent tagKey={tag} />)}
 </ul>

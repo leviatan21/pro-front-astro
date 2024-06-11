@@ -1,0 +1,24 @@
+---
+import HeadingComponent from './Heading.astro'
+
+const {
+  className='',
+  title='',
+  message=''
+} = Astro.props
+---
+
+<div class="col">
+  <div class={`pattern01 ${className}`}>
+  {title && (
+    <HeadingComponent level={1}>
+      {title}
+    </HeadingComponent>
+    )}
+    <HeadingComponent level={2}>
+      <span className="thin">
+        {message}
+      </span>
+    </HeadingComponent>
+  </div>
+</div>
