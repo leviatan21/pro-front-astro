@@ -2,14 +2,15 @@
 import { z, defineCollection } from 'astro:content'
 
 // Define a `type` and `schema` for each collection
-const schema = defineCollection({
+const baseSchema = defineCollection({
   'type': 'data',
   'schema': z.any()
 })
 
 // Export the collections
 export const collections = {
-  'pages': schema,
-  'tags': schema,
-  'group': schema,
+  'sie': baseSchema,
+  'pages': baseSchema,
+  'tags': baseSchema,
+  'group': baseSchema,
 }

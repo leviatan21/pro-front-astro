@@ -1,0 +1,23 @@
+{
+  "PUBLIC_MAINTENANCE": "false",
+  "PUBLIC_DEFAULT_LANGUAGE": "es",
+  "PUBLIC_GTM_ID": "G-908YFW99X0",
+  "PUBLIC_DATE_PUBLISHED": "2022-07-20T15:25:25+00:00",
+  "PUBLIC_DATE_MODIFIED": "2024-06-07T16:00:00+00:00",
+  "PUBLIC_RECAPTCHA_SITEKEY":  "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI",
+  "PUBLIC_RECAPTCHA_SECRETKEY": "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe",
+  "PUBLIC_MAIL_FROM_NAME": "Pro Internacional",
+  "PUBLIC_MAIL_FROM_ACCOUNT": "contacto.prointernacional@gmail.com",
+  "PUBLIC_MAIL_SERVICE_ID": "service_m703y53",
+  "PUBLIC_MAIL_PUBLIC_KEY": "0PYdB49zg3XEj_xur",
+  "PUBLIC_MAIL_TEMPLATE_ID": "template_217az3h",
+
+  "address": "Dr. Mario Cassinoni 1011",
+  "locality": "Montevideo",
+  "country": "Uruguay",
+  "countryCode": "UY",
+  "postal": "11200",
+  "latitude": -34.9099283,
+  "longitude": -56.1648242,
+  "linkedin": "https://www.linkedin.com/company/pro-internacional"
+}

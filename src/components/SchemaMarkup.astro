@@ -18,9 +18,9 @@ const translationOfWork = getAbsoluteLocaleUrl((lang === 'es') ? 'en' : 'es')
 const inLanguage        = t(lang,'global:hrefLang')
 const ImageUrl          = ImageSrc('pro-international.jpg')
 const LogoUrl           = ImageSrc('pro-international.jpg')
-const datePublished     = env?.PUBLIC_DATE_PUBLISHED || ''
-const dateModified      = env?.PUBLIC_DATE_MODIFIED || ''
-const email             = env?.PUBLIC_MAIL_REPLY_ACCOUNT || ''
+const datePublished     = (env?.PUBLIC_DATE_PUBLISHED || '')
+const dateModified      = (env?.PUBLIC_DATE_MODIFIED || '')
+const email             = (env?.PUBLIC_MAIL_REPLY_ACCOUNT || '')
 
 let BreadcrumbList      = []
 pages.forEach((route, index) => {
@@ -115,7 +115,7 @@ const json = {
       ...(email !== '' && { 'email': `${email}` }),
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Dr. Mario Cassinoni 1011",
+        "streetAddress": "Dr. Mario Cassinoni 1011, Montevideo, Uruguay",
         "addressLocality": "Montevideo",
         "addressRegion": "UY",
         "addressCountry": "UY",

@@ -1,15 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import HeroSection from './sections/Hero.astro'
-import ParallaxSection from './sections/SectionParallax.astro'
-import WhatWeDoSection from './sections/SectionWhatWeDo.astro'
-import CarousellSection from './sections/SectionCarousell.astro'
+import ParallaxSection from './sections/Parallax.astro'
+import WhatWeDoSection from './sections/WhatWeDo.astro'
+import ServicesSection from './sections/Services.astro'
+import QuotesSection from './sections/Quotes.astro'
 import UsSection from './sections/Us.astro'
 import PortfoliosSection from './sections/Portfolios.astro'
 import BottonComponent from '../../components/Botton.astro'
 
-import WhatWeDoContent from './content/whatWeDo.json'
-import CarouselsContent from './content/carousels.json'
+import ServicesContent from './content/services.json'
+import TechContent from './content/tech.json'
+import QuotesContent from './content/quotes.json'
 import CardsContent from './content/cards.json'
 
 const lang = Astro.currentLocale
@@ -18,8 +20,9 @@ const lang = Astro.currentLocale
 <Layout page='Home'>
   <HeroSection lang={lang} />
   <ParallaxSection lang={lang} />
-  <WhatWeDoSection tags={WhatWeDoContent} />
-  <CarousellSection lang={lang} slides={CarouselsContent} />
+  <WhatWeDoSection lang={lang} tags={ServicesContent} />
+  <ServicesSection lang={lang} tags={TechContent} />
+  <QuotesSection lang={lang} quotes={QuotesContent} />
   <UsSection lang={lang} />
   <PortfoliosSection lang={lang} cards={CardsContent} />
   <BottonComponent lang={lang} />
