@@ -1,0 +1,48 @@
+[
+  {
+    "field": "input",
+    "type": "text",
+    "name": "name",
+    "value": "",
+    "feedback": "",
+    "valid": true,
+    "label": "pagesContact:labelName",
+    "placeholder": "pagesContact:placeholderName",
+    "size": "40" 
+  },
+  {
+    "field": "input",
+    "type": "email",
+    "name": "email",
+    "value": "",
+    "feedback": "",
+    "valid": true,
+    "label": "pagesContact:labelEmail",
+    "placeholder": "pagesContact:placeholderEmail",
+    "size": "40" 
+  },
+  {
+    "field": "input",
+    "type": "text",
+    "name": "phone",
+    "value": "",
+    "feedback": "",
+    "valid": true,
+    "label": "pagesContact:labelPhone",
+    "placeholder": "pagesContact:placeholderPhone",
+    "size": "40" 
+  },
+  {
+    "field": "textarea",
+    "type": "textarea",
+    "name": "comments",
+    "value": "",
+    "feedback": "",
+    "valid": true,
+    "label": "pagesContact:labelComments",
+    "placeholder": "pagesContact:placeholderComments",
+    "size": "40",
+    "cols": "40",
+    "rows": "10"
+  }
+]

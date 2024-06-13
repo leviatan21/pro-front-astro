@@ -6,8 +6,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
-import react from '@astrojs/react';
-//import node from '@astrojs/node'
+import react from "@astrojs/react";
+import node from "@astrojs/node";
 // import vercel from "@astrojs/vercel/serverless";
 
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), '');
@@ -19,28 +19,31 @@ export default defineConfig({
     'enabled': false
   },
   'site': baseUrl,
-  'trailingSlash': 'always',
-  'output': 'static',
-  //'output': 'server',
+  'trailingSlash': 'ignore',
+  'output': 'server',
+  //'output': 'static',
   //'output': 'hybrid',
-  //'adapter': node({
-  //  'mode': 'standalone'
-  //}),
+  'adapter': node({
+    'mode': 'standalone'
+  }),
   //'adapter': vercel(),
   'integrations': [
-  // https://docs.astro.build/en/guides/styling/#sass-and-scss
-  tailwind(), react(), sitemap(),
-  // https://www.npmjs.com/package/astro-robots-txt
-  robotsTxt({
-    'sitemap': true,
-    'sitemapBaseFileName': 'sitemap-index',
-    'policy': [{
-      'userAgent': '*',
-      'allow': '/',
-      'disallow': ['/admin', '/login'],
-      'crawlDelay': 2
-    }]
-  })],
+    react(), 
+    // https://docs.astro.build/en/guides/styling/#sass-and-scss
+    tailwind(), 
+    sitemap(),
+    // https://www.npmjs.com/package/astro-robots-txt
+    robotsTxt({
+      'sitemap': true,
+      'sitemapBaseFileName': 'sitemap-index',
+      'policy': [{
+        'userAgent': '*',
+        'allow': '/',
+        'disallow': ['/admin', '/login'],
+        'crawlDelay': 2
+      }]
+    })
+  ],
   // https://docs.astro.build/en/guides/internationalization/
   'i18n': {
     'defaultLocale': 'es',

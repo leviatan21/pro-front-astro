@@ -7,7 +7,7 @@ import ImageTripleSection from './sections/ImageTriple.astro'
 import ImageParallaxSection from './sections/ImageParallax.astro'
 import ImageIconsSection from './sections/ImageIcons.astro'
 
-import PortfoliosContent from '../_projects/content/portfolios.json'
+import portfoliosContent from '../_projects/content/portfolios.json'
 
 const {
   project=''
@@ -15,7 +15,7 @@ const {
 
 const lang = Astro.currentLocale
 
-const portfolio = PortfoliosContent.filter(portfolio => portfolio.path===`/projects/${project}`)?.[0] || null
+const portfolio = portfoliosContent.filter(portfolio => portfolio.path===`/projects/${project}`)?.[0] || null
 if (!portfolio) {
   return Astro.redirect('404')
 }

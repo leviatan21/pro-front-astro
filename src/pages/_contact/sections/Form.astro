@@ -1,0 +1,141 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n'
+import Trans, { t } from '../../../i18n/utils.astro'
+import HeroSection from './Hero.astro'
+import SectionComponent from '../../../components/Section.astro'
+import MessageComponent from '../../../components/Message.astro'
+import InputComponent from '../../../components/Input.astro'
+import SpinnerComponent from '../../../components/Spinner.astro'
+
+const {
+  lang='',
+  fields=[]
+} = Astro.props
+
+let formValid=true, result=null, recaptcha=''
+
+const handleFormSubmit = async () => {
+
+  const href = getAbsoluteLocaleUrl(lang,'api/sendEmail')
+  const params = {}
+
+  Object.keys(fields).map((key) => {
+    params[ fields[key].name ] = fields[key].value
+  })
+
+  return await fetch(href, {
+    'method': 'POST',
+    'headers': {'Content-Type':'application/json'},
+    'body': JSON.stringify(params)
+  })
+  .then((res) => { 
+    return (res.status===200) ? true : false
+  })
+  .catch((err) => {
+    return false
+  })
+}
+
+const handleValidateForm = (recaptcha) => {
+  const valids = Object.keys(fields)
+    .map((key) => fields[key].valid===true && fields[key].value!=='')
+    .filter((valid) => valid===false)
+  return (recaptcha.length>0 || valids.length>0) ? false : true
+}
+
+if (Astro.request.method === 'POST') {
+
+  try {
+
+    const data  = await Astro.request.formData()
+    recaptcha   = data.get('recaptcha')?.toString().trim()
+
+    Object.keys(fields).map((key) => {
+      fields[key].value     = data.get(fields[key].name)?.toString().trim()
+      fields[key].valid     = fields[key].value != ''
+      fields[key].feedback  = fields[key].valid ? '' : ''
+    })
+  
+    formValid = handleValidateForm(recaptcha)
+    if (formValid) {
+      result = await handleFormSubmit()
+    }
+
+  } catch (error) {
+    result = false
+    console.error('Form.catch', error?.message)
+  }
+}
+---
+
+<SectionComponent className="top hero d-flex align-items-center full">
+  <div class="container">
+    <div class="row">
+      {result===null ? (
+        <>
+          <HeroSection />
+          <div class="col-12 col-lg-7 col-form-contacto">
+            <form 
+              method="POST"
+              id="formcontacto" 
+              name="formcontacto" 
+              aria-label={t(lang,'pagesContact:form-label')}
+              novalidate="novalidate"
+            >
+              <fieldset id="form" class="area-form">
+                <article class="form-article">
+                  {Object.keys(fields).map((key) => (
+                    <InputComponent
+                      input={fields[key]}
+                      label={t(lang,fields[key].label)}
+                      feedback={t(lang,fields[key].feedback)}
+                      placeHolder={t(lang, fields[key].placeholder)}
+                    />
+                  ))}
+                </article>
+              </fieldset>
+              <div class="row align-items-end">
+                <div class="col">
+                  <input type="hidden" name="recaptcha" value="" />
+                </div>
+                <div class="col">
+                  <div class="wrapper-input col-boton-enviar">
+                    <button
+                      id='contact-button' 
+                      class="btn btn-warning uppercase d-inline" 
+                      type="submit" 
+                      {/* disabled={!formValid} */}
+                    >
+                      <SpinnerComponent id='contact-spinner' size='sm' />
+                      {t(lang,'pagesContact:form-button')}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </>
+      ) : (
+        <MessageComponent
+          className="col-6 mx-auto"
+          title={true}
+        >
+          <Trans slot='title' i18nKey='pagesContact:messageTitle' />
+          <Trans slot='message' i18nKey={result===true ? 'pagesContact:messageSuccess' : 'pagesContact:messageError'} />
+        </MessageComponent>
+      )}
+    </div>
+  </div>
+</SectionComponent>
+
+<script>
+  const button = document.getElementById('contact-button');
+  if (typeof(button) !== 'undefined' && button !== null) {
+    button.addEventListener('click', function(e){
+      document.getElementById('contact-spinner').classList.toggle('d-none');
+      window.setTimeout(function() {
+        return e;
+      }, 1000);
+    });
+  }
+</script>

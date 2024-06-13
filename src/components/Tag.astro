@@ -1,11 +1,11 @@
 ---
 import Trans from '../i18n/utils.astro'
-import dataTags from '../content/tags/index.json'
+import tagsContent from '../content/tags/index.json'
 
 const {
   tagKey
 } = Astro.props
-const tag = dataTags?.[tagKey] || null
+const tag = tagsContent?.[tagKey] || null
 ---
 
 {tag && (

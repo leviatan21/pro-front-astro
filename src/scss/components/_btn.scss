@@ -39,4 +39,9 @@
       box-shadow: $box-shadow-light !important;
     }
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
 }

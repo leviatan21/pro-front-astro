@@ -1,5 +1,5 @@
 ---
-import { t } from '../../../i18n/utils.astro'
+import Trans, { t } from '../../../i18n/utils.astro'
 import SectionComponent from '../../../components/Section.astro'
 import MessageComponent from '../../../components/Message.astro'
 
@@ -13,9 +13,11 @@ const  {
     <div class="row">
       <MessageComponent 
         className='div_res_contacto'
-        title={t(lang, 'pagesContact:form-disabled-title')} 
-        message={t(lang,'pagesContact:form-disabled-message')}
-      />
+        title={true}
+      >
+        <Trans slot='title' i18nKey='pagesContact:form-disabled-title' />
+        <Trans slot='message' i18nKey='pagesContact:form-disabled-message' />
+      </MessageComponent>
     </div>
   </div>
 </SectionComponent>

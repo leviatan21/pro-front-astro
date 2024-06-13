@@ -3,8 +3,7 @@ import HeadingComponent from './Heading.astro'
 
 const {
   className='',
-  title='',
-  message=''
+  title=true
 } = Astro.props
 ---
 
@@ -12,12 +11,12 @@ const {
   <div class={`pattern01 ${className}`}>
   {title && (
     <HeadingComponent level={1}>
-      {title}
+      <slot name='title' />
     </HeadingComponent>
     )}
     <HeadingComponent level={2}>
       <span className="thin">
-        {message}
+        <slot name='message' />
       </span>
     </HeadingComponent>
   </div>

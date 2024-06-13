@@ -9,10 +9,10 @@ import UsSection from './sections/Us.astro'
 import PortfoliosSection from './sections/Portfolios.astro'
 import BottonComponent from '../../components/Botton.astro'
 
-import ServicesContent from './content/services.json'
-import TechContent from './content/tech.json'
-import QuotesContent from './content/quotes.json'
-import CardsContent from './content/cards.json'
+import servicesContent from './content/services.json'
+import techContent from './content/tech.json'
+import quotesContent from './content/quotes.json'
+import cardsContent from './content/cards.json'
 
 const lang = Astro.currentLocale
 ---
@@ -20,10 +20,10 @@ const lang = Astro.currentLocale
 <Layout page='Home'>
   <HeroSection lang={lang} />
   <ParallaxSection lang={lang} />
-  <WhatWeDoSection lang={lang} tags={ServicesContent} />
-  <ServicesSection lang={lang} tags={TechContent} />
-  <QuotesSection lang={lang} quotes={QuotesContent} />
+  <WhatWeDoSection lang={lang} tags={servicesContent} />
+  <ServicesSection lang={lang} tags={techContent} />
+  <QuotesSection lang={lang} quotes={quotesContent} />
   <UsSection lang={lang} />
-  <PortfoliosSection lang={lang} cards={CardsContent} />
+  <PortfoliosSection lang={lang} cards={cardsContent} />
   <BottonComponent lang={lang} />
 </Layout>

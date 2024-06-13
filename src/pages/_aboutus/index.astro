@@ -5,7 +5,7 @@ import UsSection from './sections/Us.astro'
 import TeamSection from './sections/Team.astro'
 import TeamMembersSection from './sections/TeamMembers.astro'
 
-import TeamsContent from './content/teams.json'
+import teamsContent from './content/teams.json'
 
 const lang = Astro.currentLocale
 ---
@@ -14,5 +14,5 @@ const lang = Astro.currentLocale
   <HeroSection lang={lang} />
   <UsSection />
   <TeamSection />
-  <TeamMembersSection lang={lang} teams={TeamsContent} />
+  <TeamMembersSection lang={lang} teams={teamsContent} />
 </Layout>

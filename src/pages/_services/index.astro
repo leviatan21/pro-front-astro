@@ -4,13 +4,13 @@ import HeroSection from './sections/Hero.astro'
 import ServicesSection from './sections/Services.astro'
 import ParallaxSection from './sections/Parallax.astro'
 
-import ServicesContent from './content/services.json'
+import servicesContent from './content/services.json'
 
 const lang = Astro.currentLocale
 ---
 
 <Layout page='Services'>
   <HeroSection lang={lang} />
-  <ServicesSection lang={lang} services={ServicesContent} />
+  <ServicesSection lang={lang} services={servicesContent} />
   <ParallaxSection lang={lang} />
 </Layout>

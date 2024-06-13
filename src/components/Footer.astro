@@ -9,7 +9,7 @@ import BusinessGroupComponent from './BusinessGroup.astro'
 import LocationIcon from './icons/Location.astro'
 import LinkedInIcon from './icons/LinkedIn.astro'
 
-import GroupContent from '../content/group/index.json'
+import groupContent from '../content/group/index.json'
 
 const {
   lang,
@@ -55,8 +55,8 @@ const {
           </ul>
         </div>
       </div>
-      <BusinessGroupComponent group={GroupContent} index={1} />
+      <BusinessGroupComponent group={groupContent} index={1} />
     </div>
   </footer>
-  <BusinessGroupComponent group={GroupContent} index={2} />
+  <BusinessGroupComponent group={groupContent} index={2} />
 </>

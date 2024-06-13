@@ -1,0 +1,65 @@
+---
+const {
+  input,
+  label,
+  placeHolder,
+  onChange,
+} = Astro.props
+
+/*
+input = {
+  field: 'input',
+  type: 'text',
+  name: 'name',
+  value: '',
+  valid: true,
+  label: 'pagesContact:labelName',
+  placeholder: 'pagesContact:placeholderName',
+  size: '40'
+}
+input {
+  field: 'textarea',
+  type: 'textarea',
+  name: 'comments',
+  value: '',
+  valid: true,
+  label: 'pagesContact:labelComments',
+  placeholder: 'pagesContact:placeholderComments',
+  size: '40',
+  cols: '40',
+  rows: '10'
+}
+*/
+
+const Control = input.field
+---
+
+<div class="wrapper-input">
+  {label && <label class="visually-hidden">{label}</label>}
+
+{input.field === 'textarea' ? (
+    <Control
+      {...input}
+      id={input.name}
+      autoComplete="off"
+      placeholder={placeHolder}
+      label={label}
+      class={`${input.valid ? 'valid' : 'invalid'} form-control form-control-40`}
+      aria-describedby={`validation-${input.name}-feedback`}
+    >{input.value}</Control>
+  ) : (
+    <Control
+      {...input}
+      id={input.name}
+      autoComplete="off"
+      placeholder={placeHolder}
+      label={label}
+      class={`${input.valid ? 'valid' : 'invalid'} form-control form-control-40`}
+      aria-describedby={`validation-${input.name}-feedback`}
+    />
+  )}
+
+{input.feedback && <div id={`validation-${input.name}-feedback`} class="invalid-feedback">
+    {input.feedback}
+  </div>}
+</div>

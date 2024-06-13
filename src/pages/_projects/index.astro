@@ -4,13 +4,13 @@ import HeroSection from './sections/Hero.astro'
 import PortfoliosSection from './sections/Portfolios.astro'
 import BottonComponent from '../../components/Botton.astro'
 
-import PortfoliosContent from './content/portfolios.json'
+import portfoliosContent from './content/portfolios.json'
 
 const lang = Astro.currentLocale
 ---
 
 <Layout page='Projects'>
   <HeroSection />
-  <PortfoliosSection lang={lang} portfolios={PortfoliosContent} />
+  <PortfoliosSection lang={lang} portfolios={portfoliosContent} />
   <BottonComponent lang={lang} />
 </Layout>
