@@ -35,7 +35,8 @@ const seo           = {
 
   <link rel="canonical" href={canonicalURL} />
   <link rel="icon"          type="image/x-icon" href={`${baseUrl}favicon.ico`}  />
-  <link rel="Shortcut Icon" type="image/x-icon" href={`${baseUrl}favicon.ico`}  />
+  <link rel="Shortcut Icon" type="image/x-icon" href={`${baseUrl}favicon.ico`} sizes="16x16 24x24 32x32 48x48 64x64" />
+
   <link rel="sitemap" type="application/xml" title="Site map" href={`${baseUrl}sitemap-index.xml`} />
   <HreflangComponent lang={lang} />
 
@@ -47,6 +48,10 @@ const seo           = {
   {seo?.title && <meta name="title" content={seo.title} />}
   {seo?.description && <meta name="description" content={seo.description} />}
   {seo?.keywords && <meta name="keywords" content={seo.keywords} />}
+
+  <meta name="theme-color" content="#302ca7" />
+  <meta name="msapplication-TileColor" content="#302ca7" />
+  <meta name="msapplication-TileImage" content={ImageUrl} />
 
   {seo?.title && <meta property="og:title" content={seo.title} />}
   {seo?.description && <meta name="og:description" content={seo.description} />}
