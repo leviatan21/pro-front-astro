@@ -4,6 +4,8 @@ import Page from '../../_project/index.astro'
 
 import portfoliosContent from '../../_projects/content/portfolios.json'
 
+export const prerender = true
+
 // https://docs.astro.build/en/reference/api-reference/#getstaticpaths
 // https://docs.astro.build/en/guides/routing/#dynamic-routes
 export function getStaticPaths() {

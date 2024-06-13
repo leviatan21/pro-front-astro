@@ -224,8 +224,8 @@ const Send = async (body) => {
     /*  Validate parameters */
     const params = Validate(body)
     /* Send mail */
-    return await SendNodeMailer(params)
-  //return await SendEmailJs(params)
+  //return await SendNodeMailer(params)
+    return await SendEmailJs(params)
   } catch (error) {
     console.error('sendEmail.Send.catch()', {'error':error?.message})
     return Promise.reject()
