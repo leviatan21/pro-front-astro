@@ -6,6 +6,8 @@ import emailjs from '@emailjs/nodejs'
 // https://docs.astro.build/en/recipes/build-forms/
 export const POST: APIRoute = async ({ request }) => {
 
+//return new Response(null,{'status':200})
+
   const body = await request.json()
 
   const response = await Send(body).then((res) => true).catch((err) => false)
@@ -209,8 +211,8 @@ const Send = async (body) => {
     /*  Validate parameters */
     const params = Validate(body)
     /* Send mail */
-    //return await SendNodeMailer(params)
-    return await SendEmailJs(params)
+    return await SendNodeMailer(params)
+    //return await SendEmailJs(params)
   } catch (error) {
     console.error('sendEmail.Send.catch()', error?.message || error)
     return Promise.reject({

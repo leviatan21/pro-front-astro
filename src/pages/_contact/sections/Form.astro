@@ -77,10 +77,9 @@ if (Astro.request.method === 'POST') {
           <div class="col-12 col-lg-7 col-form-contacto">
             <form 
               method="POST"
-              id="formcontacto" 
-              name="formcontacto" 
+              id="form-contact" 
+              name="form-contact" 
               aria-label={t(lang,'pagesContact:form-label')}
-              novalidate="novalidate"
             >
               <fieldset id="form" class="area-form">
                 <article class="form-article">
@@ -90,6 +89,7 @@ if (Astro.request.method === 'POST') {
                       label={t(lang,fields[key].label)}
                       feedback={t(lang,fields[key].feedback)}
                       placeHolder={t(lang, fields[key].placeholder)}
+                      required={true}
                     />
                   ))}
                 </article>
@@ -101,7 +101,7 @@ if (Astro.request.method === 'POST') {
                 <div class="col">
                   <div class="wrapper-input col-boton-enviar">
                     <button
-                      id='contact-button' 
+                      id="button-contact"
                       class="btn btn-warning uppercase d-inline" 
                       type="submit" 
                       {/* disabled={!formValid} */}
@@ -117,7 +117,7 @@ if (Astro.request.method === 'POST') {
         </>
       ) : (
         <MessageComponent
-          className="col-6 mx-auto"
+          className='col-6 mx-auto div_res_contacto'
           title={true}
         >
           <Trans slot='title' i18nKey='pagesContact:messageTitle' />
@@ -129,13 +129,50 @@ if (Astro.request.method === 'POST') {
 </SectionComponent>
 
 <script>
-  const button = document.getElementById('contact-button');
-  if (typeof(button) !== 'undefined' && button !== null) {
-    button.addEventListener('click', function(e){
-      document.getElementById('contact-spinner').classList.toggle('d-none');
-      window.setTimeout(function() {
-        return e;
-      }, 1000);
+
+  function SubmitListener(form) {
+    form.addEventListener('submit', function(event) {
+      var isValid = true;
+      var spinner = document.getElementById('contact-spinner');
+      var fields  = this.querySelectorAll('[required="true"]');
+
+      spinner.classList.remove('d-none');
+      fields.forEach(function(field) {
+        isValid = (!field.validity.valid) ? false : isValid;
+      });
+console.log('isValid', isValid); event.preventDefault(); return false;
+
+      if (isValid) {
+        window.setTimeout(function() {
+          return event;
+        }, 1000);
+      } else {
+        event.preventDefault();
+        spinner.classList.add('d-none');
+        return false;
+      }
     });
+  }
+
+  function EmailListener() {
+    const email = document.getElementById('input-email');
+    email.addEventListener('input', function(event) {
+      const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i;
+      if (email.validity.valid && emailRegExp.test(email.value)) {
+        email.validity.setCustomValidity(true);
+        email.classList.add('valid');
+        email.classList.remove('invalid');
+      } else {
+        email.validity.setCustomValidity(false);
+        email.classList.remove('valid');
+        email.classList.add('invalid');
+      }
+    });
+  }
+
+  const form = document.getElementById('form-contact');
+  if (typeof(form) !== 'undefined' && form !== null) {
+    SubmitListener(form);
+    EmailListener();
   }
 </script>

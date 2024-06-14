@@ -1,10 +1,15 @@
 ---
 const {
-  input,
-  label,
-  placeHolder,
-  onChange,
+  input={},
+  label='',
+  placeHolder='',
+  required=false,
 } = Astro.props
+
+const {
+  field:Control,
+  ...attrs
+} = input
 
 /*
 input = {
@@ -31,7 +36,6 @@ input {
 }
 */
 
-const Control = input.field
 ---
 
 <div class="wrapper-input">
@@ -39,27 +43,31 @@ const Control = input.field
 
 {input.field === 'textarea' ? (
     <Control
-      {...input}
-      id={input.name}
+      {...attrs}
+      id={`input-${input.name}`}
       autoComplete="off"
       placeholder={placeHolder}
       label={label}
+      required={required? 'true' : 'false'}
       class={`${input.valid ? 'valid' : 'invalid'} form-control form-control-40`}
       aria-describedby={`validation-${input.name}-feedback`}
     >{input.value}</Control>
   ) : (
     <Control
-      {...input}
-      id={input.name}
+      {...attrs}
+      id={`input-${input.name}`}
       autoComplete="off"
       placeholder={placeHolder}
       label={label}
       class={`${input.valid ? 'valid' : 'invalid'} form-control form-control-40`}
       aria-describedby={`validation-${input.name}-feedback`}
+      required={required? 'true' : 'false'}
     />
   )}
 
-{input.feedback && <div id={`validation-${input.name}-feedback`} class="invalid-feedback">
-    {input.feedback}
-  </div>}
+  {input.feedback && (
+    <div id={`validation-${input.name}-feedback`} class="invalid-feedback">
+      {input.feedback}
+    </div>
+  )}
 </div>

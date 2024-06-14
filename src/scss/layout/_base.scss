@@ -202,22 +202,19 @@ h5.card-title {
     background-position-x: left;
     @include media-max-992px {
       background-image: none;
-      //@include background-assets('ornament-01-responsive', '100% no-repeat');
-      //background-size: 50%;
-      //left: -40px;
-      //width: 210px;
-      //top: -50px;
     }
   }
 
-  &:after {
-    position: absolute;
-    right: -70px;
-    @include content-assets('ornament-02.webp');
-    z-index: -1;
-    transform: scale(0.7);
-    @include media-max-992px {
-    //content: "";
+  &.div_res_contacto {
+    &:after {
+      position: absolute;
+      right: -70px;
+      @include content-assets('ornament-02.webp');
+      z-index: -1;
+      transform: scale(0.7);
+      @include media-max-992px {
+        content: "";
+      }
     }
   }
 }

@@ -8,7 +8,8 @@
     "valid": true,
     "label": "pagesContact:labelName",
     "placeholder": "pagesContact:placeholderName",
-    "size": "40" 
+    "size": "40",
+    "minlength": 6
   },
   {
     "field": "input",
@@ -19,7 +20,8 @@
     "valid": true,
     "label": "pagesContact:labelEmail",
     "placeholder": "pagesContact:placeholderEmail",
-    "size": "40" 
+    "size": "40",
+    "minlength": 6
   },
   {
     "field": "input",
@@ -30,7 +32,8 @@
     "valid": true,
     "label": "pagesContact:labelPhone",
     "placeholder": "pagesContact:placeholderPhone",
-    "size": "40" 
+    "size": "40",
+    "minlength": 6
   },
   {
     "field": "textarea",
@@ -43,6 +46,7 @@
     "placeholder": "pagesContact:placeholderComments",
     "size": "40",
     "cols": "40",
-    "rows": "10"
+    "rows": "10",
+    "minlength": 10
   }
 ]
