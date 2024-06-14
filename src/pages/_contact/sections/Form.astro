@@ -7,6 +7,8 @@ import MessageComponent from '../../../components/Message.astro'
 import InputComponent from '../../../components/Input.astro'
 import SpinnerComponent from '../../../components/Spinner.astro'
 
+export const prerender = false
+
 const {
   lang='',
   fields=[]
@@ -80,6 +82,7 @@ if (Astro.request.method === 'POST') {
               id="form-contact" 
               name="form-contact" 
               aria-label={t(lang,'pagesContact:form-label')}
+              novalidate="novalidate"
             >
               <fieldset id="form" class="area-form">
                 <article class="form-article">
@@ -140,7 +143,7 @@ if (Astro.request.method === 'POST') {
       fields.forEach(function(field) {
         isValid = (!field.validity.valid) ? false : isValid;
       });
-console.log('isValid', isValid); event.preventDefault(); return false;
+      // console.log('isValid', isValid);spinner.classList.add('d-none');event.preventDefault();return false;
 
       if (isValid) {
         window.setTimeout(function() {
@@ -157,16 +160,19 @@ console.log('isValid', isValid); event.preventDefault(); return false;
   function EmailListener() {
     const email = document.getElementById('input-email');
     email.addEventListener('input', function(event) {
+      email.setCustomValidity('');
       const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i;
+ 
       if (email.validity.valid && emailRegExp.test(email.value)) {
-        email.validity.setCustomValidity(true);
+        email.setCustomValidity('');
         email.classList.add('valid');
         email.classList.remove('invalid');
       } else {
-        email.validity.setCustomValidity(false);
+        email.setCustomValidity('error');
         email.classList.remove('valid');
         email.classList.add('invalid');
       }
+
     });
   }
 
