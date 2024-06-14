@@ -28,10 +28,10 @@ const handleFormSubmit = async () => {
     'headers': {'Content-Type':'application/json'},
     'body': JSON.stringify(params)
   })
-  .then((res) => { 
-    return (res.status===200) ? true : false
+  .then((response) => {
+    return (response.status===200) ? true : false
   })
-  .catch((err) => {
+  .catch((error) => {
     return false
   })
 }
@@ -55,7 +55,7 @@ if (Astro.request.method === 'POST') {
       fields[key].valid     = fields[key].value != ''
       fields[key].feedback  = fields[key].valid ? '' : ''
     })
-  
+
     formValid = handleValidateForm(recaptcha)
     if (formValid) {
       result = await handleFormSubmit()
