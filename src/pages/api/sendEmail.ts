@@ -7,7 +7,7 @@ import emailjs from '@emailjs/nodejs'
 // https://docs.astro.build/en/recipes/build-forms/
 export const POST: APIRoute = async ({ request }) => {
 
-return new Response(null,{'status':200})
+//return new Response(null,{'status':200,'statusText':'OK','headers':{'Content-Type':'application/json'}})
 
   const body = await request.json()
 
