@@ -28,40 +28,43 @@ const seo           = {
 ---
 
 <>
-  <link rel="preconnect"    href="https://fonts.googleapis.com" />
+  <link rel="preconnect"    href="https://fonts.googleapis.com" crossorigin="anonymous" />
   <link rel="dns-prefetch"  href="https://fonts.googleapis.com" />
   <link rel="preconnect"    href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link rel="dns-prefetch"  href="https://fonts.gstatic.com" />
-
-  <link rel="canonical" href={canonicalURL} />
-  <link rel="icon"          type="image/x-icon" href={`${baseUrl}favicon.ico`}  />
-  <link rel="Shortcut Icon" type="image/x-icon" href={`${baseUrl}favicon.ico`} sizes="16x16 24x24 32x32 48x48 64x64" />
-
-  <link rel="sitemap" type="application/xml" title="Site map" href={`${baseUrl}sitemap-index.xml`} />
-  <HreflangComponent lang={lang} />
-
   {GTMID && <link rel="preconnect"    href="https://www.googletagmanager.com" crossorigin="anonymous" />}
   {GTMID && <link rel="dns-prefetch"  href="https://www.googletagmanager.com" />}
   {GTMID && <link rel="preload"       href={`https://www.googletagmanager.com/gtag/js?id=${GTMID}`} as="script" />}
 
+  <link rel="canonical"     href={canonicalURL} />
+  <link rel="icon"          href={`${baseUrl}favicon.ico`} type="image/x-icon" />
+  <link rel="Shortcut Icon" href={`${baseUrl}favicon.ico`} type="image/x-icon" sizes="16x16 24x24 32x32 48x48 64x64" />
+  <link rel="sitemap" type="application/xml" title="Site map" href={`${baseUrl}sitemap-index.xml`} />
+
+  <HreflangComponent lang={lang} />
+
+  <!-- Primary Meta Tags -->
   {seo?.title && <title>{ `${seo.title} - ${t(lang,'global:siteTitle')}`}</title>}
   {seo?.title && <meta name="title" content={seo.title} />}
   {seo?.description && <meta name="description" content={seo.description} />}
   {seo?.keywords && <meta name="keywords" content={seo.keywords} />}
 
+  <!-- ui -->
   <meta name="theme-color" content="#302ca7" />
   <meta name="msapplication-TileColor" content="#302ca7" />
   <meta name="msapplication-TileImage" content={ImageUrl} />
 
+  <!-- Open Graph / Facebook -->
   {seo?.title && <meta property="og:title" content={seo.title} />}
   {seo?.description && <meta name="og:description" content={seo.description} />}
-  <meta property="og:locale" content={t(lang,'global:hrefLang-ES')} />
-  <meta property="og:locale:alternate" content={t(lang,'global:hrefLang-EN')} />
+  <meta property="og:locale"           content={lang==='es' ? t('es','global:hrefLang-ES') : t('en','global:hrefLang-EN')} />
+  <meta property="og:locale:alternate" content={lang==='es' ? t('en','global:hrefLang-EN') : t('es','global:hrefLang-ES')} />
   <meta property="og:site_name" content={t(lang,'global:siteTitle')} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:image" content={ImageUrl} />
 
+  <!-- Twitter -->
   <meta name="twitter:widgets:autoload" content="off" />
   <meta name="twitter:widgets:csp" content="on" />
   <meta name="twitter:widgets:theme" content="light" />
