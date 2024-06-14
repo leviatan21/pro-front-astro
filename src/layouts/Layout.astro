@@ -7,7 +7,7 @@ import SchemaMarkupComponent from '../components/SchemaMarkup.astro'
 import FooterComponent from '../components/Footer.astro'
 
 const currentLocale = Astro.currentLocale
-const disabled      = (import.meta.env.PUBLIC_MAINTENANCE || 'false')
+const disabled      = (import.meta.env?.PUBLIC_MAINTENANCE || 'false')
 
 const {
   page='home',

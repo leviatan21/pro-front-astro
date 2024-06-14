@@ -1,14 +1,11 @@
 ---
-import { loadEnv } from 'vite'
 import Layout from '../../layouts/Layout.astro'
 import DisabledSection from './sections/Disabled.astro'
 import FormSection from './sections/Form.astro'
 import fieldsContent from './content/fields.json'
 
-const env         = loadEnv(process.env.NODE_ENV, process.cwd(), '')
-
 const lang        = Astro.currentLocale
-const contactForm = env?.PUBLIC_CONTACT_FORM || null
+const contactForm = (import.meta.env?.PUBLIC_CONTACT_FORM || null)
 ---
 
 <Layout page='Contact'>

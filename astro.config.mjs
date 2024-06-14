@@ -20,9 +20,8 @@ export default defineConfig({
   },
   'site': baseUrl,
   'trailingSlash': 'ignore',
-  //'output': 'server',
-  //'output': 'static',
-  'output': 'hybrid',
+  // Because of form contact
+  'output': 'server', // 'static' | 'hybrid',
   'adapter': node({
     'mode': 'standalone'
   }),

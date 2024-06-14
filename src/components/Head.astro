@@ -1,5 +1,4 @@
 ---
-import { loadEnv } from 'vite'
 import { t } from '../i18n/utils.astro'
 import { ImageSrc } from './ImageAssets.astro'
 import HreflangComponent from './Hreflang.astro'
@@ -15,10 +14,10 @@ const {
 const canonicalURL  = new URL(Astro.url.pathname, Astro.site)
 const baseUrl       = new URL(Astro.site)
 const ImageUrl      = ImageSrc('pro-international.jpg')
-const env           = loadEnv(process.env.NODE_ENV, process.cwd(), '')
-const GTMID         = env?.PUBLIC_GTM_ID || null
-const datePublished = env?.PUBLIC_DATE_PUBLISHED || ''
-const dateModified  = env?.PUBLIC_DATE_MODIFIED || ''
+
+const GTMID         = (import.meta.env?.PUBLIC_GTM_ID || null)
+const datePublished = (import.meta.env?.PUBLIC_DATE_PUBLISHED || '')
+const dateModified  = (import.meta.env?.PUBLIC_DATE_MODIFIED || '')
 
 const seo           = {
   'title':          t(lang,`pages${page}:title`, false),

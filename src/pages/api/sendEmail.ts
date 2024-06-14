@@ -1,5 +1,4 @@
 import type { APIRoute } from 'astro'
-import { loadEnv } from 'vite'
 import nodemailer from 'nodemailer'
 import emailjs from '@emailjs/nodejs'
 
@@ -9,9 +8,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   const body = await request.json()
 
-  const response = await Send(body)
-    .then((res) => true)
-    .catch((err) => false)
+  const response = await Send(body).then((res) => true).catch((err) => false)
 
   if (!response) {
     return new Response(
@@ -43,27 +40,19 @@ export const POST: APIRoute = async ({ request }) => {
 
 }
 
-const Env = () => {
-  return loadEnv(process.env.NODE_ENV, process.cwd(), '')
-}
-
 const Validate = (body) => {
 
-  const env = Env()
+  const subject     = import.meta.env?.PRIVATE_MAIL_SUBJECT       || null
+  const fromAccount = import.meta.env?.PRIVATE_MAIL_FROM_ACCOUNT  || null
+  const toAccount   = import.meta.env?.PRIVATE_MAIL_TO_ACCOUNT    || null
 
-  const subject     = env?.PRIVATE_MAIL_SUBJECT       || null
-  const fromAccount = env?.PRIVATE_MAIL_FROM_ACCOUNT  || null
-  const fromName    = env?.PRIVATE_MAIL_FROM_NAME     || null
-  const toAccount   = env?.PRIVATE_MAIL_TO_ACCOUNT    || null
-  const toName      = env?.PRIVATE_MAIL_TO_NAME       || null
-
-  const vars = {
+  const vars        = {
     'subject' : body?.subject || subject || null,
-    'from'    : body?.from    || (fromName && fromAccount) ? `${fromName} <${fromAccount}>` : fromAccount ? fromAccount : null,
-    'to'      : body?.to      || (toName   && toAccount  ) ? `${toName} <${toAccount}>`     : toAccount   ? toAccount   : null
+    'from'    : body?.from    || fromAccount || null,
+    'to'      : body?.to      || toAccount || null
   }
 
-  const data = {
+  const data        = {
     'name'    : body?.name,
     'email'   : body?.email,
     'phone'   : body?.phone,
@@ -131,13 +120,11 @@ const Parse = (params) => {
 
 const SendNodeMailer = async (params) => {
 
-  const env = Env()
-
-  const host        = env?.PRIVATE_MAIL_HOST        || null
-  const port        = env?.PRIVATE_MAIL_PORT        || null
-  const secure      = env?.PRIVATE_MAIL_SECURE      || null
-  const user        = env?.PRIVATE_MAIL_USER        || null
-  const pass        = env?.PRIVATE_MAIL_PASS        || null
+  const host        = import.meta.env?.PRIVATE_MAIL_HOST        || null
+  const port        = import.meta.env?.PRIVATE_MAIL_PORT        || null
+  const secure      = import.meta.env?.PRIVATE_MAIL_SECURE      || null
+  const user        = import.meta.env?.PRIVATE_MAIL_USER        || null
+  const pass        = import.meta.env?.PRIVATE_MAIL_PASS        || null
 
   /* mailer */
   if (!host || !port || !secure || !user || !pass) {
@@ -162,23 +149,21 @@ const SendNodeMailer = async (params) => {
       }
     })
     .sendMail(email)
-    .then((resp) => {
-      return resp
+    .then((response) => {
+      return response
     })
     .catch((error) => {
-      console.error('sendEmail.Mailer.catch()', {'error':error?.message})
+      console.error('sendEmail.Mailer.catch()', error?.message || error)
       throw new Error('sendEmail.Mailer - Error')
     })
 }
 
 const SendEmailJs = async (params) => {
 
-  const env = Env()
-
-  const serviceId   = env?.PRIVATE_MAIL_SERVICE_ID  || null
-  const templateId  = env?.PRIVATE_MAIL_TEMPLATE_ID || null
-  const publicKey   = env?.PRIVATE_MAIL_PUBLIC_KEY  || null
-  const privateKey  = env?.PRIVATE_MAIL_PRIVATE_KEY || null
+  const serviceId   = import.meta.env?.PRIVATE_MAIL_SERVICE_ID  || null
+  const templateId  = import.meta.env?.PRIVATE_MAIL_TEMPLATE_ID || null
+  const publicKey   = import.meta.env?.PRIVATE_MAIL_PUBLIC_KEY  || null
+  const privateKey  = import.meta.env?.PRIVATE_MAIL_PRIVATE_KEY || null
 
   /* mailer */
   if (!serviceId || !templateId || !publicKey || !privateKey) {
@@ -205,16 +190,16 @@ const SendEmailJs = async (params) => {
     }
   )
   .then(
-    (resp) => {
-      return resp
+    (response) => {
+      return response
     },
-    (err) => {
-      console.error('sendEmail.SendEmailJs.FAILED()', err)
+    (error) => {
+      console.error('sendEmail.SendEmailJs.FAILED()', error?.message || error)
       throw new Error('sendEmail.SendEmailJs - Fail')
     }
   )
   .catch((error) => {
-    console.error('sendEmail.SendEmailJs.catch()', {'error':error})
+    console.error('sendEmail.SendEmailJs.catch()', error?.message || error)
     throw new Error('sendEmail.SendEmailJs - Error')
   })
 }
@@ -224,10 +209,14 @@ const Send = async (body) => {
     /*  Validate parameters */
     const params = Validate(body)
     /* Send mail */
-  //return await SendNodeMailer(params)
+    //return await SendNodeMailer(params)
     return await SendEmailJs(params)
   } catch (error) {
-    console.error('sendEmail.Send.catch()', {'error':error?.message})
-    return Promise.reject()
+    console.error('sendEmail.Send.catch()', error?.message || error)
+    return Promise.reject({
+      'error': true, 
+      'message': error?.message || error,
+      'status': 500
+    })
   }
 }

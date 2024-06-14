@@ -1,5 +1,4 @@
 ---
-import { loadEnv } from 'vite'
 import { getAbsoluteLocaleUrl } from 'astro:i18n'
 import { t } from '../i18n/utils.astro'
 import { ImageSrc } from './ImageAssets.astro'
@@ -11,16 +10,15 @@ const {
   page=''
 } = Astro.props
 
-const env               = loadEnv(process.env.NODE_ENV, process.cwd(), '')
 const WebSiteUrl        = new URL(Astro.site)                     // https://pro-front.vercel.app
 const WebPageUrl        = new URL(Astro.url.pathname, Astro.site) // https://pro-front.vercel.app/projects
 const translationOfWork = getAbsoluteLocaleUrl((lang === 'es') ? 'en' : 'es')
 const inLanguage        = t(lang,'global:hrefLang')
 const ImageUrl          = ImageSrc('pro-international.jpg')
 const LogoUrl           = ImageSrc('pro-international.jpg')
-const datePublished     = (env?.PUBLIC_DATE_PUBLISHED || '')
-const dateModified      = (env?.PUBLIC_DATE_MODIFIED || '')
-const email             = (env?.PUBLIC_MAIL_REPLY_ACCOUNT || '')
+const datePublished     = (import.meta.env?.PUBLIC_DATE_PUBLISHED || '')
+const dateModified      = (import.meta.env?.PUBLIC_DATE_MODIFIED || '')
+const email             = (import.meta.env?.PUBLIC_MAIL_REPLY_ACCOUNT || '')
 
 let BreadcrumbList      = []
 pages.forEach((route, index) => {
