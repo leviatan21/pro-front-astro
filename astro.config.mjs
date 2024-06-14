@@ -21,7 +21,9 @@ export default defineConfig({
   'site': baseUrl,
   'trailingSlash': 'ignore',
   // Because of form contact
-  'output': 'server', // 'static' | 'hybrid',
+  'output': 'server',
+  //'output': 'static',
+  //'output': 'hybrid',
   'adapter': node({
     'mode': 'standalone'
   }),
