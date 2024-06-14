@@ -57,7 +57,7 @@ const seo           = {
   <!-- Open Graph / Facebook -->
   {seo?.title && <meta property="og:title" content={seo.title} />}
   {seo?.description && <meta name="og:description" content={seo.description} />}
-  <meta property="og:locale"           content={lang==='es' ? t('es','global:hrefLang-ES') : t('en','global:hrefLang-EN')} />
+  <meta property="og:locale" content={lang==='es' ? t('es','global:hrefLang-ES') : t('en','global:hrefLang-EN')} />
   <meta property="og:locale:alternate" content={lang==='es' ? t('en','global:hrefLang-EN') : t('es','global:hrefLang-ES')} />
   <meta property="og:site_name" content={t(lang,'global:siteTitle')} />
   <meta property="og:type" content="website" />
