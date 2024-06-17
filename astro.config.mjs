@@ -27,9 +27,7 @@ export default defineConfig({
   'adapter': node({
     'mode': 'standalone'
   }),
-  'adapter': vercel({
-    'functionPerRoute': true,
-  }),
+//'adapter': vercel({}),
   'integrations': [
     react(), 
     // https://docs.astro.build/en/guides/styling/#sass-and-scss
