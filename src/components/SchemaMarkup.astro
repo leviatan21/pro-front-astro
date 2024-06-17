@@ -14,13 +14,14 @@ const {
 const WebSiteUrl        = new URL(Astro.site)                     // https://pro-front.vercel.app
 const WebPageUrl        = new URL(Astro.url.pathname, Astro.site) // https://pro-front.vercel.app/projects
 const translationOfWork = getAbsoluteLocaleUrl((lang === 'es') ? 'en' : 'es')
+
+const env               = loadEnv(process.env.NODE_ENV, process.cwd(), '')
 const inLanguage        = t(lang,'global:hrefLang')
 const ImageUrl          = ImageSrc('pro-international.jpg')
 const LogoUrl           = ImageSrc('pro-international.jpg')
-const env               = loadEnv(process.env.NODE_ENV, process.cwd(), '')
-const datePublished     = (env?.PUBLIC_DATE_PUBLISHED || '')
-const dateModified      = (env?.PUBLIC_DATE_MODIFIED || '')
-const email             = (env?.PUBLIC_MAIL_REPLY_ACCOUNT || '')
+const datePublished     = env?.PUBLIC_DATE_PUBLISHED || ''
+const dateModified      = env?.PUBLIC_DATE_MODIFIED || ''
+const email             = env?.PUBLIC_MAIL_REPLY_ACCOUNT || ''
 
 let BreadcrumbList      = []
 pages.forEach((route, index) => {

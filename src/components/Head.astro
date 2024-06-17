@@ -17,9 +17,9 @@ const baseUrl       = new URL(Astro.site)
 const ImageUrl      = ImageSrc('pro-international.jpg')
 
 const env           = loadEnv(process.env.NODE_ENV, process.cwd(), '')
-const GTMID         = (env?.PUBLIC_GTM_ID || null)
-const datePublished = (env?.PUBLIC_DATE_PUBLISHED || '')
-const dateModified  = (env?.PUBLIC_DATE_MODIFIED || '')
+const GTMID         = env?.PUBLIC_GTM_ID || null
+const datePublished = env?.PUBLIC_DATE_PUBLISHED || ''
+const dateModified  = env?.PUBLIC_DATE_MODIFIED || ''
 
 const seo           = {
   'title':          t(lang,`pages${page}:title`, false),
