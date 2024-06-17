@@ -27,7 +27,7 @@ export default defineConfig({
   'adapter': node({
     'mode': 'standalone'
   }),
-  'adapter': vercel(),
+//'adapter': vercel(),
   'integrations': [
     react(), 
     // https://docs.astro.build/en/guides/styling/#sass-and-scss
@@ -54,6 +54,11 @@ export default defineConfig({
     },
     'routing': {
       'prefixDefaultLocale': false
+    }
+  },
+  'resolve': {
+    'alias': {
+      'bootstrap' : 'bootstrap/dist/js/bootstrap.bundle.js'
     }
   }
 });
