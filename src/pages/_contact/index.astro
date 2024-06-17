@@ -7,7 +7,7 @@ import fieldsContent from './content/fields.json'
 
 const env         = loadEnv(process.env.NODE_ENV, process.cwd(), '')
 const lang        = Astro.currentLocale
-const contactForm = (env?.PUBLIC_CONTACT_FORM || null)
+const contactForm = env?.PUBLIC_CONTACT_FORM || null
 ---
 
 <Layout page='Contact'>
