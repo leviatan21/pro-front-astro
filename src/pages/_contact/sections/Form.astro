@@ -45,8 +45,9 @@ const handleValidateForm = (recaptcha) => {
   return (recaptcha.length>0 || valids.length>0) ? false : true
 }
 
+/*
+// https://github.com/withastro/astro/issues/11247
 if (Astro.request.method === 'POST') {
-
   try {
 
     const data  = await Astro.request.formData()
@@ -68,6 +69,7 @@ if (Astro.request.method === 'POST') {
     console.error('Form.catch', error?.message)
   }
 }
+*/
 ---
 
 <SectionComponent className="top hero d-flex align-items-center full">
@@ -141,6 +143,15 @@ if (Astro.request.method === 'POST') {
 
       spinner.classList.remove('d-none');
       fields.forEach(function(field) {
+
+        if (!field.validity.valid) {
+          field.classList.add('valid');
+          field.classList.remove('invalid');
+        } else {
+          field.classList.remove('valid');
+          field.classList.add('invalid');
+        }
+
         isValid = (!field.validity.valid) ? false : isValid;
       });
       // console.log('isValid', isValid);spinner.classList.add('d-none');event.preventDefault();return false;

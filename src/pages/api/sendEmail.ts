@@ -3,6 +3,8 @@ import { loadEnv } from 'vite'
 import nodemailer from 'nodemailer'
 import emailjs from '@emailjs/nodejs'
 
+export const prerender = false
+
 // https://docs.astro.build/en/recipes/build-forms-api/
 // https://docs.astro.build/en/recipes/build-forms/
 export const POST: APIRoute = async ({ request }) => {
@@ -49,11 +51,11 @@ const Env = () => {
 
 const Validate = (body) => {
 
-  const env = Env()
+//const env = Env()
 
-  const subject     = env?.PRIVATE_MAIL_SUBJECT       || null
-  const fromAccount = env?.PRIVATE_MAIL_FROM_ACCOUNT  || null
-  const toAccount   = env?.PRIVATE_MAIL_TO_ACCOUNT    || null
+  const subject     = import.meta.env?.PRIVATE_MAIL_SUBJECT       || null
+  const fromAccount = import.meta.env?.PRIVATE_MAIL_FROM_ACCOUNT  || null
+  const toAccount   = import.meta.env?.PRIVATE_MAIL_TO_ACCOUNT    || null
 
   const vars        = {
     'subject' : body?.subject || subject || null,
@@ -129,13 +131,13 @@ const Parse = (params) => {
 
 const SendNodeMailer = async (params) => {
 
-  const env = Env()
+//const env = Env()
 
-  const host        = env?.PRIVATE_MAIL_HOST        || null
-  const port        = env?.PRIVATE_MAIL_PORT        || null
-  const secure      = env?.PRIVATE_MAIL_SECURE      || null
-  const user        = env?.PRIVATE_MAIL_USER        || null
-  const pass        = env?.PRIVATE_MAIL_PASS        || null
+  const host        = import.meta.env?.PRIVATE_MAIL_HOST        || null
+  const port        = import.meta.env?.PRIVATE_MAIL_PORT        || null
+  const secure      = import.meta.env?.PRIVATE_MAIL_SECURE      || null
+  const user        = import.meta.env?.PRIVATE_MAIL_USER        || null
+  const pass        = import.meta.env?.PRIVATE_MAIL_PASS        || null
 
   /* mailer */
   if (!host || !port || !secure || !user || !pass) {
@@ -143,7 +145,7 @@ const SendNodeMailer = async (params) => {
   }
 
   /* Template & Parse */
-  const email     = Parse(params)
+  const email        = Parse(params)
 
   return await nodemailer
     .createTransport({
@@ -171,12 +173,12 @@ const SendNodeMailer = async (params) => {
 
 const SendEmailJs = async (params) => {
 
-  const env = Env()
+//const env = Env()
 
-  const serviceId   = env?.PRIVATE_MAIL_SERVICE_ID  || null
-  const templateId  = env?.PRIVATE_MAIL_TEMPLATE_ID || null
-  const publicKey   = env?.PRIVATE_MAIL_PUBLIC_KEY  || null
-  const privateKey  = env?.PRIVATE_MAIL_PRIVATE_KEY || null
+  const serviceId   = import.meta.env?.PRIVATE_MAIL_SERVICE_ID  || null
+  const templateId  = import.meta.env?.PRIVATE_MAIL_TEMPLATE_ID || null
+  const publicKey   = import.meta.env?.PRIVATE_MAIL_PUBLIC_KEY  || null
+  const privateKey  = import.meta.env?.PRIVATE_MAIL_PRIVATE_KEY || null
 
   /* mailer */
   if (!serviceId || !templateId || !publicKey || !privateKey) {
