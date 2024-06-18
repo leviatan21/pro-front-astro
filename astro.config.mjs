@@ -61,7 +61,7 @@ export default defineConfig({
       'bootstrap' : 'bootstrap/dist/js/bootstrap.bundle.js'
     }
   },
-  'build': {
-    'inlineStylesheets': 'always'
-  }
+//'build': {
+//  'inlineStylesheets': 'always'
+//}
 });

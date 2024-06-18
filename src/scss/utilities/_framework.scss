@@ -4,6 +4,7 @@
 $btn-font-family: inherit;
 
 :root {
+  --bs-body-font-family: "Work Sans", sans-serif;
   --bs-dropdown-link-hover-color: #fff;
   --bs-heading-color: inherit;
   --bs-link-color-rgb: 13, 110, 253;
@@ -18,5 +19,5 @@ $btn-font-family: inherit;
     }
   }
 }
-@import 'bootstrap/dist/css/bootstrap.css';
 @import 'aos/dist/aos.css';
+@import 'bootstrap/dist/css/bootstrap.css';
