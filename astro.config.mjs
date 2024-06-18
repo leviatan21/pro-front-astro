@@ -61,7 +61,26 @@ export default defineConfig({
       'bootstrap' : 'bootstrap/dist/js/bootstrap.bundle.js'
     }
   },
-//'build': {
-//  'inlineStylesheets': 'always'
-//}
+  'build': {
+    'inlineStylesheets': 'never'
+  },
+  'redirects': {
+    // Redirection index
+    '/index.html': '/',
+    '/eng/index.html': '/en',
+    // Redirection about
+    '/nosotros.html': '/aboutus',
+    '/eng/aboutus.html': '/en/aboutus',
+    // Redirection projects ( https://www.prointernacional.com/proyectos/bhu/bhu.html )
+    '/proyectos.html': '/projects',
+    '/eng/projects.html': '/en/projects',
+    '/proyectos/[...project]/[...slug].html': '/projects/[project]',
+    '/eng/proyectos/[...project]/[...slug].html': '/en/projects/[project]',
+    // Redirection services
+    '/servicios.html': '/services',
+    '/eng/services.html': '/en/services',
+    // Redirection contact
+    '/contacto.html': '/contact',
+    '/eng/contact.html': '/en/contact',
+  }
 });
