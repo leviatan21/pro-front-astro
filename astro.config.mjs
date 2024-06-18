@@ -71,7 +71,7 @@ export default defineConfig({
     // Redirection about
     '/nosotros.html': '/aboutus',
     '/eng/aboutus.html': '/en/aboutus',
-    // Redirection projects ( https://www.prointernacional.com/proyectos/bhu/bhu.html )
+    // Redirection projects
     '/proyectos.html': '/projects',
     '/eng/projects.html': '/en/projects',
     '/proyectos/[...project]/[...slug].html': '/projects/[project]',
@@ -81,6 +81,6 @@ export default defineConfig({
     '/eng/services.html': '/en/services',
     // Redirection contact
     '/contacto.html': '/contact',
-    '/eng/contact.html': '/en/contact',
+    '/eng/contact.html': '/en/contact'
   }
 });
