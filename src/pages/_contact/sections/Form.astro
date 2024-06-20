@@ -11,10 +11,11 @@ export const prerender = false
 
 const {
   lang='',
-  fields=[]
+  fields=[],
+  recaptchaSiteKey=null
 } = Astro.props
 
-let formValid=true, result=null, recaptcha=''
+let formValid=true, result=null
 
 const handleFormSubmit = async () => {
 
@@ -50,8 +51,8 @@ const handleValidateForm = (recaptcha) => {
 if (Astro.request.method === 'POST') {
   try {
 
-    const data  = await Astro.request.formData()
-    recaptcha   = data.get('recaptcha')?.toString().trim()
+    const data      = await Astro.request.formData()
+    const recaptcha = data.get('recaptcha')?.toString().trim()
 
     Object.keys(fields).map((key) => {
       fields[key].value     = data.get(fields[key].name)?.toString().trim()
@@ -84,7 +85,7 @@ if (Astro.request.method === 'POST') {
               id="form-contact" 
               name="form-contact" 
               aria-label={t(lang,'pagesContact:form-label')}
-              novalidate="novalidate"
+              {/* novalidate="novalidate" */}
             >
               <fieldset id="form" class="area-form">
                 <article class="form-article">
@@ -102,6 +103,14 @@ if (Astro.request.method === 'POST') {
               <div class="row align-items-end">
                 <div class="col">
                   <input type="hidden" name="recaptcha" value="" />
+                  {recaptchaSiteKey && (
+                    <div
+                      class="g-recaptcha" 
+                      data-action="submit"
+                      data-callback="onSubmit"
+                      data-sitekey={recaptchaSiteKey}
+                    ></div>
+                  )}
                 </div>
                 <div class="col">
                   <div class="wrapper-input col-boton-enviar">
@@ -109,7 +118,7 @@ if (Astro.request.method === 'POST') {
                       id="button-contact"
                       class="btn btn-warning uppercase d-inline" 
                       type="submit" 
-                      {/* disabled={!formValid} */}
+                      disabled={recaptchaSiteKey ? true : false}
                     >
                       <SpinnerComponent id='contact-spinner' size='sm' />
                       {t(lang,'pagesContact:form-button')}
@@ -133,6 +142,31 @@ if (Astro.request.method === 'POST') {
   </div>
 </SectionComponent>
 
+<script is:inline src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script is:inline>
+  function onSubmit(token) {
+
+    const button    = document.getElementById('button-contact');
+    const comments  = document.getElementById('input-comments');
+
+    fetch('/api/recaptcha', {
+      'method': 'POST',
+      'body': JSON.stringify({ 'token':token })
+    })
+    .then( async (response) => {
+      const gResponse = await response.json()
+      // Captcha verification was a success ?
+      if (gResponse?.success === true) {
+        button.removeAttribute('disabled');
+      }
+    })
+    .catch((error) => {
+      button.setAttribute('disabled', true);
+      comments.value = JSON.stringify(error);
+    });
+  }
+</script>
+
 <script>
 
   function SubmitListener(form) {
@@ -144,9 +178,9 @@ if (Astro.request.method === 'POST') {
       spinner.classList.remove('d-none');
       fields.forEach(function(field) {
 
-        if (!field.validity.valid) {
-          field.classList.add('valid');
+        if (field.validity.valid) {
           field.classList.remove('invalid');
+          field.classList.add('valid');
         } else {
           field.classList.remove('valid');
           field.classList.add('invalid');
@@ -154,7 +188,6 @@ if (Astro.request.method === 'POST') {
 
         isValid = (!field.validity.valid) ? false : isValid;
       });
-      // console.log('isValid', isValid);spinner.classList.add('d-none');event.preventDefault();return false;
 
       if (isValid) {
         window.setTimeout(function() {
@@ -187,7 +220,7 @@ if (Astro.request.method === 'POST') {
     });
   }
 
-  const form = document.getElementById('form-contact');
+  var form = document.getElementById('form-contact');
   if (typeof(form) !== 'undefined' && form !== null) {
     SubmitListener(form);
     EmailListener();

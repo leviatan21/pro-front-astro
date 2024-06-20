@@ -1,5 +1,3 @@
-import type { APIRoute } from 'astro'
-import { loadEnv } from 'vite'
 import nodemailer from 'nodemailer'
 import emailjs from '@emailjs/nodejs'
 
@@ -7,9 +5,9 @@ export const prerender = false
 
 // https://docs.astro.build/en/recipes/build-forms-api/
 // https://docs.astro.build/en/recipes/build-forms/
-export const POST: APIRoute = async ({ request }) => {
+export const POST = async ({ request }) => {
 
-//return new Response(null,{'status':200,'statusText':'OK','headers':{'Content-Type':'application/json'}})
+return new Response(null,{'status':200,'statusText':'OK','headers':{'Content-Type':'application/json'}});
 
   const body = await request.json()
 
@@ -45,13 +43,7 @@ export const POST: APIRoute = async ({ request }) => {
 
 }
 
-const Env = () => {
-  return loadEnv(process.env.NODE_ENV, process.cwd(), '')
-}
-
 const Validate = (body) => {
-
-//const env = Env()
 
   const subject     = import.meta.env?.PRIVATE_MAIL_SUBJECT       || null
   const fromAccount = import.meta.env?.PRIVATE_MAIL_FROM_ACCOUNT  || null
@@ -131,8 +123,6 @@ const Parse = (params) => {
 
 const SendNodeMailer = async (params) => {
 
-//const env = Env()
-
   const host        = import.meta.env?.PRIVATE_MAIL_HOST        || null
   const port        = import.meta.env?.PRIVATE_MAIL_PORT        || null
   const secure      = import.meta.env?.PRIVATE_MAIL_SECURE      || null
@@ -172,8 +162,6 @@ const SendNodeMailer = async (params) => {
 }
 
 const SendEmailJs = async (params) => {
-
-//const env = Env()
 
   const serviceId   = import.meta.env?.PRIVATE_MAIL_SERVICE_ID  || null
   const templateId  = import.meta.env?.PRIVATE_MAIL_TEMPLATE_ID || null

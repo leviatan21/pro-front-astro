@@ -2,11 +2,11 @@
 @import "./navbar";
 
 header {
+  background: transparent !important;
+  width: 100%;
+  padding: 24px 0px !important;
+  z-index: 1;
   &.pro {
-    background: transparent !important;
-    width: 100%;
-    padding: 24px 0px !important;
-    z-index: 1;
     position: absolute;
     top: 0px;
   }

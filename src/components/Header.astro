@@ -8,7 +8,7 @@ import ImageAssetsComponent from './ImageAssets.astro'
 
 const {
   lang,
-  props
+  ...attrs
 } = Astro.props
 
 const pathname      = Astro.url.pathname
@@ -17,7 +17,7 @@ const route         = getRouteFromUrl(pathname)
 ---
 
 <>
-  <header id="top" class={`p-3 mb-3 ${(isContactPage) ? '' : 'pro'}`} {...props}>
+  <header id="top" class={`p-3 mb-3 ${(isContactPage) ? '' : 'pro'}`} {...attrs}>
     <div class="container">
       <div class="d-flex justify-content-between">
         <nav class="navbar navbar-expand-lg w-100 navbar-light">

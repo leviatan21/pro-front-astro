@@ -5,15 +5,16 @@ import DisabledSection from './sections/Disabled.astro'
 import FormSection from './sections/Form.astro'
 import fieldsContent from './content/fields.json'
 
-const env         = loadEnv(process.env.NODE_ENV, process.cwd(), '')
-const lang        = Astro.currentLocale
-const contactForm = env?.PUBLIC_CONTACT_FORM || null
+const env               = loadEnv(process.env.NODE_ENV, process.cwd(), '')
+const lang              = Astro.currentLocale
+const contactForm       = env?.PUBLIC_CONTACT_FORM || null
+const recaptchaSiteKey  = env?.PUBLIC_RECAPTCHA_SITEKEY || null
 ---
 
 <Layout page='Contact'>
   {contactForm !== 'true' ? (
     <DisabledSection lang={lang} />
   ) : (
-    <FormSection lang={lang} fields={fieldsContent} />
+    <FormSection lang={lang} fields={fieldsContent} _recaptchaSiteKey={recaptchaSiteKey} />
   )}
 </Layout>
