@@ -21,13 +21,16 @@ export default defineConfig({
   'site': baseUrl,
   'trailingSlash': 'ignore',
   // Because of form contact
-  //'output': 'server',
+  'output': 'server',
   //'output': 'static',
-  'output': 'hybrid',
+  //'output': 'hybrid',
   'adapter': node({
     'mode': 'standalone'
   }),
-  'adapter': vercel(),
+  'adapter': vercel({
+    'edgeMiddleware': true,
+    'isr': true,
+  }),
   'integrations': [
     react(), 
     // https://docs.astro.build/en/guides/styling/#sass-and-scss
